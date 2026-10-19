@@ -323,7 +323,7 @@ class DmaFrRow(models.Model):
     report_localid = fields.Char("Field report id", readonly=True, copy=False)
     object_guid = fields.Char(readonly=True, copy=False)
     fieldreport_guid = fields.Char(readonly=True, copy=False)
-    imsma_state = fields.Selection([("not_sent", "Not exported"), ("sent", "Exported"), ("found", "In IMSMA")],
+    imsma_state = fields.Selection([("not_sent", "Not exported"), ("sent", "Exported"), ("found", "In IMSMA")], string="IMSMA",
                                    default="not_sent", readonly=True, copy=False)
     imsma_status = fields.Char("IMSMA status", readonly=True, copy=False)
 

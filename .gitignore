@@ -3,3 +3,4 @@ __pycache__/
 # IMSMA data never goes into git
 *.zip
 /local/
+dist/

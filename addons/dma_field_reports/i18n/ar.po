@@ -1,0 +1,3509 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dma_field_reports
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-19 10:32+0000\n"
+"PO-Revision-Date: 2026-10-19 10:32+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid " %s report(s) have notes to check; they can still be exported."
+msgstr " %s من التقارير فيها ملاحظات للمراجعة، ومع ذلك يمكن تصديرها."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_export_build.py:0
+msgid ""
+"%(label)s does not match IMSMA's schema:\n"
+"%(errors)s"
+msgstr ""
+"%(label)s لا يطابق مخطط IMSMA:\n"
+"%(errors)s"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "%(n)s characters; IMSMA keeps %(max)s."
+msgstr "%(n)s حرفاً، ويحتفظ IMSMA بـ %(max)s فقط."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_export_build.py:0
+msgid "%(n)s new location(s) exported: %(ids)s. %(note)s"
+msgstr "تم تصدير %(n)s من المواقع الجديدة: %(ids)s. %(note)s"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_export_build.py:0
+msgid "%(n)s report(s) exported (%(first)s to %(last)s). %(note)s"
+msgstr "تم تصدير %(n)s من التقارير (من %(first)s إلى %(last)s). %(note)s"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "%(rows)s report(s) read from sheet '%(sheet)s'."
+msgstr "تمت قراءة %(rows)s من التقارير من ورقة العمل '%(sheet)s'."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/wizards/dma_fr_fix_wizard.py:0
+msgid "%(user)s fixed %(field)s ('%(raw)s') on %(n)s row(s)."
+msgstr "أصلح %(user)s الحقل %(field)s ('%(raw)s') في %(n)s من الصفوف."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_export_build.py:0
+msgid ""
+"%s new location(s) must be created and approved in IMSMA first (step 3)."
+msgstr "يجب أولاً إنشاء %s من المواقع الجديدة والموافقة عليها في IMSMA (الخطوة 3)."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_export_build.py:0
+msgid ""
+"%s report(s) still have problems that must be fixed (or leave them out)."
+msgstr "ما يزال لدى %s من التقارير مشكلات يجب إصلاحها (أو استبعادها)."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "'%(raw)s' is not a %(what)s of the IMSMA gazetteer here."
+msgstr "'%(raw)s' لا يطابق أي %(what)s في الدليل الجغرافي لـ IMSMA ضمن هذا النطاق."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "'%s' is not a date. Write it as YYYY-MM-DD or DD/MM/YYYY."
+msgstr "'%s' ليس تاريخاً. اكتبه بالصيغة YYYY-MM-DD أو DD/MM/YYYY."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "'%s' is not a number."
+msgstr "'%s' ليس رقماً."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "'%s' is not a valid MGRS grid reference."
+msgstr "'%s' ليس إحداثياً شبكياً صالحاً بنظام MGRS."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "'%s' is not an organisation in IMSMA."
+msgstr "'%s' ليست مؤسسة مسجلة في IMSMA."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_template__header_rows
+msgid ""
+"2 when a group header (e.g. 'Location') sits over sub-headers (e.g. "
+"'Province')."
+msgstr "2 عندما يعلو عنوانُ مجموعة (مثل 'Location') عناوينَ فرعية (مثل 'Province')."
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+msgid "<span class=\"o_stat_text\">Must fix</span>"
+msgstr "<span class=\"o_stat_text\">يجب إصلاحه</span>"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+msgid "<span class=\"o_stat_text\">To check</span>"
+msgstr "<span class=\"o_stat_text\">للمراجعة</span>"
+
+#. module: dma_field_reports
+#: model:ir.model.constraint,message:dma_field_reports.constraint_dma_fr_ref_option_value_uniq
+msgid "A value is listed once per field."
+msgstr "تُدرَج القيمة مرة واحدة فقط لكل حقل."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "A whole number is expected."
+msgstr "يجب أن تكون القيمة عدداً صحيحاً."
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_cell_view_problem_list
+msgid "Accept"
+msgstr "قبول"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "Accepted by %s"
+msgstr "قبِلها %s"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__message_needaction
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_office__active
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_cdf__active
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_form__active
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_location__active
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_option__active
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_org__active
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place__active
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__active
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_value_map__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_form__is_active_in_imsma
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_ref_form_view_search
+msgid "Active in IMSMA"
+msgstr "نشط في IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f20
+msgid "Activity type"
+msgstr "نوع النشاط"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f19
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__role__actual_end
+msgid "Actual end date"
+msgstr "تاريخ الانتهاء الفعلي"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f18
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__role__actual_start
+msgid "Actual start date"
+msgstr "تاريخ البدء الفعلي"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_value_map_view_list
+msgid "Added by"
+msgstr "أضافه"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f42
+msgid "Adult (19+) female"
+msgstr "بالغون (19+) إناث"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f41
+msgid "Adult (19+) male"
+msgstr "بالغون (19+) ذكور"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place_alias__alias
+msgid "Alias"
+msgstr "الاسم البديل"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place_alias__alias_norm
+msgid "Alias Norm"
+msgstr "الاسم البديل (موحَّد)"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "All reports of this batch are in IMSMA."
+msgstr "جميع تقارير هذه الدفعة موجودة في IMSMA."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template_field__fixed_options
+msgid "Allowed values"
+msgstr "القيم المسموح بها"
+
+#. module: dma_field_reports
+#: model:res.groups,comment:dma_field_reports.group_dma_fr_manager
+msgid ""
+"Also sets up the IMSMA reference source, the form templates, the value "
+"mappings, the offices and the id counters."
+msgstr "يتولى أيضاً تهيئة مصدر بيانات IMSMA المرجعية، وقوالب الاستمارات، ومطابقات القيم، والمكاتب، وعدّادات المعرّفات."
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+msgid "Anything to remember about this batch..."
+msgstr "أي ملاحظة تخص هذه الدفعة..."
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_fix_wizard_view_form
+msgid "Apply"
+msgstr "تطبيق"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_location_request__state__confirmed
+msgid "Approved in IMSMA"
+msgstr "موافق عليه في IMSMA"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_value_map_view_search
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__area_id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__area_id
+msgid "Area found"
+msgstr "المنطقة المطابقة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_ref_form__version
+msgid "As IMSMA writes it, e.g. 23 or 1.0.01"
+msgstr "كما يكتبه IMSMA، مثل 23 أو 1.0.01"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__message_attachment_count
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__role__attachments
+msgid "Attachment file names"
+msgstr "أسماء ملفات المرفقات"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f59
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__attachment_ids
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+msgid "Attachments"
+msgstr "المرفقات"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__attachment_ids
+msgid "Attachments (reports, photos)"
+msgstr "المرفقات (تقارير، صور)"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_template_view_list
+msgid "Attention"
+msgstr "تنبيه"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f43
+msgid "Audience type"
+msgstr "نوع الفئة المستهدفة"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f49
+msgid "Audio broadcasts"
+msgstr "البث الصوتي"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f48
+msgid "Audio method"
+msgstr "الوسيلة الصوتية"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f21
+msgid "Awareness type"
+msgstr "نوع التوعية"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+msgid "Back to draft"
+msgstr "إعادة إلى المسودة"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_source_view_form
+msgid "Backup package"
+msgstr "حزمة النسخة الاحتياطية"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f25
+msgid "Bags"
+msgstr "الحقائب"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__batch_id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_export__batch_id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__batch_id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_location_request__batch_id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__batch_id
+msgid "Batch"
+msgstr "دفعة"
+
+#. module: dma_field_reports
+#: model:ir.ui.menu,name:dma_field_reports.menu_dma_fr_batches
+msgid "Batches"
+msgstr "الدفعات"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_cell__suggestion
+msgid "Best guesses, best first, separated by ' | '."
+msgstr "أرجح الاقتراحات مرتبةً من الأفضل، مفصولة بـ ' | '."
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f33
+msgid "Booklets"
+msgstr "الكتيبات"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_source_view_form
+msgid ""
+"Build the package from an IMSMA backup on any PC with Python:\n"
+"                            <code>python imsma_ref_extract.py --backup Backup_..\\Dump.sql --out imsma_ref.zip</code>\n"
+"                            (the tool is in the module's <code>tools</code> folder). It holds lists only, no report contents."
+msgstr ""
+"يمكن بناء الحزمة من نسخة احتياطية لـ IMSMA على أي حاسوب يتوفر فيه Python:\n"
+"                            <code>python imsma_ref_extract.py --backup Backup_..\\Dump.sql --out imsma_ref.zip</code>\n"
+"                            (الأداة موجودة في مجلد <code>tools</code> ضمن الوحدة). تحتوي الحزمة على القوائم فقط، دون أي محتوى من التقارير."
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_value_map__origin__seeded
+msgid "Built in"
+msgstr "مدمج"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_value_map__scope
+msgid ""
+"CDF GUID of the list field, or 'organisation'. A mapping applies to that "
+"field only."
+msgstr "قيمة CDF GUID لحقل القائمة، أو 'organisation'. تنطبق المطابقة على ذلك الحقل فقط."
+
+#. module: dma_field_reports
+#: model:ir.model.constraint,message:dma_field_reports.constraint_dma_fr_ref_cdf_cdf_uniq
+msgid "CDF id must be unique."
+msgstr "يجب أن يكون معرّف CDF فريداً."
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_fix_wizard_view_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+msgid "Cancel batch"
+msgstr "إلغاء الدفعة"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_batch__state__cancel
+msgid "Cancelled"
+msgstr "ملغاة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template_field__cdf_missing
+msgid "Cdf Missing"
+msgstr "حقل CDF مفقود"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__cell_id
+msgid "Cell"
+msgstr "الخلية"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_source__stamp
+msgid "Changes every time the data is reloaded; batches remember it."
+msgstr "يتغير في كل مرة يُعاد فيها تحميل البيانات، وتحتفظ الدفعات به."
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_cell__state__warning
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_row__state__warning
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+msgid "Check"
+msgstr "تدقيق"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+msgid "Check again"
+msgstr "إعادة التدقيق"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__checked_on
+msgid "Checked On"
+msgstr "تاريخ التدقيق"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_template_view_list
+msgid "Checked against"
+msgstr "دُقِّق مقابل"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place__child_ids
+msgid "Children"
+msgstr "الأطفال"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f38
+msgid "Children (5-12) female"
+msgstr "أطفال (5-12) إناث"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f37
+msgid "Children (5-12) male"
+msgstr "أطفال (5-12) ذكور"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid ""
+"Choose the form and office, upload the operator's Excel file and drop the "
+"attachments (Word reports, photos) in Attachments. Then press Check."
+msgstr "اختر الاستمارة والمكتب، وارفع ملف Excel الخاص بالجهة المنفذة، وضع المرفقات (تقارير Word، صور) في حقل المرفقات. ثم اضغط «تدقيق»."
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_ref_place_view_search
+msgid "Cities / villages"
+msgstr "المدن / القرى"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f11
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_ref_place__level__city
+msgid "City / town / village"
+msgstr "المدينة / البلدة / القرية"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_cell_view_problem_list
+msgid "Closest matches"
+msgstr "أقرب التطابقات"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/wizards/dma_fr_fix_wizard.py:0
+msgid "Closest matches: "
+msgstr "أقرب التطابقات: "
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__code
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__code
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_office__code
+msgid "Code"
+msgstr "الرمز"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__column
+msgid "Col"
+msgstr "حرف العمود"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__field_id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__field_id
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_cell_view_search
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_fix_wizard_view_form
+msgid "Column"
+msgstr "العمود"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__column_report
+msgid "Column Report"
+msgstr "تقرير الأعمدة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template_field__headers
+msgid "Column headers"
+msgstr "عناوين الأعمدة"
+
+#. module: dma_field_reports
+#: model:ir.model,name:dma_field_reports.model_dma_fr_template_field
+msgid "Column of a field report template"
+msgstr "عمود في قالب تقرير ميداني"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__field_ids
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_template_view_form
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_template_view_list
+msgid "Columns"
+msgstr "الأعمدة"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "Columns in the file that are not used:"
+msgstr "أعمدة في الملف غير مستخدمة:"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "Columns not found in the file:"
+msgstr "أعمدة غير موجودة في الملف:"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f44
+msgid "Comment"
+msgstr "تعليق"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__role__comments
+msgid "Comments"
+msgstr "التعليقات"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place__complete_name
+msgid "Complete Name"
+msgstr "الاسم الكامل"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template__kind__completion
+msgid "Completion"
+msgstr "الإنجاز"
+
+#. module: dma_field_reports
+#: model:ir.ui.menu,name:dma_field_reports.menu_dma_fr_config
+msgid "Configuration"
+msgstr "التهيئة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_ref_location__origin__confirmed
+msgid "Confirmed in Odoo, waiting for IMSMA data"
+msgstr "مؤكَّد في Odoo، بانتظار بيانات IMSMA"
+
+#. module: dma_field_reports
+#: model_terms:ir.actions.act_window,help:dma_field_reports.dma_fr_source_action
+msgid "Connect IMSMA data"
+msgstr "ربط بيانات IMSMA"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_source.py:0
+msgid "Connected. IMSMA has %s form definitions."
+msgstr "تم الاتصال. يحتوي IMSMA على %s من تعريفات الاستمارات."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__coord_note
+msgid "Coord Note"
+msgstr "ملاحظة الإحداثيات"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__role__mgrs
+msgid "Coordinates: MGRS"
+msgstr "الإحداثيات: MGRS"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__role__latitude
+msgid "Coordinates: latitude"
+msgstr "الإحداثيات: خط العرض"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__role__longitude
+msgid "Coordinates: longitude"
+msgstr "الإحداثيات: خط الطول"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_fix_wizard__mode__text
+msgid "Correct the value"
+msgstr "تصحيح القيمة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__new_value
+msgid "Correct value"
+msgstr "القيمة الصحيحة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__override
+msgid "Corrected value"
+msgstr "القيمة المصحَّحة"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_source.py:0
+msgid "Could not read IMSMA: %s"
+msgstr "تعذّرت قراءة IMSMA: %s"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_export_build.py:0
+msgid "Counter in IMSMA (localidtype '%(t)s'): at least %(n)s."
+msgstr "العدّاد في IMSMA (localidtype '%(t)s'): لا يقل عن %(n)s."
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_ref_place__level__country
+msgid "Country"
+msgstr "الدولة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__create_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__create_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_counter__create_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__create_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_location_request__create_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_office__create_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_cdf__create_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_form__create_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_idusage__create_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_location__create_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_option__create_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_org__create_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place__create_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place_alias__create_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_task__create_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__create_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__create_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__create_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template_field__create_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_value_map__create_uid
+msgid "Created by"
+msgstr "أنشأه"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__create_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__create_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_counter__create_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__create_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_location_request__create_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_office__create_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_cdf__create_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_form__create_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_idusage__create_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_location__create_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_option__create_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_org__create_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place__create_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place_alias__create_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_task__create_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__create_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__create_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__create_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template_field__create_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_value_map__create_date
+msgid "Created on"
+msgstr "تاريخ الإنشاء"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__form_id
+msgid "Current IMSMA version"
+msgstr "إصدار IMSMA الحالي"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_option__cdf_ref_id
+msgid "Custom field"
+msgstr "حقل مخصص"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__cdf_ref_id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template_field__cdf_ref_id
+msgid "Custom field in IMSMA data"
+msgstr "حقل مخصص في بيانات IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.ui.menu,name:dma_field_reports.menu_dma_fr_ref_cdf
+msgid "Custom fields and values"
+msgstr "الحقول المخصصة وقيمها"
+
+#. module: dma_field_reports
+#: model:ir.module.category,name:dma_field_reports.module_category_dma_field_reports
+#: model:res.groups.privilege,name:dma_field_reports.res_groups_privilege_dma_field_reports
+msgid "DMA Field Reports"
+msgstr "التقارير الميدانية لدائرة شؤون الألغام"
+
+#. module: dma_field_reports
+#: model:ir.actions.server,name:dma_field_reports.cron_refresh_live_imsma_ir_actions_server
+msgid "DMA Field Reports: refresh live IMSMA data"
+msgstr "التقارير الميدانية لدائرة شؤون الألغام: تحديث بيانات IMSMA المباشرة"
+
+#. module: dma_field_reports
+#: model:dma.fr.office,name:dma_field_reports.office_dma_hq
+msgid "DMA Headquarters (Baghdad)"
+msgstr "مقر دائرة شؤون الألغام (بغداد)"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__dump_date
+msgid "Data as of"
+msgstr "البيانات بتاريخ"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__db_name
+msgid "Database"
+msgstr "قاعدة البيانات"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_cdf__datatype
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template_field__datatype
+msgid "Datatype"
+msgstr "نوع البيانات"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__datatype__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f02
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__role__report_date
+msgid "Date of report"
+msgstr "تاريخ التقرير"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_fix_wizard__area_id
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_row__area_id
+msgid ""
+"Deepest level of the address that matched the gazetteer (e.g. the district)."
+msgstr "أدنى مستوى من العنوان طابق الدليل الجغرافي (مثل القضاء)."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__display_name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__display_name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_counter__display_name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_export__display_name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__display_name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_location_request__display_name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_office__display_name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_cdf__display_name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_form__display_name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_idusage__display_name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_location__display_name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_option__display_name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_org__display_name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place__display_name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place_alias__display_name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_task__display_name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__display_name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__display_name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__display_name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template_field__display_name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_value_map__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f09
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_ref_place__level__district
+msgid "District"
+msgstr "القضاء"
+
+#. module: dma_field_reports
+#: model:dma.fr.template,name:dma_field_reports.template_eore
+msgid "EORE (DMA Excel template)"
+msgstr "EORE (قالب Excel لدائرة شؤون الألغام)"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template__kind__eore
+msgid "EORE (Explosive Ordnance Risk Education)"
+msgstr "EORE (التوعية بمخاطر الذخائر المتفجرة)"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f23
+msgid "EORE sub-type"
+msgstr "النوع الفرعي لـ EORE"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f22
+msgid "EORE type"
+msgstr "نوع EORE"
+
+#. module: dma_field_reports
+#: model_terms:ir.actions.act_window,help:dma_field_reports.dma_fr_source_action
+msgid ""
+"Either upload a package built from an IMSMA backup, or give a read-only connection to the\n"
+"               IMSMA database. Checking and export use this data; Odoo never writes to IMSMA."
+msgstr ""
+"إما أن ترفع حزمة مبنية من نسخة احتياطية لـ IMSMA، أو تزوّد اتصالاً للقراءة فقط بقاعدة\n"
+"               بيانات IMSMA. يعتمد التدقيق والتصدير على هذه البيانات، ولا يكتب Odoo في IMSMA إطلاقاً."
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_cell__state__empty
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_row__state__empty
+msgid "Empty"
+msgstr "فارغ"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "Ends before it starts (%s)."
+msgstr "ينتهي قبل أن يبدأ (%s)."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_cdf__entity
+msgid "Entity"
+msgstr "الكيان"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "Every report of this batch was found in IMSMA."
+msgstr "عُثر على جميع تقارير هذه الدفعة في IMSMA."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "Everything required is in place."
+msgstr "جميع المتطلبات مستوفاة."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_template__imsma_form_name
+msgid ""
+"Exact name of the field report form in IMSMA. Its GUID and current version "
+"are taken from the IMSMA data at export time."
+msgstr "الاسم الدقيق لاستمارة التقرير الميداني في IMSMA. يؤخذ GUID الخاص بها وإصدارها الحالي من بيانات IMSMA وقت التصدير."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_template_field__cdf_id_text
+msgid "Exactly as in IMSMA, typos and spaces included."
+msgstr "مطابق تماماً لما في IMSMA، بما في ذلك الأخطاء الإملائية والمسافات."
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_template_view_form
+msgid "Excel file"
+msgstr "ملف Excel"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__excel_row
+msgid "Excel row"
+msgstr "صف Excel"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+msgid "Export new locations"
+msgstr "تصدير المواقع الجديدة"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_export_build.py:0
+msgid "Export of '%s' reports is not available yet."
+msgstr "تصدير تقارير '%s' غير متاح بعد."
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+msgid "Export to IMSMA"
+msgstr "تصدير إلى IMSMA"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_batch__state__exported
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_row__imsma_state__sent
+msgid "Exported"
+msgstr "مُصدَّر"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_export__create_uid
+msgid "Exported by"
+msgstr "صدّره"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_export__create_date
+msgid "Exported on"
+msgstr "تاريخ التصدير"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_location_request__state__exported
+msgid "Exported, waiting for approval in IMSMA"
+msgstr "مُصدَّر، بانتظار الموافقة في IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__export_ids
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+msgid "Exports"
+msgstr "عمليات التصدير"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_source__state__failed
+msgid "Failed"
+msgstr "فشل"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_value_map__scope_label
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_value_map_view_list
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_value_map_view_search
+msgid "Field"
+msgstr "الحقل"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__field_count
+msgid "Field Count"
+msgstr "عدد الحقول"
+
+#. module: dma_field_reports
+#: model:ir.ui.menu,name:dma_field_reports.menu_dma_fr_root
+msgid "Field Reports"
+msgstr "التقارير الميدانية"
+
+#. module: dma_field_reports
+#: model:ir.model,name:dma_field_reports.model_dma_fr_batch
+msgid "Field data batch"
+msgstr "دفعة بيانات ميدانية"
+
+#. module: dma_field_reports
+#: model:ir.actions.act_window,name:dma_field_reports.dma_fr_batch_action
+msgid "Field data batches"
+msgstr "دفعات البيانات الميدانية"
+
+#. module: dma_field_reports
+#: model:ir.module.category,description:dma_field_reports.module_category_dma_field_reports
+msgid "Field data from operators, checked in Odoo and exported to IMSMA NG."
+msgstr "البيانات الميدانية الواردة من الجهات المنفذة، تُدقَّق في Odoo وتُصدَّر إلى IMSMA NG."
+
+#. module: dma_field_reports
+#: model:ir.model,name:dma_field_reports.model_dma_fr_row
+msgid "Field report (one row of the file)"
+msgstr "تقرير ميداني (صف واحد من الملف)"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__report_localid
+msgid "Field report id"
+msgstr "معرّف التقرير الميداني"
+
+#. module: dma_field_reports
+#: model:ir.model,name:dma_field_reports.model_dma_fr_template
+msgid "Field report template"
+msgstr "قالب التقرير الميداني"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_export__kind__reports
+msgid "Field reports"
+msgstr "التقارير الميدانية"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_location_request__fieldreport_guid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__fieldreport_guid
+msgid "Fieldreport Guid"
+msgstr "GUID التقرير الميداني"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_export__file
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_list
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_search
+msgid "File"
+msgstr "الملف"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+msgid "File columns"
+msgstr "أعمدة الملف"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_batch__read_filename
+msgid "File the rows were read from."
+msgstr "الملف الذي قُرئت منه الصفوف."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_export__filename
+msgid "Filename"
+msgstr "اسم الملف"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+msgid "Files"
+msgstr "الملفات"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_source.py:0
+msgid "Fill in host, database and user."
+msgstr "املأ حقول الخادم وقاعدة البيانات والمستخدم."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__first_data_row
+msgid "First data row"
+msgstr "أول صف بيانات"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__header_row
+msgid "First header row"
+msgstr "أول صف عناوين"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_cell_view_form
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_cell_view_problem_list
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_row_view_form
+msgid "Fix"
+msgstr "إصلاح"
+
+#. module: dma_field_reports
+#: model:ir.model,name:dma_field_reports.model_dma_fr_fix_wizard
+msgid "Fix a problem"
+msgstr "إصلاح مشكلة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__apply_all
+msgid "Fix every row with this value"
+msgstr "إصلاح كل الصفوف التي تحمل هذه القيمة"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+msgid "Fix problems"
+msgstr "إصلاح المشكلات"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "Fix problems: %s"
+msgstr "إصلاح المشكلات: %s"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_export_build.py:0
+msgid "Fix the place problems first (%s cells)."
+msgstr "أصلح مشكلات الأماكن أولاً (%s من الخلايا)."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "Fix: %s"
+msgstr "إصلاح: %s"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f24
+msgid "Folders"
+msgstr "الحافظات"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__message_follower_ids
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__message_partner_ids
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_batch__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome، مثل fa-tasks"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f28
+msgid "Football"
+msgstr "كرات القدم"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_fix_wizard__part
+msgid "For a cell with several values, the first one IMSMA does not know."
+msgstr "في الخلية التي تحتوي على عدة قيم: أول قيمة لا يعرفها IMSMA."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_fix_wizard__fixed_value
+msgid "For lists that are not an IMSMA custom field."
+msgstr "للقوائم التي ليست حقلاً مخصصاً في IMSMA."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_source__server_path
+msgid ""
+"For packages too large to upload: a path to the zip on the Odoo server."
+msgstr "للحزم الأكبر من أن تُرفع: مسار ملف zip على خادم Odoo."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__template_id
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_search
+msgid "Form"
+msgstr "الاستمارة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__form_version_warning
+msgid "Form Version Warning"
+msgstr "تنبيه إصدار الاستمارة"
+
+#. module: dma_field_reports
+#: model:ir.actions.act_window,name:dma_field_reports.dma_fr_template_action
+#: model:ir.ui.menu,name:dma_field_reports.menu_dma_fr_template
+msgid "Form templates"
+msgstr "قوالب الاستمارات"
+
+#. module: dma_field_reports
+#: model:ir.ui.menu,name:dma_field_reports.menu_dma_fr_ref_form
+msgid "Forms"
+msgstr "الاستمارات"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f01
+msgid "Funded by"
+msgstr "الجهة الممولة"
+
+#. module: dma_field_reports
+#: model:ir.actions.act_window,name:dma_field_reports.dma_fr_ref_place_action
+#: model:ir.ui.menu,name:dma_field_reports.menu_dma_fr_ref_place
+msgid "Gazetteer"
+msgstr "الدليل الجغرافي"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_location_request__place_id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_location__place_id
+msgid "Gazetteer place"
+msgstr "مكان في الدليل الجغرافي"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "Give both latitude and longitude, or an MGRS reference."
+msgstr "أدخل خط العرض وخط الطول معاً، أو إحداثياً بنظام MGRS."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "Give the city, town or village."
+msgstr "أدخل المدينة أو البلدة أو القرية."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_office__code
+msgid "Goes into IMSMA ids: Education-<code>-123, LOC-<code>-45."
+msgstr "يدخل في معرّفات IMSMA: Education-<code>-123، LOC-<code>-45."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_location_request__guid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_form__guid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_location__guid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_org__guid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place__guid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_task__guid
+msgid "Guid"
+msgstr "GUID"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__has_message
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+msgid ""
+"Have the location reports been imported AND approved in the IMSMA Workbench?"
+msgstr "هل تم استيراد تقارير المواقع، والموافقة عليها أيضاً، في IMSMA Workbench؟"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template__kind__hazard
+msgid "Hazard"
+msgstr "منطقة خطرة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__header_rows
+msgid "Header rows"
+msgstr "صفوف العناوين"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_template_view_form
+msgid "Headers (one per line)"
+msgstr "العناوين (عنوان في كل سطر)"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template_field__help_text
+msgid "Help for users"
+msgstr "إرشادات للمستخدمين"
+
+#. module: dma_field_reports
+#: model:ir.model,name:dma_field_reports.model_dma_fr_ref_idusage
+msgid "Highest IMSMA number in use per id prefix"
+msgstr "أعلى رقم مستخدم في IMSMA لكل بادئة معرّف"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__db_host
+msgid "Host"
+msgstr "الخادم"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_ref_option__usage
+msgid "How many times IMSMA has stored this value."
+msgstr "عدد المرات التي خزّن فيها IMSMA هذه القيمة."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_counter__id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_export__id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_location_request__id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_office__id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_cdf__id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_form__id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_idusage__id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_location__id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_option__id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_org__id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place__id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place_alias__id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_task__id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template_field__id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_value_map__id
+msgid "ID"
+msgstr "المعرّف"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f60
+msgid "IM date"
+msgstr "تاريخ إدارة المعلومات"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_ref_place_alias__origin__imsma
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_row_view_form
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_template_view_form
+msgid "IMSMA"
+msgstr "IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template_field__cdf_guid
+msgid "IMSMA CDF GUID"
+msgstr "GUID حقل CDF في IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_cdf__cdf_id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template_field__cdf_id_text
+msgid "IMSMA CDF id"
+msgstr "معرّف CDF في IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model.constraint,message:dma_field_reports.constraint_dma_fr_ref_form_guid_uniq
+#: model:ir.model.constraint,message:dma_field_reports.constraint_dma_fr_ref_location_guid_uniq
+#: model:ir.model.constraint,message:dma_field_reports.constraint_dma_fr_ref_org_guid_uniq
+#: model:ir.model.constraint,message:dma_field_reports.constraint_dma_fr_ref_place_guid_uniq
+#: model:ir.model.constraint,message:dma_field_reports.constraint_dma_fr_ref_task_guid_uniq
+msgid "IMSMA GUID must be unique."
+msgstr "يجب أن يكون GUID في IMSMA فريداً."
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_source__mode__package
+msgid "IMSMA backup package"
+msgstr "حزمة النسخة الاحتياطية لـ IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_org__localid
+msgid "IMSMA code"
+msgstr "رمز IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_ref_idusage__source__counter
+msgid "IMSMA counter (localidtype)"
+msgstr "عدّاد IMSMA (localidtype)"
+
+#. module: dma_field_reports
+#: model:ir.model,name:dma_field_reports.model_dma_fr_ref_cdf
+msgid "IMSMA custom field"
+msgstr "حقل IMSMA المخصص"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__role__cdf
+msgid "IMSMA custom field (CDF)"
+msgstr "حقل IMSMA المخصص (CDF)"
+
+#. module: dma_field_reports
+#: model:ir.actions.act_window,name:dma_field_reports.dma_fr_ref_cdf_action
+msgid "IMSMA custom fields"
+msgstr "حقول IMSMA المخصصة"
+
+#. module: dma_field_reports
+#: model:ir.ui.menu,name:dma_field_reports.menu_dma_fr_imsma
+msgid "IMSMA data"
+msgstr "بيانات IMSMA"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_source.py:0
+msgid "IMSMA data loaded (as of %(date)s)."
+msgstr "تم تحميل بيانات IMSMA (بتاريخ %(date)s)."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_source.py:0
+msgid "IMSMA data loaded."
+msgstr "تم تحميل بيانات IMSMA."
+
+#. module: dma_field_reports
+#: model:ir.actions.act_window,name:dma_field_reports.dma_fr_source_action
+#: model:ir.ui.menu,name:dma_field_reports.menu_dma_fr_source
+msgid "IMSMA data source"
+msgstr "مصدر بيانات IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__source_id
+msgid "IMSMA data used"
+msgstr "بيانات IMSMA المستخدمة"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_export_build.py:0
+msgid ""
+"IMSMA does not have these locations yet: %s. Approve them in the Workbench "
+"first."
+msgstr "لا تتوفر هذه المواقع في IMSMA بعد: %s. وافق عليها في Workbench أولاً."
+
+#. module: dma_field_reports
+#: model:ir.model,name:dma_field_reports.model_dma_fr_ref_form
+msgid "IMSMA field report form"
+msgstr "استمارة التقرير الميداني في IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__imsma_form_name
+msgid "IMSMA form"
+msgstr "استمارة IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.actions.act_window,name:dma_field_reports.dma_fr_ref_form_action
+msgid "IMSMA forms"
+msgstr "استمارات IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model,name:dma_field_reports.model_dma_fr_ref_place
+msgid "IMSMA gazetteer place"
+msgstr "مكان في الدليل الجغرافي لـ IMSMA"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_export_build.py:0
+msgid ""
+"IMSMA has no active form named '%s'. Load newer IMSMA data or correct the "
+"template."
+msgstr "لا توجد في IMSMA استمارة نشطة باسم '%s'. حمّل بيانات IMSMA أحدث أو صحّح القالب."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_location_request__localid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_location__localid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__object_localid
+msgid "IMSMA id"
+msgstr "معرّف IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model,name:dma_field_reports.model_dma_fr_counter
+msgid "IMSMA id counter used by exports"
+msgstr "عدّاد معرّفات IMSMA المستخدم في التصدير"
+
+#. module: dma_field_reports
+#: model:ir.actions.act_window,name:dma_field_reports.dma_fr_counter_action
+#: model:ir.ui.menu,name:dma_field_reports.menu_dma_fr_counter
+msgid "IMSMA id counters"
+msgstr "عدّادات معرّفات IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_counter__id_type
+msgid "IMSMA id type"
+msgstr "نوع معرّف IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__object_id_type
+msgid "IMSMA id type of the object"
+msgstr "نوع معرّف IMSMA للكائن"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_template_view_form
+msgid "IMSMA ids"
+msgstr "معرّفات IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_counter__id_type
+msgid "IMSMA localidtype name, e.g. Education, LOC."
+msgstr "اسم localidtype في IMSMA، مثل Education و LOC."
+
+#. module: dma_field_reports
+#: model:ir.model,name:dma_field_reports.model_dma_fr_ref_location
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__location_pick_id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__location_id
+msgid "IMSMA location"
+msgstr "موقع IMSMA"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f62
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__role__location_guid
+msgid "IMSMA location GUID"
+msgstr "GUID موقع IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__location_manual_id
+msgid "IMSMA location chosen by hand"
+msgstr "موقع IMSMA المختار يدوياً"
+
+#. module: dma_field_reports
+#: model:ir.actions.act_window,name:dma_field_reports.dma_fr_ref_location_action
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place__location_ids
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_ref_place_view_form
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_ref_place_view_list
+msgid "IMSMA locations"
+msgstr "مواقع IMSMA"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/wizards/dma_fr_fix_wizard.py:0
+msgid "IMSMA locations near the report's point: "
+msgstr "مواقع IMSMA القريبة من نقطة التقرير: "
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "IMSMA locations nearby: %s."
+msgstr "مواقع IMSMA القريبة: %s."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_template.py:0
+msgid ""
+"IMSMA now has version %(new)s of this form; the columns were checked against"
+" version %(old)s. Check the list, then set the checked version to %(new)s."
+msgstr "يتوفر في IMSMA الآن الإصدار %(new)s من هذه الاستمارة، بينما دُقِّقت الأعمدة مقابل الإصدار %(old)s. راجع القائمة، ثم اجعل الإصدار المدقَّق %(new)s."
+
+#. module: dma_field_reports
+#: model:ir.model,name:dma_field_reports.model_dma_fr_ref_org
+msgid "IMSMA organisation"
+msgstr "مؤسسة في IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.actions.act_window,name:dma_field_reports.dma_fr_ref_org_action
+msgid "IMSMA organisations"
+msgstr "مؤسسات IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model,name:dma_field_reports.model_dma_fr_source
+msgid "IMSMA reference source"
+msgstr "مصدر بيانات IMSMA المرجعية"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_source_view_form
+msgid "IMSMA schema (optional)"
+msgstr "مخطط IMSMA (اختياري)"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__imsma_status
+msgid "IMSMA status"
+msgstr "الحالة في IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model,name:dma_field_reports.model_dma_fr_ref_task
+msgid "IMSMA task (dossier)"
+msgstr "مهمة IMSMA (الملف)"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__option_id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_value_map__target_value
+msgid "IMSMA value"
+msgstr "قيمة IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__fixed_value
+msgid "IMSMA value "
+msgstr "قيمة IMSMA "
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_template_view_list
+msgid "IMSMA version now"
+msgstr "إصدار IMSMA الحالي"
+
+#. module: dma_field_reports
+#: model:ir.model,name:dma_field_reports.model_dma_fr_export
+msgid "IMSMA zip produced from a batch"
+msgstr "ملف zip لـ IMSMA مُنتَج من دفعة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_batch__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للدلالة على نشاط استثنائي."
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_ref_idusage__source__usage
+msgid "Ids found in IMSMA data"
+msgstr "المعرّفات الموجودة في بيانات IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_batch__message_needaction
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_source__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محدداً، فهناك رسائل جديدة تتطلب انتباهك."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_batch__message_has_error
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_source__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محدداً، فهناك رسائل بها خطأ في التسليم."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid ""
+"Import the locations zip in IMSMA and approve the location reports, then "
+"press Locations approved."
+msgstr "استورد ملف zip الخاص بالمواقع في IMSMA ووافق على تقارير المواقع، ثم اضغط «تمت الموافقة على المواقع»."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid ""
+"Import the zip in the IMSMA Workbench and approve the reports. Odoo marks "
+"them as in IMSMA when the IMSMA data is next loaded."
+msgstr "استورد ملف zip في IMSMA Workbench ووافق على التقارير. سيؤشّرها Odoo على أنها «في IMSMA» عند التحميل التالي لبيانات IMSMA."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__imsma_state
+msgid "Imsma State"
+msgstr "الحالة في IMSMA"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_batch__state__done
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_ref_location__origin__imsma
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_row__imsma_state__found
+msgid "In IMSMA"
+msgstr "في IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__raw
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__raw
+msgid "In the file"
+msgstr "في الملف"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_row_view_form
+msgid "Include again"
+msgstr "إعادة التضمين"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__message_is_follower
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_fix_wizard__place_choice__same
+msgid "It is a gazetteer place, written differently"
+msgstr "إنه مكان في الدليل الجغرافي مكتوب بصيغة مختلفة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_fix_wizard__place_choice__inside
+msgid ""
+"It is a village or site inside a gazetteer place: create it as a new IMSMA "
+"location"
+msgstr "إنه قرية أو موقع ضمن مكان في الدليل الجغرافي: أنشئه كموقع IMSMA جديد"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_fix_wizard__place_choice__existing
+msgid "It is an existing IMSMA location"
+msgstr "إنه موقع IMSMA موجود"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_cell_view_problem_list
+msgid "Keep the value as it is"
+msgstr "الإبقاء على القيمة كما هي"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__kind
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_export__kind
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__kind
+msgid "Kind"
+msgstr "النوع"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_export_build.py:0
+msgid "LOC counter in IMSMA (localidtype '%(t)s'): at least %(n)s."
+msgstr "عدّاد LOC في IMSMA (localidtype '%(t)s'): لا يقل عن %(n)s."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_cdf__label
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template_field__name
+msgid "Label"
+msgstr "التسمية"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__last_error
+msgid "Last Error"
+msgstr "آخر خطأ"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__write_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__write_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_counter__write_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_export__write_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__write_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_location_request__write_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_office__write_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_cdf__write_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_form__write_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_idusage__write_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_location__write_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_option__write_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_org__write_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place__write_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place_alias__write_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_task__write_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__write_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__write_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__write_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template_field__write_uid
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_value_map__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__write_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__write_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_counter__write_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_export__write_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__write_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_location_request__write_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_office__write_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_cdf__write_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_form__write_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_idusage__write_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_location__write_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_option__write_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_org__write_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place__write_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place_alias__write_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_task__write_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__write_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__write_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__write_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template_field__write_date
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_value_map__write_date
+msgid "Last Updated on"
+msgstr "تاريخ آخر تحديث"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_source_view_form
+msgid "Last load"
+msgstr "آخر تحميل"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_counter__last_number
+msgid "Last number given by Odoo"
+msgstr "آخر رقم أعطاه Odoo"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f14
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_location__latitude
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place__latitude
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__latitude
+msgid "Latitude"
+msgstr "خط العرض"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "Latitude and longitude are swapped (%(lat)s, %(lon)s is outside Iraq)."
+msgstr "خط العرض وخط الطول متبادلان (النقطة %(lat)s, %(lon)s تقع خارج العراق)."
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_fix_wizard_view_form
+msgid "Latitude and longitude will be swapped on the rows below."
+msgstr "سيتم تبديل خط العرض وخط الطول في الصفوف أدناه."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_ref_form__version_num
+msgid "Leading number of the version, for sorting."
+msgstr "الرقم الأول من الإصدار، لأغراض الترتيب."
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f34
+msgid "Leaflets"
+msgstr "المنشورات"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_ref_place_alias__origin__learned
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_value_map__origin__learned
+msgid "Learned from a fix"
+msgstr "مستفاد من إصلاح سابق"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_value_map_view_search
+msgid "Learned from fixes"
+msgstr "مستفاد من الإصلاحات"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_row_view_form
+msgid "Leave out of the export"
+msgstr "استبعاد من التصدير"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__excluded_count
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__row_excluded
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__excluded
+msgid "Left out"
+msgstr "مستبعد"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_row_view_form
+msgid "Left out: this report is not exported."
+msgstr "مستبعد: لا يُصدَّر هذا التقرير."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place__level
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_ref_place_view_search
+msgid "Level"
+msgstr "المستوى"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_source__mode__live
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_source_view_form
+msgid "Live IMSMA database (read-only)"
+msgstr "قاعدة بيانات IMSMA المباشرة (للقراءة فقط)"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_source__auto_refresh
+msgid "Live sources only."
+msgstr "للمصادر المباشرة فقط."
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_source_view_form
+msgid "Load IMSMA data"
+msgstr "تحميل بيانات IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_source__state__ok
+msgid "Loaded"
+msgstr "محمَّل"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_ref_idusage__prefix
+msgid "Local id without its number, e.g. 'Education-CI-' or 'LOC-SI-'."
+msgstr "المعرّف المحلي دون رقمه، مثل 'Education-CI-' أو 'LOC-SI-'."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_task__localid
+msgid "Localid"
+msgstr "المعرّف المحلي"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_org__localid_norm
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_task__localid_norm
+msgid "Localid Norm"
+msgstr "المعرّف المحلي (موحَّد)"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__location_label
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template__kind__location
+msgid "Location"
+msgstr "موقع"
+
+#. module: dma_field_reports
+#: model:dma.fr.template,name:dma_field_reports.template_location
+msgid "Location (generated)"
+msgstr "موقع (مُولَّد)"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__location_count
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place__location_count
+msgid "Location Count"
+msgstr "عدد المواقع"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f12
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_location_request__name
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__role__location_name
+msgid "Location name"
+msgstr "اسم الموقع"
+
+#. module: dma_field_reports
+#: model:ir.model,name:dma_field_reports.model_dma_fr_location_request
+msgid "Location to create in IMSMA"
+msgstr "موقع يُنشأ في IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.ui.menu,name:dma_field_reports.menu_dma_fr_ref_location
+msgid "Locations"
+msgstr "المواقع"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+msgid "Locations approved in IMSMA"
+msgstr "تمت الموافقة على المواقع في IMSMA"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f15
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_location__longitude
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place__longitude
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__longitude
+msgid "Longitude"
+msgstr "خط الطول"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f46
+msgid "MAC owner"
+msgstr "المركز الإقليمي المسؤول"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f13
+msgid "MGRS"
+msgstr "MGRS"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "MGRS and lat/long are %.1f km apart. Lat/long will be sent."
+msgstr "المسافة بين MGRS وخط العرض/الطول %.1f كم. سيُرسَل خط العرض/الطول."
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f26
+msgid "Magazines"
+msgstr "المجلات"
+
+#. module: dma_field_reports
+#: model:res.groups,name:dma_field_reports.group_dma_fr_manager
+msgid "Manager"
+msgstr "المدير"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_ref_place_alias__origin__manual
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_value_map__origin__manual
+msgid "Manual"
+msgstr "يدوي"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_row_view_form
+msgid "Map"
+msgstr "الخريطة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__map_url
+msgid "Map Url"
+msgstr "رابط الخريطة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__checked_form_version
+msgid "Mapping checked against version"
+msgstr "المطابقة مدقَّقة مقابل الإصدار"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template_field__max_length
+msgid "Max Length"
+msgstr "الطول الأقصى"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_idusage__max_number
+msgid "Max Number"
+msgstr "الرقم الأعلى"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__message
+msgid "Message"
+msgstr "الرسالة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__message_has_error
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__message_ids
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "Missing: taken from the MGRS (%.6f, %.6f)."
+msgstr "مفقود: أُخذ من MGRS (%.6f, %.6f)."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__mode
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__mode
+msgid "Mode"
+msgstr "الوضع"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__error_count
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_cell__state__error
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_row__state__error
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_list
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_cell_view_search
+msgid "Must fix"
+msgstr "يجب إصلاحه"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_search
+msgid "My batches"
+msgstr "دفعاتي"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_office__name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_cdf__name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_form__name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_location__name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_org__name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place__name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__name
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_location__name_norm
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_org__name_norm
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place__name_norm
+msgid "Name Norm"
+msgstr "الاسم (موحَّد)"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f36
+msgid "Narrative and reasons"
+msgstr "السرد والأسباب"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__nearby_html
+msgid "Nearby Html"
+msgstr "المواقع القريبة (HTML)"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "Negative numbers are not allowed."
+msgstr "الأرقام السالبة غير مسموح بها."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__location_request_id
+msgid "New location"
+msgstr "موقع جديد"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__location_request_ids
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_export__kind__locations
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+msgid "New locations"
+msgstr "مواقع جديدة"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_export_build.py:0
+msgid "New locations confirmed as approved in IMSMA."
+msgstr "تم تأكيد الموافقة على المواقع الجديدة في IMSMA."
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_batch__state__locations
+msgid "New locations in IMSMA"
+msgstr "مواقع جديدة في IMSMA"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "New locations: %s"
+msgstr "مواقع جديدة: %s"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "New: %s"
+msgstr "جديد: %s"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__next_step
+msgid "Next Step"
+msgstr "الخطوة التالية"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_fix_wizard__remember
+msgid ""
+"Next time any file has this text in this column, it is translated "
+"automatically."
+msgstr "عندما يحتوي أي ملف لاحقاً على هذا النص في هذا العمود، يُحوَّل تلقائياً إلى قيمته المقابلة."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_export_build.py:0
+msgid "No IMSMA data is loaded."
+msgstr "لم تُحمَّل أي بيانات من IMSMA."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid ""
+"No IMSMA data is loaded. A manager must load it first (Field Reports > "
+"Configuration > IMSMA data source)."
+msgstr "لم تُحمَّل أي بيانات من IMSMA. يجب على المدير تحميلها أولاً (التقارير الميدانية > التهيئة > مصدر بيانات IMSMA)."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid ""
+"No IMSMA location '%(name)s' in %(place)s yet: it will be created first "
+"(step 3)."
+msgstr "لا يوجد بعد موقع IMSMA باسم '%(name)s' في %(place)s: سيُنشأ أولاً (الخطوة 3)."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_template.py:0
+msgid "No active IMSMA form named '%s' in the IMSMA data."
+msgstr "لا توجد استمارة IMSMA نشطة باسم '%s' في بيانات IMSMA."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "No audience counted in any age group."
+msgstr "لم يُحتسب أي مستفيد في أي فئة عمرية."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "No coordinates: the report will have no point on the map."
+msgstr "لا توجد إحداثيات: لن تكون للتقرير نقطة على الخريطة."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_export_build.py:0
+msgid "No exported location is waiting for approval."
+msgstr "لا يوجد موقع مُصدَّر بانتظار الموافقة."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_source.py:0
+msgid "No file at %s on the server."
+msgstr "لا يوجد ملف في %s على الخادم."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_export_build.py:0
+msgid "No report to export."
+msgstr "لا يوجد تقرير للتصدير."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid ""
+"No task order '%s' in IMSMA or Odoo. Check the id; IMSMA will still accept "
+"the report."
+msgstr "لا يوجد أمر مهمة '%s' في IMSMA أو Odoo. تحقق من المعرّف، علماً بأن IMSMA سيقبل التقرير مع ذلك."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "No uploaded attachment is named like this report id."
+msgstr "لا يوجد مرفق مرفوع يحمل اسماً مطابقاً لمعرّف هذا التقرير."
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template__kind__nts
+msgid "Non-Technical Survey"
+msgstr "المسح غير الفني"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "Not among the uploaded attachments: %s"
+msgstr "غير موجود ضمن المرفقات المرفوعة: %s"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "Not an IMSMA value: %s"
+msgstr "ليست قيمة من قيم IMSMA: %s"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_row__imsma_state__not_sent
+msgid "Not exported"
+msgstr "غير مُصدَّر"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_cell__row_excluded
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_row__excluded
+msgid "Not exported to IMSMA."
+msgstr "لا يُصدَّر إلى IMSMA."
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_search
+msgid "Not exported yet"
+msgstr "لم يُصدَّر بعد"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_source__state__new
+msgid "Not loaded"
+msgstr "غير محمَّل"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__role__ignore
+msgid "Not sent to IMSMA"
+msgstr "لا يُرسَل إلى IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__note
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_counter__note
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__note
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_cell__state__info
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_row__state__info
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_template_view_form
+msgid "Notes"
+msgstr "الملاحظات"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "Nothing from this batch will be exported."
+msgstr "لن يُصدَّر أي شيء من هذه الدفعة."
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__datatype__number
+msgid "Number"
+msgstr "رقم"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__message_needaction_counter
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__message_has_error_counter
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_batch__message_needaction_counter
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_source__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراءً"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_batch__message_has_error_counter
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_source__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_cell__state__ok
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_row__state__ok
+msgid "OK"
+msgstr "سليم"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__object_guid
+msgid "Object Guid"
+msgstr "GUID الكائن"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__object_id_prefix
+msgid "Object id prefix"
+msgstr "بادئة معرّف الكائن"
+
+#. module: dma_field_reports
+#: model_terms:ir.actions.act_window,help:dma_field_reports.dma_fr_batch_action
+msgid ""
+"Odoo reads it, lists every problem at once, lets you fix them, and gives you one zip\n"
+"               to import in the IMSMA Workbench."
+msgstr ""
+"يقرؤه Odoo، ويعرض جميع المشكلات دفعة واحدة، ويتيح لك إصلاحها، ثم يعطيك ملف zip واحداً\n"
+"               لاستيراده في IMSMA Workbench."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_ref_option__is_preferred
+msgid ""
+"Offered when fixing a value. Untick spellings that should not be used any "
+"more."
+msgstr "يُعرض عند إصلاح قيمة. ألغِ تحديد الصيغ الإملائية التي لم يعد ينبغي استخدامها."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__office_id
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_search
+msgid "Office"
+msgstr "المكتب"
+
+#. module: dma_field_reports
+#: model:ir.model.constraint,message:dma_field_reports.constraint_dma_fr_office_code_uniq
+msgid "Office codes must be unique."
+msgstr "يجب أن تكون رموز المكاتب فريدة."
+
+#. module: dma_field_reports
+#: model:ir.model,name:dma_field_reports.model_dma_fr_office
+msgid "Office that imports field data"
+msgstr "المكتب الذي يستورد البيانات الميدانية"
+
+#. module: dma_field_reports
+#: model:ir.actions.act_window,name:dma_field_reports.dma_fr_office_action
+#: model:ir.ui.menu,name:dma_field_reports.menu_dma_fr_office
+msgid "Offices"
+msgstr "المكاتب"
+
+#. module: dma_field_reports
+#: model:ir.model.constraint,message:dma_field_reports.constraint_dma_fr_counter_uniq
+msgid "One counter per id type."
+msgstr "عدّاد واحد لكل نوع معرّف."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_template_field__headers
+msgid ""
+"One header per line. A column whose header matches any line is used. Write "
+"'Group / Sub' for a column under a group header. Case, spaces, punctuation, "
+"* and # are ignored; Arabic headers work."
+msgstr "عنوان واحد في كل سطر. يُستخدم العمود الذي يطابق عنوانه أي سطر. اكتب 'المجموعة / الفرعي' للعمود الواقع تحت عنوان مجموعة. يُتجاهل حجم الأحرف والمسافات وعلامات الترقيم و * و #، وتعمل العناوين العربية أيضاً."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_template_field__fixed_options
+msgid ""
+"One per line. When empty, list values are checked against the values IMSMA "
+"has stored for the custom field."
+msgstr "قيمة واحدة في كل سطر. عند تركه فارغاً، تُدقَّق قيم القائمة مقابل القيم التي خزّنها IMSMA للحقل المخصص."
+
+#. module: dma_field_reports
+#: model:ir.model.constraint,message:dma_field_reports.constraint_dma_fr_ref_idusage_prefix_uniq
+msgid "One row per prefix and source."
+msgstr "صف واحد لكل بادئة ومصدر."
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__datatype__list
+msgid "One value from a list"
+msgstr "قيمة واحدة من قائمة"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_source.py:0
+msgid ""
+"Only one IMSMA source can be used for checking. Untick the other one first."
+msgstr "لا يمكن استخدام سوى مصدر IMSMA واحد للتدقيق. ألغِ تحديد المصدر الآخر أولاً."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_source__is_current
+msgid "Only one source is used at a time."
+msgstr "يُستخدم مصدر واحد فقط في كل مرة."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid ""
+"Open Fix problems. Problems are grouped by column and value: fixing one "
+"fixes every row with the same value. Use Leave out for a report that should "
+"not go to IMSMA."
+msgstr "افتح «إصلاح المشكلات». المشكلات مجمّعة حسب العمود والقيمة: إصلاح إحداها يصلح كل الصفوف التي تحمل القيمة نفسها. استخدم «استبعاد من التصدير» للتقرير الذي لا ينبغي إرساله إلى IMSMA."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__source_file
+msgid "Operator file"
+msgstr "ملف الجهة المنفذة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_source__xsd_file
+msgid ""
+"Optional. When set, every exported file is checked against IMSMA's schema."
+msgstr "اختياري. عند تحديده، يُدقَّق كل ملف مُصدَّر مقابل مخطط IMSMA."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__server_path
+msgid "Or path on the server"
+msgstr "أو المسار على الخادم"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_template.py:0
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f05
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__org_id
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__datatype__organisation
+msgid "Organisation"
+msgstr "المؤسسة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__role__organisation
+msgid "Organisation (operator)"
+msgstr "المؤسسة (الجهة المنفذة)"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__org_id
+msgid "Organisation in IMSMA"
+msgstr "المؤسسة في IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__role__org_report_id
+msgid "Organisation's own report id"
+msgstr "معرّف التقرير الخاص بالمؤسسة"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f45
+msgid "Organisation's report id"
+msgstr "معرّف تقرير المؤسسة"
+
+#. module: dma_field_reports
+#: model:ir.ui.menu,name:dma_field_reports.menu_dma_fr_ref_org
+msgid "Organisations"
+msgstr "المؤسسات"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_location__origin
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place_alias__origin
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_value_map__origin
+msgid "Origin"
+msgstr "المنشأ"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f35
+msgid "Other material"
+msgstr "مواد أخرى"
+
+#. module: dma_field_reports
+#: model:ir.model,name:dma_field_reports.model_dma_fr_ref_place_alias
+msgid "Other name of a gazetteer place"
+msgstr "اسم آخر لمكان في الدليل الجغرافي"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place__alias_ids
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_ref_place_view_form
+msgid "Other names"
+msgstr "أسماء أخرى"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__package_file
+msgid "Package (zip)"
+msgstr "الحزمة (zip)"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__package_filename
+msgid "Package Filename"
+msgstr "اسم ملف الحزمة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_source__mode
+msgid ""
+"Package: a zip built from an IMSMA backup with tools/imsma_ref_extract.py. "
+"Live: Odoo reads IMSMA's PostgreSQL directly, read-only."
+msgstr "الحزمة: ملف zip مبني من نسخة احتياطية لـ IMSMA باستخدام tools/imsma_ref_extract.py. مباشر: يقرأ Odoo قاعدة بيانات PostgreSQL الخاصة بـ IMSMA مباشرةً، للقراءة فقط."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place__parent_id
+msgid "Parent"
+msgstr "الأصل"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place__parent_path
+msgid "Parent Path"
+msgstr "مسار الأصل"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__db_password
+msgid "Password"
+msgstr "كلمة المرور"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_fix_wizard__mode__place
+msgid "Pick a place"
+msgstr "اختيار مكان"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_fix_wizard__mode__list
+msgid "Pick a value"
+msgstr "اختيار قيمة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_fix_wizard__mode__org
+msgid "Pick an organisation"
+msgstr "اختيار مؤسسة"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/wizards/dma_fr_fix_wizard.py:0
+msgid "Pick the IMSMA location."
+msgstr "اختر موقع IMSMA."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/wizards/dma_fr_fix_wizard.py:0
+msgid "Pick the IMSMA value."
+msgstr "اختر قيمة IMSMA."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/wizards/dma_fr_fix_wizard.py:0
+msgid "Pick the organisation."
+msgstr "اختر المؤسسة."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/wizards/dma_fr_fix_wizard.py:0
+msgid "Pick the place."
+msgstr "اختر المكان."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place_alias__place_id
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_ref_place_view_search
+msgid "Place"
+msgstr "مكان"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__place_id
+msgid "Place (IMSMA gazetteer)"
+msgstr "المكان (الدليل الجغرافي لـ IMSMA)"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__place_choice
+msgid "Place Choice"
+msgstr "اختيار المكان"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__place_manual
+msgid "Place chosen by hand"
+msgstr "المكان المختار يدوياً"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__place_id
+msgid "Place in the IMSMA gazetteer"
+msgstr "المكان في الدليل الجغرافي لـ IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__role__city
+msgid "Place: city / town / village"
+msgstr "المكان: المدينة / البلدة / القرية"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__role__district
+msgid "Place: district"
+msgstr "المكان: القضاء"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__role__province
+msgid "Place: province"
+msgstr "المكان: المحافظة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__role__subdistrict
+msgid "Place: sub-district"
+msgstr "المكان: الناحية"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f17
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__role__planned_end
+msgid "Planned end date"
+msgstr "تاريخ الانتهاء المخطط"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "Planned end is before planned start."
+msgstr "تاريخ الانتهاء المخطط يسبق تاريخ البدء المخطط."
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f16
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__role__planned_start
+msgid "Planned start date"
+msgstr "تاريخ البدء المخطط"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__db_port
+msgid "Port"
+msgstr "المنفذ"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f04
+msgid "Position"
+msgstr "المنصب"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__role__reporting_position
+msgid "Position of the reporter"
+msgstr "منصب مُعِدّ التقرير"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f27
+msgid "Posters"
+msgstr "الملصقات"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_option__is_preferred
+msgid "Preferred"
+msgstr "مفضَّل"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_idusage__prefix
+msgid "Prefix"
+msgstr "البادئة"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "Press Check to read the file."
+msgstr "اضغط «تدقيق» لقراءة الملف."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "Press Export to IMSMA and import the zip in the IMSMA Workbench."
+msgstr "اضغط «تصدير إلى IMSMA» ثم استورد ملف zip في IMSMA Workbench."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__message
+msgid "Problem"
+msgstr "المشكلة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__problem_count
+msgid "Problem Count"
+msgstr "عدد المشكلات"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_row_view_list
+msgid "Problems"
+msgstr "المشكلات"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_batch__state__checked
+msgid "Problems to fix"
+msgstr "مشكلات يجب إصلاحها"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template__kind__progress
+msgid "Progress"
+msgstr "التقدم"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f08
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_ref_place__level__province
+msgid "Province"
+msgstr "المحافظة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_form__published_on
+msgid "Published On"
+msgstr "تاريخ النشر"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f53
+msgid "QA DMA representative 1"
+msgstr "ممثل ضمان الجودة في دائرة شؤون الألغام 1"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f56
+msgid "QA DMA representative 2"
+msgstr "ممثل ضمان الجودة في دائرة شؤون الألغام 2"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f55
+msgid "QA verification date 1"
+msgstr "تاريخ تحقق ضمان الجودة 1"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f58
+msgid "QA verification date 2"
+msgstr "تاريخ تحقق ضمان الجودة 2"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f54
+msgid "QA visit date 1"
+msgstr "تاريخ زيارة ضمان الجودة 1"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f57
+msgid "QA visit date 2"
+msgstr "تاريخ زيارة ضمان الجودة 2"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template__kind__qa
+msgid "Quality Assurance (Survey123)"
+msgstr "ضمان الجودة (Survey123)"
+
+#. module: dma_field_reports
+#: model:dma.fr.office,name:dma_field_reports.office_rmac_s
+msgid "RMAC South"
+msgstr "RMAC الجنوب"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__raw_date
+msgid "Raw Date"
+msgstr "التاريخ كما ورد"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+msgid "Re-open"
+msgstr "إعادة الفتح"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+msgid ""
+"Re-open this batch to correct it? A new export keeps the same IMSMA ids."
+msgstr "هل تريد إعادة فتح هذه الدفعة لتصحيحها؟ يحتفظ التصدير الجديد بمعرّفات IMSMA نفسها."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid ""
+"Re-opened. A new export keeps the IMSMA ids already given, so IMSMA updates "
+"the same reports."
+msgstr "أُعيد الفتح. يحتفظ التصدير الجديد بمعرّفات IMSMA الممنوحة سابقاً، فيُحدِّث IMSMA التقارير نفسها."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__read_filename
+msgid "Read Filename"
+msgstr "اسم الملف المقروء"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "Read as day/month: %s. Check it is not month/day."
+msgstr "قُرئ بصيغة يوم/شهر: %s. تحقق من أنه ليس شهر/يوم."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__ok_count
+msgid "Ready"
+msgstr "جاهز"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_batch__state__ready
+msgid "Ready to export"
+msgstr "جاهز للتصدير"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__role__reason
+msgid "Reason / narrative"
+msgstr "السبب / السرد"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f63
+msgid "Received by"
+msgstr "المستلم"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f64
+msgid "Received by position"
+msgstr "منصب المستلم"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f61
+msgid "Received date"
+msgstr "تاريخ الاستلام"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_location_request__ref_location_id
+msgid "Ref Location"
+msgstr "الموقع المرجعي"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__auto_refresh
+msgid "Refresh every night"
+msgstr "التحديث كل ليلة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__refreshed_by
+msgid "Refreshed By"
+msgstr "حدّثه"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__refreshed_on
+msgid "Refreshed On"
+msgstr "تاريخ التحديث"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__remember
+msgid "Remember for future files"
+msgstr "الحفظ للملفات القادمة"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f47
+msgid "Remote risk education"
+msgstr "التوعية بالمخاطر عن بُعد"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_row_view_list
+msgid "Report"
+msgstr "التقرير"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_export__report_count
+msgid "Report Count"
+msgstr "عدد التقارير"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__report_date
+msgid "Report Date"
+msgstr "تاريخ التقرير"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_location_request__report_localid
+msgid "Report Localid"
+msgstr "المعرّف المحلي للتقرير"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__report_id_prefix
+msgid "Report id prefix"
+msgstr "بادئة معرّف التقرير"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f03
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__role__reporting_person
+msgid "Reported by"
+msgstr "مُعِدّ التقرير"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__row_ids
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_location_request__row_ids
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_list
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_location_request_view_list
+msgid "Reports"
+msgstr "التقارير"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "Reports: %s"
+msgstr "التقارير: %s"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template_field__required
+msgid "Required"
+msgstr "إلزامي"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "Required: this cell is empty."
+msgstr "إلزامي: هذه الخلية فارغة."
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_row_view_form
+msgid "Resolved"
+msgstr "القيم المعتمدة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__user_id
+msgid "Responsible"
+msgstr "المسؤول"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template_field__role
+msgid "Role"
+msgstr "الدور"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__row_id
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__excel_row
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_cell_view_search
+msgid "Row"
+msgstr "الصف"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "Row %s"
+msgstr "الصف %s"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__row_count
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_location_request__row_count
+msgid "Row Count"
+msgstr "عدد الصفوف"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__same_count
+msgid "Rows with the same value"
+msgstr "الصفوف التي تحمل القيمة نفسها"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__same_count
+msgid "Rows with this problem"
+msgstr "الصفوف التي فيها هذه المشكلة"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f52
+msgid "SMS sent"
+msgstr "الرسائل النصية المرسلة"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f29
+msgid "School supplement"
+msgstr "ملحق مدرسي"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_value_map__scope
+msgid "Scope"
+msgstr "النطاق"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_fix_wizard_view_form
+msgid "Search IMSMA locations by name or id..."
+msgstr "البحث في مواقع IMSMA بالاسم أو المعرّف..."
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_fix_wizard_view_form
+msgid "Search by code or name..."
+msgstr "البحث بالرمز أو الاسم..."
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_fix_wizard_view_form
+msgid "Search the gazetteer (English or Arabic)..."
+msgstr "البحث في الدليل الجغرافي (بالإنجليزية أو العربية)..."
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_fix_wizard_view_form
+msgid "Search the values IMSMA uses..."
+msgstr "البحث في القيم التي يستخدمها IMSMA..."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_location_request__imsma_seen
+msgid "Seen in IMSMA data"
+msgstr "ظاهر في بيانات IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__value
+msgid "Sent to IMSMA"
+msgstr "مُرسَل إلى IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__sequence
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_office__sequence
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__sequence
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template_field__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_export__counter_note
+msgid "Set these IMSMA counters"
+msgstr "اضبط عدّادات IMSMA هذه"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__datatype__multi
+msgid "Several values from a list"
+msgstr "عدة قيم من قائمة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__severity
+msgid "Severity"
+msgstr "درجة الخطورة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__sheet_name
+msgid "Sheet"
+msgstr "ورقة العمل"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f31
+msgid "Snake and ladder game"
+msgstr "لعبة السلم والثعبان"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_idusage__source
+msgid "Source"
+msgstr "المصدر"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__source_filename
+msgid "Source Filename"
+msgstr "اسم الملف المصدر"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_value_map__source_norm
+msgid "Source Norm"
+msgstr "المصدر (موحَّد)"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__source_stamp
+msgid "Source Stamp"
+msgstr "بصمة المصدر"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__stamp
+msgid "Stamp"
+msgstr "البصمة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__state
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__state
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_location_request__state
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__state
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__stats
+msgid "Stats"
+msgstr "الإحصاءات"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_batch__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخرة: تاريخ الاستحقاق قد مضى\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخططة: أنشطة مستقبلية."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "Step 1 of 4: check"
+msgstr "الخطوة 1 من 4: التدقيق"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "Step 1 of 4: upload"
+msgstr "الخطوة 1 من 4: الرفع"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "Step 2 of 4: fix %s report(s)"
+msgstr "الخطوة 2 من 4: إصلاح %s من التقارير"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "Step 3 of 4: %s new location(s)"
+msgstr "الخطوة 3 من 4: %s من المواقع الجديدة"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "Step 3 of 4: waiting for IMSMA"
+msgstr "الخطوة 3 من 4: بانتظار IMSMA"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "Step 4 of 4: export"
+msgstr "الخطوة 4 من 4: التصدير"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f06
+msgid "Sub-contractor"
+msgstr "المقاول الثانوي"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__role__subcontractor
+msgid "Sub-contractor (organisation CDF)"
+msgstr "المقاول الثانوي (حقل CDF للمؤسسة)"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f10
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_ref_place__level__subdistrict
+msgid "Sub-district"
+msgstr "الناحية"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__suggestion
+msgid "Suggestion"
+msgstr "الاقتراح"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__suggestion_html
+msgid "Suggestion Html"
+msgstr "الاقتراح (HTML)"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__summary
+msgid "Summary"
+msgstr "الملخص"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_fix_wizard__mode__swap
+msgid "Swap coordinates"
+msgstr "تبديل الإحداثيات"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f30
+msgid "T-shirts"
+msgstr "القمصان"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f07
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__role__task_dossier
+msgid "Task dossier id"
+msgstr "معرّف ملف المهمة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template__kind__ts
+msgid "Technical Survey"
+msgstr "المسح الفني"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template_field__template_id
+msgid "Template"
+msgstr "القالب"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_source_view_form
+msgid "Test connection"
+msgstr "اختبار الاتصال"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__datatype__text
+msgid "Text"
+msgstr "نص"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_value_map__source_value
+msgid "Text in the file"
+msgstr "النص في الملف"
+
+#. module: dma_field_reports
+#: model_terms:ir.actions.act_window,help:dma_field_reports.dma_fr_value_map_action
+msgid ""
+"Texts in operator files and the IMSMA value they stand for. Fixes made with\n"
+"               \"Remember for future files\" appear here."
+msgstr ""
+"النصوص الواردة في ملفات الجهات المنفذة وقيمة IMSMA المقابلة لكل منها. تظهر هنا الإصلاحات المحفوظة\n"
+"               بخيار \"الحفظ للملفات القادمة\"."
+
+#. module: dma_field_reports
+#: model_terms:dma.fr.template,note:dma_field_reports.template_eore
+msgid ""
+"The \"DMA EORE Template English\" workbook (sheet EORE, headers on rows 4-5,"
+" data from row 6). Columns are found by their header text, so they may be "
+"moved."
+msgstr "مصنف \"DMA EORE Template English\" (ورقة العمل EORE، العناوين في الصفين 4-5، والبيانات من الصف 6). يُتعرَّف على الأعمدة من نص عناوينها، لذا يمكن تغيير مواضعها."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_export_build.py:0
+msgid ""
+"The IMSMA data was reloaded since the last check. The batch was checked "
+"again and now has problems to fix."
+msgstr "أُعيد تحميل بيانات IMSMA منذ آخر تدقيق. أُعيد تدقيق الدفعة وأصبحت فيها مشكلات يجب إصلاحها."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_template__checked_form_version
+msgid ""
+"The IMSMA form version this column list was last checked against. When IMSMA"
+" publishes a newer version, a warning asks a manager to look at the list "
+"again."
+msgstr "إصدار استمارة IMSMA الذي دُقِّقت مقابله قائمة الأعمدة هذه آخر مرة. عندما ينشر IMSMA إصداراً أحدث، يظهر تنبيه يطلب من المدير مراجعة القائمة مجدداً."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_value_map__target_value
+msgid "The IMSMA list value, or the IMSMA GUID of the organisation."
+msgstr "قيمة القائمة في IMSMA، أو GUID المؤسسة في IMSMA."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_export_build.py:0
+msgid "The Location template is missing."
+msgstr "قالب الموقع مفقود."
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+msgid "The Word reports and photos named in the file (or a zip of them)."
+msgstr "تقارير Word والصور المذكورة في الملف (أو ملف zip يضمها)."
+
+#. module: dma_field_reports
+#: model_terms:ir.actions.act_window,help:dma_field_reports.dma_fr_counter_action
+msgid ""
+"The last number Odoo gave per IMSMA id type. Odoo never goes below the numbers already used in\n"
+"               IMSMA; after an export, set IMSMA's own counter as the export tells you."
+msgstr ""
+"آخر رقم أعطاه Odoo لكل نوع من معرّفات IMSMA. لا ينزل Odoo أبداً عن الأرقام المستخدمة مسبقاً في\n"
+"               IMSMA، وبعد كل تصدير اضبط عدّاد IMSMA نفسه وفق ما يبيّنه التصدير."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "The report is dated before the activity ended (%s)."
+msgstr "تاريخ التقرير يسبق انتهاء النشاط (%s)."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "The same report id is on rows %s."
+msgstr "معرّف التقرير نفسه موجود في الصفوف %s."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_export_build.py:0
+msgid "There are no new locations to export."
+msgstr "لا توجد مواقع جديدة للتصدير."
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+msgid ""
+"These places are in the IMSMA gazetteer but have no IMSMA location\n"
+"                                with this name yet. They are created first, as Location reports."
+msgstr ""
+"هذه الأماكن موجودة في الدليل الجغرافي لـ IMSMA لكن لا يوجد لها بعد موقع IMSMA\n"
+"                                بهذا الاسم. تُنشأ أولاً على شكل تقارير مواقع."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid ""
+"These places have no IMSMA location yet. Press Export new locations, import "
+"that zip in the IMSMA Workbench, approve the locations, then press Locations"
+" approved."
+msgstr "لا يوجد لهذه الأماكن موقع IMSMA بعد. اضغط «تصدير المواقع الجديدة»، واستورد ملف zip الناتج في IMSMA Workbench، ووافق على المواقع، ثم اضغط «تمت الموافقة على المواقع»."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "This MGRS point is outside Iraq."
+msgstr "نقطة MGRS هذه تقع خارج العراق."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "This batch is already exported. Use Re-open to change it."
+msgstr "هذه الدفعة مُصدَّرة مسبقاً. استخدم «إعادة الفتح» لتعديلها."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "This date is before 2000."
+msgstr "هذا التاريخ يسبق عام 2000."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "This date is in the future."
+msgstr "هذا التاريخ في المستقبل."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "This file could not be read as Excel (%s)."
+msgstr "تعذّرت قراءة هذا الملف بصيغة Excel (%s)."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "This point (%(lat)s, %(lon)s) is outside Iraq."
+msgstr "هذه النقطة (%(lat)s, %(lon)s) تقع خارج العراق."
+
+#. module: dma_field_reports
+#: model:ir.model.constraint,message:dma_field_reports.constraint_dma_fr_value_map_uniq
+msgid "This text already has a mapping for this field."
+msgstr "لهذا النص مطابقة مسجلة مسبقاً لهذا الحقل."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__warning_count
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_list
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_cell_view_search
+msgid "To check"
+msgstr "للمراجعة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_location_request__state__draft
+msgid "To export"
+msgstr "للتصدير"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_batch__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي في السجل."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/wizards/dma_fr_fix_wizard.py:0
+msgid "Type the correct value."
+msgstr "اكتب القيمة الصحيحة."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_cell__override
+msgid "Type the right value here; the row is checked again when you save."
+msgstr "اكتب القيمة الصحيحة هنا، وسيُعاد تدقيق الصف عند الحفظ."
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template__kind__uxo_spot
+msgid "UXO Spot"
+msgstr "بقعة UXO"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template__kind__uxo_completion
+msgid "UXO Spot Completion"
+msgstr "إنجاز بقعة UXO"
+
+#. module: dma_field_reports
+#: model_terms:ir.actions.act_window,help:dma_field_reports.dma_fr_batch_action
+msgid "Upload an operator's Excel file"
+msgstr "رفع ملف Excel لجهة منفذة"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "Upload the operator's Excel file first."
+msgstr "ارفع ملف Excel الخاص بالجهة المنفذة أولاً."
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_source.py:0
+msgid "Upload the package zip or give its path on the server."
+msgstr "ارفع ملف zip الخاص بالحزمة أو أدخل مساره على الخادم."
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_batch__state__draft
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_list
+msgid "Uploaded"
+msgstr "مرفوع"
+
+#. module: dma_field_reports
+#: model:res.groups,comment:dma_field_reports.group_dma_fr_user
+msgid ""
+"Uploads operator files, fixes the problems found and exports the IMSMA zip."
+msgstr "يرفع ملفات الجهات المنفذة، ويصلح المشكلات المكتشفة، ويصدّر ملف zip الخاص بـ IMSMA."
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_source_view_form
+msgid ""
+"Use a PostgreSQL user that can only read. Odoo opens a read-only transaction and only runs\n"
+"                            SELECT queries on the lists it needs."
+msgstr ""
+"استخدم مستخدم PostgreSQL بصلاحية القراءة فقط. يفتح Odoo معاملة للقراءة فقط ولا ينفّذ سوى\n"
+"                            استعلامات SELECT على القوائم التي يحتاجها."
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__is_current
+msgid "Use for checking"
+msgstr "الاستخدام في التدقيق"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_option__usage
+msgid "Used in IMSMA"
+msgstr "مستخدم في IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__db_user
+#: model:res.groups,name:dma_field_reports.group_dma_fr_user
+msgid "User"
+msgstr "المستخدم"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_option__value
+msgid "Value"
+msgstr "القيمة"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_option__value_norm
+msgid "Value Norm"
+msgstr "القيمة (موحَّدة)"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_cell_view_search
+msgid "Value in the file"
+msgstr "القيمة في الملف"
+
+#. module: dma_field_reports
+#: model:ir.model,name:dma_field_reports.model_dma_fr_cell
+msgid "Value of a field report"
+msgstr "قيمة في تقرير ميداني"
+
+#. module: dma_field_reports
+#: model:ir.model,name:dma_field_reports.model_dma_fr_ref_option
+msgid "Value of an IMSMA list field"
+msgstr "قيمة حقل قائمة في IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__part
+msgid "Value to fix"
+msgstr "القيمة المطلوب إصلاحها"
+
+#. module: dma_field_reports
+#: model:ir.model,name:dma_field_reports.model_dma_fr_value_map
+msgid "Value translation (file text -> IMSMA value)"
+msgstr "مطابقة القيم (نص الملف -> قيمة IMSMA)"
+
+#. module: dma_field_reports
+#: model:ir.actions.act_window,name:dma_field_reports.dma_fr_value_map_action
+#: model:ir.ui.menu,name:dma_field_reports.menu_dma_fr_value_map
+msgid "Value translations"
+msgstr "مطابقات القيم"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__cell_ids
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__cell_ids
+msgid "Values"
+msgstr "القيم"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_cdf__option_ids
+msgid "Values used in IMSMA"
+msgstr "القيم المستخدمة في IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_form__version
+msgid "Version"
+msgstr "الإصدار"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_form__version_num
+msgid "Version number"
+msgstr "رقم الإصدار"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template__kind__victim
+msgid "Victim / VA survey"
+msgstr "مسح الضحايا / مساعدة الضحايا"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f51
+msgid "Visual broadcasts"
+msgstr "البث المرئي"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f50
+msgid "Visual method"
+msgstr "الوسيلة المرئية"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_search
+msgid "Waiting for IMSMA"
+msgstr "بانتظار IMSMA"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_template_field__max_length
+msgid "Warn when the text is longer (0 = no limit)."
+msgstr "التنبيه عندما يكون النص أطول (0 = بلا حد)."
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f32
+msgid "Warning signs (flexes)"
+msgstr "العلامات التحذيرية (لافتات فلكس)"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+msgid "What"
+msgstr "الأساسيات"
+
+#. module: dma_field_reports
+#: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_template_field__datatype__integer
+msgid "Whole number"
+msgstr "عدد صحيح"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__xsd_filename
+msgid "Xsd Filename"
+msgstr "اسم ملف XSD"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f40
+msgid "Youth (13-18) female"
+msgstr "يافعون (13-18) إناث"
+
+#. module: dma_field_reports
+#: model:dma.fr.template.field,name:dma_field_reports.eore_f39
+msgid "Youth (13-18) male"
+msgstr "يافعون (13-18) ذكور"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "city / town / village"
+msgstr "مدينة أو بلدة أو قرية"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "district"
+msgstr "قضاء"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_template__object_id_prefix
+msgid "e.g. 'Education' gives Education-CI-75322"
+msgstr "مثال: 'Education' ينتج Education-CI-75322"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_template__report_id_prefix
+msgid "e.g. 'FR-MRE' gives FR-MRE-CI-75322"
+msgstr "مثال: 'FR-MRE' ينتج FR-MRE-CI-75322"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_template__object_id_type
+msgid "e.g. Education, LOC (IMSMA localidtype name)"
+msgstr "مثال: Education، LOC (اسم localidtype في IMSMA)"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_source_view_form
+msgid "e.g. IMSMA backup 2025-03-02"
+msgstr "مثال: نسخة IMSMA الاحتياطية 2025-03-02"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_template__object_element
+msgid "e.g. MREActivity"
+msgstr "مثال: MREActivity"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "from MGRS"
+msgstr "من MGRS"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "lat/long completed from MGRS"
+msgstr "أُكمل خط العرض/الطول من MGRS"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__object_element
+msgid "maXML activity element"
+msgstr "عنصر النشاط في maXML"
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_source__xsd_file
+msgid "maXMLSchema.xsd"
+msgstr "maXMLSchema.xsd"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "province"
+msgstr "محافظة"
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid "sub-district"
+msgstr "ناحية"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_cell_view_problem_list
+msgid "type the right value"
+msgstr "اكتب القيمة الصحيحة"
+
+#. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_row_view_form
+msgid "type to correct"
+msgstr "اكتب للتصحيح"

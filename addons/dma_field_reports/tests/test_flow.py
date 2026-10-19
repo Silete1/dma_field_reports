@@ -92,6 +92,7 @@ class TestFlow(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
+        cls.env["dma.fr.source"].search([]).write({"is_current": False})
         cls.source = cls.env["dma.fr.source"].create({
             "name": "test package", "mode": "package", "package_file": base64.b64encode(_package())})
         cls.source.action_refresh()
@@ -130,7 +131,7 @@ class TestFlow(TransactionCase):
             b.action_export()
 
         # one fix for both rows, remembered for next time
-        option = self.env["dma.fr.ref.option"].search([("value", "=", "PMWRA")])
+        option = self.env["dma.fr.ref.option"].search([("value", "=", "PMWRA"), ("cdf_ref_id.cdf_id", "=", FUNDED)])
         self.fix(self.cell(6, "Funded by"), option_id=option.id)
         self.assertFalse(self.cell(7, "Funded by").code)
         self.assertTrue(self.env["dma.fr.value.map"].search([("scope", "=", FUNDED), ("source_value", "=", "WRA")]))
@@ -138,7 +139,7 @@ class TestFlow(TransactionCase):
         self.fix(self.cell(6, "City / town / village"), place_choice="existing",
                  location_pick_id=self.env["dma.fr.ref.location"].search([("localid", "=", "LOC-CI-101")]).id)
         self.fix(self.cell(7, "Latitude"))  # swap
-        mac = self.env["dma.fr.ref.option"].search([("value", "=", "RMAC-N")])
+        mac = self.env["dma.fr.ref.option"].search([("value", "=", "RMAC-N"), ("cdf_ref_id.cdf_id", "=", MAC)])
         self.fix(self.cell(7, "MAC owner"), option_id=mac.id)
         self.assertEqual(b.error_count, 0, b.cell_ids.filtered(lambda c: c.state == "error").mapped("message"))
 
@@ -180,7 +181,7 @@ class TestFlow(TransactionCase):
         b = self.batch
         b.action_check()
         b.row_ids.filtered(lambda r: r.excel_row == 7).action_exclude()
-        option = self.env["dma.fr.ref.option"].search([("value", "=", "PMWRA")])
+        option = self.env["dma.fr.ref.option"].search([("value", "=", "PMWRA"), ("cdf_ref_id.cdf_id", "=", FUNDED)])
         self.fix(self.cell(6, "Funded by"), option_id=option.id)
         self.fix(self.cell(6, "City / town / village"), place_choice="existing",
                  location_pick_id=self.env["dma.fr.ref.location"].search([("localid", "=", "LOC-CI-101")]).id)

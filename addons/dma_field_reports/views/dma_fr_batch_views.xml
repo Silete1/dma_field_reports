@@ -124,16 +124,16 @@
                                 <list decoration-danger="state == 'error'" decoration-warning="state == 'warning'"
                                       decoration-muted="excluded">
                                     <field name="excel_row"/>
-                                    <field name="summary" string="Report"/>
+                                    <field name="summary" string="Report" width="200px"/>
                                     <field name="org_id"/>
                                     <field name="place_id" optional="show"/>
                                     <field name="location_label" optional="show"/>
                                     <field name="problem_count" string="Problems"/>
                                     <field name="object_localid" optional="show"/>
-                                    <field name="imsma_state" widget="badge" optional="show"
+                                    <field name="imsma_state" widget="badge" width="120px" optional="show"
                                            decoration-success="imsma_state == 'found'"
                                            decoration-info="imsma_state == 'sent'"/>
-                                    <field name="state" widget="badge" decoration-danger="state == 'error'"
+                                    <field name="state" widget="badge" width="110px" decoration-danger="state == 'error'"
                                            decoration-warning="state == 'warning'" decoration-success="state in ('ok', 'info')"/>
                                     <field name="excluded" column_invisible="1"/>
                                 </list>
@@ -202,15 +202,15 @@
         <field name="arch" type="xml">
             <list decoration-danger="state == 'error'" decoration-warning="state == 'warning'" decoration-muted="excluded">
                 <field name="excel_row"/>
-                <field name="summary" string="Report"/>
+                <field name="summary" string="Report" width="200px"/>
                 <field name="org_id"/>
                 <field name="report_date"/>
                 <field name="place_id"/>
                 <field name="location_label"/>
                 <field name="problem_count" string="Problems"/>
                 <field name="object_localid" optional="show"/>
-                <field name="imsma_state" widget="badge" optional="show"/>
-                <field name="state" widget="badge" decoration-danger="state == 'error'" decoration-warning="state == 'warning'"
+                <field name="imsma_state" widget="badge" width="120px" optional="show"/>
+                <field name="state" widget="badge" width="110px" decoration-danger="state == 'error'" decoration-warning="state == 'warning'"
                        decoration-success="state in ('ok', 'info')"/>
                 <field name="excluded" column_invisible="1"/>
             </list>

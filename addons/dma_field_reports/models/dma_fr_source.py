@@ -5,7 +5,7 @@ import os
 import re
 
 from odoo import _, api, fields, models
-from odoo.exceptions import UserError
+from odoo.exceptions import AccessError, UserError
 
 from ..services import refdata, text
 
@@ -78,6 +78,7 @@ class DmaFrSource(models.Model):
 
     def action_test_connection(self):
         self.ensure_one()
+        self._check_manager()
         import psycopg2
 
         try:
@@ -91,7 +92,12 @@ class DmaFrSource(models.Model):
             raise UserError(_("Could not read IMSMA: %s", e)) from e
         return self._notify(_("Connected. IMSMA has %s form definitions.", n), "success")
 
+    def _check_manager(self):
+        if not (self.env.su or self.env.user.has_group("dma_field_reports.group_dma_fr_manager")):
+            raise AccessError(_("Only a Field Reports manager can load IMSMA data."))
+
     def action_refresh(self):
+        self._check_manager()
         for src in self:
             try:
                 if src.mode == "live":
@@ -169,8 +175,9 @@ class DmaFrSource(models.Model):
             else:
                 to_create.append(vals)
         created = Model.create(to_create) if to_create else Model
-        stale = [r.id for k, r in existing.items() if k not in seen and r.active]
-        if stale and "active" in Model._fields:
+        has_active = "active" in Model._fields
+        stale = [r.id for k, r in existing.items() if k not in seen and has_active and r.active]
+        if stale:
             Model.browse(stale).write({"active": False})
         return {"created": len(created), "updated": updated, "archived": len(stale)}
 

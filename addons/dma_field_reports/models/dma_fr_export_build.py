@@ -124,7 +124,8 @@ class DmaFrBatchExport(models.Model):
             raise UserError(_("No exported location is waiting for approval."))
         source = self.env["dma.fr.source"].current()
         if source.mode == "live":
-            source.action_refresh()
+            # a user may confirm; reloading IMSMA data is a manager's right, done here on the user's behalf
+            source.sudo().action_refresh()
         Loc = self.env["dma.fr.ref.location"]
         not_found = []
         for req in reqs:

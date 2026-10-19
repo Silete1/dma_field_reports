@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <menuitem id="menu_dma_fr_root" name="Field Reports" sequence="27"
+    <menuitem id="menu_dma_fr_root" name="Field Reports" sequence="47"
               groups="group_dma_fr_user" web_icon="dma_field_reports,static/description/icon.svg"/>
 
     <menuitem id="menu_dma_fr_batches" name="Batches" parent="menu_dma_fr_root"
