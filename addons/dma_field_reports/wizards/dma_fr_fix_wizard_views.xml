@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="dma_fr_fix_wizard_view_form" model="ir.ui.view">
+        <field name="name">dma.fr.fix.wizard.form</field>
+        <field name="model">dma.fr.fix.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="mode" invisible="1"/>
+                <field name="cdf_ref_id" invisible="1"/>
+                <div class="alert alert-danger mb-2" role="alert">
+                    <field name="message" readonly="1" nolabel="1"/>
+                </div>
+                <group>
+                    <field name="field_id" readonly="1" string="Column"/>
+                    <field name="raw" readonly="1"/>
+                    <field name="part" readonly="1" invisible="mode != 'list' or part == raw"/>
+                </group>
+                <field name="suggestion_html" nolabel="1" invisible="not suggestion_html"/>
+
+                <group invisible="mode != 'list'">
+                    <field name="option_id" options="{'no_create': True, 'no_open': True}"
+                           invisible="not cdf_ref_id" placeholder="Search the values IMSMA uses..."/>
+                    <field name="fixed_value" invisible="cdf_ref_id"/>
+                </group>
+                <group invisible="mode != 'org'">
+                    <field name="org_id" options="{'no_create': True, 'no_open': True}"
+                           placeholder="Search by code or name..."/>
+                </group>
+                <div invisible="mode != 'place'">
+                    <field name="nearby_html" nolabel="1" invisible="not nearby_html"/>
+                    <group>
+                        <field name="area_id" readonly="1" invisible="not area_id"/>
+                        <field name="place_choice" widget="radio"/>
+                        <field name="location_pick_id" options="{'no_create': True, 'no_open': True}"
+                               invisible="place_choice != 'existing'" placeholder="Search IMSMA locations by name or id..."/>
+                        <field name="place_id" options="{'no_create': True, 'no_open': True}"
+                               invisible="place_choice == 'existing'"
+                               placeholder="Search the gazetteer (English or Arabic)..."/>
+                    </group>
+                </div>
+                <div invisible="mode != 'swap'" class="mb-2">
+                    Latitude and longitude will be swapped on the rows below.
+                </div>
+                <group invisible="mode != 'text'">
+                    <field name="new_value"/>
+                </group>
+
+                <group>
+                    <field name="apply_all"/>
+                    <field name="same_count" readonly="1" invisible="not apply_all"/>
+                    <field name="remember" invisible="mode not in ('list', 'org') and not (mode == 'place' and place_choice == 'same')"/>
+                </group>
+                <footer>
+                    <button name="action_apply" type="object" string="Apply" class="btn-primary" data-hotkey="q"/>
+                    <button special="cancel" string="Cancel" data-hotkey="x"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

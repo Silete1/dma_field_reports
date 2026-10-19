@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_dma_fr_root" name="Field Reports" sequence="27"
+              groups="group_dma_fr_user" web_icon="dma_field_reports,static/description/icon.svg"/>
+
+    <menuitem id="menu_dma_fr_batches" name="Batches" parent="menu_dma_fr_root"
+              action="dma_fr_batch_action" sequence="10"/>
+
+    <menuitem id="menu_dma_fr_imsma" name="IMSMA data" parent="menu_dma_fr_root" sequence="50"/>
+    <menuitem id="menu_dma_fr_ref_place" name="Gazetteer" parent="menu_dma_fr_imsma" action="dma_fr_ref_place_action" sequence="10"/>
+    <menuitem id="menu_dma_fr_ref_location" name="Locations" parent="menu_dma_fr_imsma" action="dma_fr_ref_location_action" sequence="20"/>
+    <menuitem id="menu_dma_fr_ref_org" name="Organisations" parent="menu_dma_fr_imsma" action="dma_fr_ref_org_action" sequence="30"/>
+    <menuitem id="menu_dma_fr_ref_form" name="Forms" parent="menu_dma_fr_imsma" action="dma_fr_ref_form_action" sequence="40"/>
+    <menuitem id="menu_dma_fr_ref_cdf" name="Custom fields and values" parent="menu_dma_fr_imsma" action="dma_fr_ref_cdf_action" sequence="50"/>
+
+    <menuitem id="menu_dma_fr_config" name="Configuration" parent="menu_dma_fr_root" sequence="90"
+              groups="group_dma_fr_manager"/>
+    <menuitem id="menu_dma_fr_source" name="IMSMA data source" parent="menu_dma_fr_config" action="dma_fr_source_action" sequence="10"/>
+    <menuitem id="menu_dma_fr_template" name="Form templates" parent="menu_dma_fr_config" action="dma_fr_template_action" sequence="20"/>
+    <menuitem id="menu_dma_fr_value_map" name="Value translations" parent="menu_dma_fr_config" action="dma_fr_value_map_action" sequence="30"/>
+    <menuitem id="menu_dma_fr_office" name="Offices" parent="menu_dma_fr_config" action="dma_fr_office_action" sequence="40"/>
+    <menuitem id="menu_dma_fr_counter" name="IMSMA id counters" parent="menu_dma_fr_config" action="dma_fr_counter_action" sequence="50"/>
+</odoo>

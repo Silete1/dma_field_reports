@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!-- Location reports are generated from the places of other batches (no file of their own). -->
+    <record id="template_location" model="dma.fr.template">
+        <field name="name">Location (generated)</field>
+        <field name="sequence">90</field>
+        <field name="kind">location</field>
+        <field name="imsma_form_name">DMA Location Form</field>
+        <field name="checked_form_version">20</field>
+        <field name="object_element">Location</field>
+        <field name="sheet_name">-</field>
+        <field name="object_id_type">LOC</field>
+        <field name="object_id_prefix">LOC</field>
+        <field name="report_id_prefix">FR-LOC</field>
+    </record>
+</odoo>

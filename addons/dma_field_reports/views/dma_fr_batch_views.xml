@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ============================================================ batch -->
+    <record id="dma_fr_batch_view_list" model="ir.ui.view">
+        <field name="name">dma.fr.batch.list</field>
+        <field name="model">dma.fr.batch</field>
+        <field name="arch" type="xml">
+            <list decoration-muted="state == 'cancel'" decoration-danger="state == 'checked'"
+                  decoration-success="state in ('exported', 'done')">
+                <field name="name"/>
+                <field name="template_id"/>
+                <field name="office_id"/>
+                <field name="source_filename" string="File"/>
+                <field name="row_count" string="Reports"/>
+                <field name="error_count" string="Must fix" decoration-danger="error_count &gt; 0"/>
+                <field name="warning_count" string="To check" optional="show"/>
+                <field name="user_id" widget="many2one_avatar_user" optional="show"/>
+                <field name="create_date" string="Uploaded" optional="show"/>
+                <field name="state" widget="badge" decoration-danger="state == 'checked'"
+                       decoration-warning="state == 'locations'" decoration-info="state in ('draft', 'ready')"
+                       decoration-success="state in ('exported', 'done')"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="dma_fr_batch_view_search" model="ir.ui.view">
+        <field name="name">dma.fr.batch.search</field>
+        <field name="model">dma.fr.batch</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="source_filename" string="File"/>
+                <field name="template_id"/>
+                <field name="office_id"/>
+                <filter name="mine" string="My batches" domain="[('user_id', '=', uid)]"/>
+                <filter name="open" string="Not exported yet" domain="[('state', 'in', ('draft', 'checked', 'locations', 'ready'))]"/>
+                <filter name="waiting" string="Waiting for IMSMA" domain="[('state', '=', 'exported')]"/>
+                <separator/>
+                <group>
+                    <filter name="by_state" string="Status" context="{'group_by': 'state'}"/>
+                    <filter name="by_office" string="Office" context="{'group_by': 'office_id'}"/>
+                    <filter name="by_form" string="Form" context="{'group_by': 'template_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="dma_fr_batch_view_form" model="ir.ui.view">
+        <field name="name">dma.fr.batch.form</field>
+        <field name="model">dma.fr.batch</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_check" type="object" string="Check" class="btn-primary"
+                            invisible="state not in ('draft', 'checked', 'ready', 'locations') or row_count"/>
+                    <button name="action_check" type="object" string="Check again"
+                            invisible="state not in ('draft', 'checked', 'ready', 'locations') or not row_count"/>
+                    <button name="action_open_problems" type="object" string="Fix problems" class="btn-primary"
+                            invisible="error_count == 0 or state not in ('draft', 'checked', 'ready', 'locations')"/>
+                    <button name="action_export_locations" type="object" string="Export new locations"
+                            class="btn-primary"
+                            invisible="error_count or not location_count or state not in ('checked', 'ready')"/>
+                    <button name="action_confirm_locations" type="object" string="Locations approved in IMSMA"
+                            class="btn-primary" invisible="state != 'locations'"
+                            confirm="Have the location reports been imported AND approved in the IMSMA Workbench?"/>
+                    <button name="action_export" type="object" string="Export to IMSMA" class="btn-primary"
+                            invisible="state != 'ready'"/>
+                    <button name="action_reopen" type="object" string="Re-open" invisible="state not in ('exported', 'done')"
+                            confirm="Re-open this batch to correct it? A new export keeps the same IMSMA ids."/>
+                    <button name="action_cancel" type="object" string="Cancel batch"
+                            invisible="state in ('exported', 'done', 'cancel')"/>
+                    <button name="action_reset" type="object" string="Back to draft" invisible="state != 'cancel'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,checked,locations,ready,exported,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_open_rows" type="object" class="oe_stat_button" icon="fa-list"
+                                invisible="not row_count">
+                            <field name="row_count" widget="statinfo" string="Reports"/>
+                        </button>
+                        <button name="action_open_problems" type="object" class="oe_stat_button"
+                                icon="fa-exclamation-triangle" invisible="not row_count">
+                            <div class="o_stat_info">
+                                <span class="o_stat_value text-danger"><field name="error_count"/></span>
+                                <span class="o_stat_text">Must fix</span>
+                            </div>
+                        </button>
+                        <button name="action_open_problems" type="object" class="oe_stat_button" icon="fa-eye"
+                                invisible="not row_count">
+                            <div class="o_stat_info">
+                                <span class="o_stat_value"><field name="warning_count"/></span>
+                                <span class="o_stat_text">To check</span>
+                            </div>
+                        </button>
+                        <button name="action_open_locations" type="object" class="oe_stat_button" icon="fa-map-marker"
+                                invisible="not location_count">
+                            <field name="location_count" widget="statinfo" string="New locations"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <field name="next_step" nolabel="1" class="d-block mb-3"/>
+                    <group>
+                        <group string="What">
+                            <field name="template_id" options="{'no_create': True, 'no_open': True}"
+                                   domain="[('kind', '!=', 'location')]" readonly="row_count"/>
+                            <field name="office_id" options="{'no_create': True, 'no_open': True}"
+                                   readonly="state in ('exported', 'done')"/>
+                            <field name="user_id" widget="many2one_avatar_user"/>
+                        </group>
+                        <group string="Files">
+                            <field name="source_file" filename="source_filename" readonly="state in ('exported', 'done', 'cancel')"/>
+                            <field name="source_filename" invisible="1"/>
+                            <field name="attachment_ids" widget="many2many_binary" string="Attachments"
+                                   readonly="state in ('exported', 'done', 'cancel')"
+                                   help="The Word reports and photos named in the file (or a zip of them)."/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Reports" name="rows" invisible="not row_count">
+                            <field name="row_ids" readonly="1">
+                                <list decoration-danger="state == 'error'" decoration-warning="state == 'warning'"
+                                      decoration-muted="excluded">
+                                    <field name="excel_row"/>
+                                    <field name="summary" string="Report"/>
+                                    <field name="org_id"/>
+                                    <field name="place_id" optional="show"/>
+                                    <field name="location_label" optional="show"/>
+                                    <field name="problem_count" string="Problems"/>
+                                    <field name="object_localid" optional="show"/>
+                                    <field name="imsma_state" widget="badge" optional="show"
+                                           decoration-success="imsma_state == 'found'"
+                                           decoration-info="imsma_state == 'sent'"/>
+                                    <field name="state" widget="badge" decoration-danger="state == 'error'"
+                                           decoration-warning="state == 'warning'" decoration-success="state in ('ok', 'info')"/>
+                                    <field name="excluded" column_invisible="1"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="New locations" name="locations" invisible="not location_count">
+                            <p class="text-muted">These places are in the IMSMA gazetteer but have no IMSMA location
+                                with this name yet. They are created first, as Location reports.</p>
+                            <field name="location_request_ids" readonly="1">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="place_id"/>
+                                    <field name="row_count" string="Reports"/>
+                                    <field name="localid"/>
+                                    <field name="state" widget="badge" decoration-warning="state == 'exported'"
+                                           decoration-success="state == 'confirmed'"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Exports" name="exports" invisible="not export_ids">
+                            <field name="export_ids" readonly="1">
+                                <list>
+                                    <field name="create_date"/>
+                                    <field name="kind"/>
+                                    <field name="report_count"/>
+                                    <field name="file" filename="filename" widget="binary"/>
+                                    <field name="filename" column_invisible="1"/>
+                                    <field name="counter_note"/>
+                                    <field name="create_uid" widget="many2one_avatar_user"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="File columns" name="columns" invisible="not column_report">
+                            <field name="column_report"/>
+                        </page>
+                        <page string="Notes" name="notes">
+                            <field name="note" placeholder="Anything to remember about this batch..."/>
+                            <group>
+                                <field name="source_id" readonly="1"/>
+                                <field name="checked_on" readonly="1"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="dma_fr_batch_action" model="ir.actions.act_window">
+        <field name="name">Field data batches</field>
+        <field name="res_model">dma.fr.batch</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_open': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Upload an operator's Excel file</p>
+            <p>Odoo reads it, lists every problem at once, lets you fix them, and gives you one zip
+               to import in the IMSMA Workbench.</p>
+        </field>
+    </record>
+
+    <!-- ============================================================ row -->
+    <record id="dma_fr_row_view_list" model="ir.ui.view">
+        <field name="name">dma.fr.row.list</field>
+        <field name="model">dma.fr.row</field>
+        <field name="arch" type="xml">
+            <list decoration-danger="state == 'error'" decoration-warning="state == 'warning'" decoration-muted="excluded">
+                <field name="excel_row"/>
+                <field name="summary" string="Report"/>
+                <field name="org_id"/>
+                <field name="report_date"/>
+                <field name="place_id"/>
+                <field name="location_label"/>
+                <field name="problem_count" string="Problems"/>
+                <field name="object_localid" optional="show"/>
+                <field name="imsma_state" widget="badge" optional="show"/>
+                <field name="state" widget="badge" decoration-danger="state == 'error'" decoration-warning="state == 'warning'"
+                       decoration-success="state in ('ok', 'info')"/>
+                <field name="excluded" column_invisible="1"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="dma_fr_row_view_form" model="ir.ui.view">
+        <field name="name">dma.fr.row.form</field>
+        <field name="model">dma.fr.row</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_exclude" type="object" string="Leave out of the export" invisible="excluded"/>
+                    <button name="action_include" type="object" string="Include again" invisible="not excluded"/>
+                    <field name="state" widget="badge"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h2><field name="summary" readonly="1"/></h2>
+                    </div>
+                    <div class="alert alert-secondary" role="status" invisible="not excluded">Left out: this report is not exported.</div>
+                    <group>
+                        <group string="Resolved">
+                            <field name="org_id"/>
+                            <field name="report_date"/>
+                            <field name="place_id" options="{'no_create': True}"/>
+                            <field name="place_manual" invisible="1"/>
+                            <field name="location_label"/>
+                            <field name="latitude"/>
+                            <field name="longitude"/>
+                            <field name="coord_note" invisible="not coord_note"/>
+                            <field name="map_url" widget="url" string="Map" invisible="not map_url"
+                                   options="{'website_path': False}"/>
+                        </group>
+                        <group string="IMSMA">
+                            <field name="object_localid"/>
+                            <field name="report_localid"/>
+                            <field name="imsma_state"/>
+                            <field name="imsma_status" invisible="not imsma_status"/>
+                            <field name="attachment_ids" widget="many2many_binary"/>
+                        </group>
+                    </group>
+                    <field name="cell_ids">
+                        <list editable="bottom" create="0" delete="0" decoration-danger="state == 'error'"
+                              decoration-warning="state == 'warning'" decoration-info="state == 'info'"
+                              decoration-muted="state == 'empty'">
+                            <field name="column" readonly="1"/>
+                            <field name="field_id" readonly="1"/>
+                            <field name="raw" readonly="1"/>
+                            <field name="override" placeholder="type to correct"/>
+                            <field name="value" readonly="1"/>
+                            <field name="message" readonly="1"/>
+                            <field name="state" column_invisible="1"/>
+                            <button name="action_fix" type="object" icon="fa-wrench" title="Fix"
+                                    invisible="state not in ('error', 'warning')"/>
+                        </list>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- ============================================================ location requests -->
+    <record id="dma_fr_location_request_view_list" model="ir.ui.view">
+        <field name="name">dma.fr.location.request.list</field>
+        <field name="model">dma.fr.location.request</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="place_id"/>
+                <field name="row_count" string="Reports"/>
+                <field name="localid"/>
+                <field name="imsma_seen" optional="show"/>
+                <field name="state" widget="badge" decoration-warning="state == 'exported'" decoration-success="state == 'confirmed'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="dma_fr_location_request_view_form" model="ir.ui.view">
+        <field name="name">dma.fr.location.request.form</field>
+        <field name="model">dma.fr.location.request</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" readonly="state != 'draft'"/>
+                            <field name="place_id" readonly="state != 'draft'" options="{'no_create': True}"/>
+                        </group>
+                        <group>
+                            <field name="localid"/>
+                            <field name="report_localid"/>
+                            <field name="imsma_seen"/>
+                            <field name="ref_location_id"/>
+                        </group>
+                    </group>
+                    <field name="row_ids" readonly="1">
+                        <list>
+                            <field name="excel_row"/>
+                            <field name="summary"/>
+                        </list>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

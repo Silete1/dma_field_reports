@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!-- Codes as they appear in IMSMA ids (Education-CI-75321, LOC-SI-397). Add other offices in Configuration. -->
+    <record id="office_dma_hq" model="dma.fr.office">
+        <field name="name">DMA Headquarters (Baghdad)</field>
+        <field name="code">CI</field>
+        <field name="sequence">10</field>
+    </record>
+    <record id="office_rmac_s" model="dma.fr.office">
+        <field name="name">RMAC South</field>
+        <field name="code">SI</field>
+        <field name="sequence">20</field>
+    </record>
+</odoo>

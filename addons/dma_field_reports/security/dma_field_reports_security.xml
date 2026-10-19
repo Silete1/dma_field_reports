@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="module_category_dma_field_reports" model="ir.module.category">
+        <field name="name">DMA Field Reports</field>
+        <field name="description">Field data from operators, checked in Odoo and exported to IMSMA NG.</field>
+        <field name="sequence">27</field>
+    </record>
+
+    <record id="res_groups_privilege_dma_field_reports" model="res.groups.privilege">
+        <field name="name">DMA Field Reports</field>
+        <field name="description">Role of the user in the field-report import.</field>
+        <field name="category_id" ref="module_category_dma_field_reports"/>
+        <field name="sequence">10</field>
+    </record>
+
+    <!-- user < manager. Victim data gets its own group when the Victim form is added. -->
+    <record id="group_dma_fr_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="sequence">10</field>
+        <field name="privilege_id" ref="res_groups_privilege_dma_field_reports"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="comment">Uploads operator files, fixes the problems found and exports the IMSMA zip.</field>
+    </record>
+
+    <record id="group_dma_fr_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="sequence">20</field>
+        <field name="privilege_id" ref="res_groups_privilege_dma_field_reports"/>
+        <field name="implied_ids" eval="[(4, ref('group_dma_fr_user'))]"/>
+        <field name="user_ids" eval="[(4, ref('base.user_admin'))]"/>
+        <field name="comment">Also sets up the IMSMA reference source, the form templates, the value mappings, the offices and the id counters.</field>
+    </record>
+
+</odoo>

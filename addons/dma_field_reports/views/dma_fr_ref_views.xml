@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="dma_fr_ref_place_view_list" model="ir.ui.view">
+        <field name="name">dma.fr.ref.place.list</field>
+        <field name="model">dma.fr.ref.place</field>
+        <field name="arch" type="xml">
+            <list create="0">
+                <field name="complete_name"/>
+                <field name="level"/>
+                <field name="location_count" string="IMSMA locations"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="dma_fr_ref_place_view_form" model="ir.ui.view">
+        <field name="name">dma.fr.ref.place.form</field>
+        <field name="model">dma.fr.ref.place</field>
+        <field name="arch" type="xml">
+            <form create="0">
+                <sheet>
+                    <div class="oe_title"><h1><field name="name" readonly="1"/></h1></div>
+                    <group>
+                        <field name="complete_name" readonly="1"/>
+                        <field name="level" readonly="1"/>
+                        <field name="guid" readonly="1"/>
+                    </group>
+                    <notebook>
+                        <page string="Other names">
+                            <field name="alias_ids">
+                                <list editable="bottom">
+                                    <field name="alias"/>
+                                    <field name="origin"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="IMSMA locations">
+                            <field name="location_ids" readonly="1">
+                                <list>
+                                    <field name="localid"/>
+                                    <field name="name"/>
+                                    <field name="origin"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="dma_fr_ref_place_view_search" model="ir.ui.view">
+        <field name="name">dma.fr.ref.place.search</field>
+        <field name="model">dma.fr.ref.place</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="complete_name" string="Place" filter_domain="['|', ('complete_name', 'ilike', self), ('alias_ids.alias', 'ilike', self)]"/>
+                <filter name="cities" string="Cities / villages" domain="[('level', '=', 'city')]"/>
+                <group>
+                    <filter name="by_level" string="Level" context="{'group_by': 'level'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="dma_fr_ref_place_action" model="ir.actions.act_window">
+        <field name="name">Gazetteer</field>
+        <field name="res_model">dma.fr.ref.place</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="dma_fr_ref_location_view_list" model="ir.ui.view">
+        <field name="name">dma.fr.ref.location.list</field>
+        <field name="model">dma.fr.ref.location</field>
+        <field name="arch" type="xml">
+            <list create="0">
+                <field name="localid"/>
+                <field name="name"/>
+                <field name="place_id"/>
+                <field name="origin"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="dma_fr_ref_location_action" model="ir.actions.act_window">
+        <field name="name">IMSMA locations</field>
+        <field name="res_model">dma.fr.ref.location</field>
+        <field name="view_mode">list</field>
+    </record>
+
+    <record id="dma_fr_ref_org_view_list" model="ir.ui.view">
+        <field name="name">dma.fr.ref.org.list</field>
+        <field name="model">dma.fr.ref.org</field>
+        <field name="arch" type="xml">
+            <list create="0">
+                <field name="localid"/>
+                <field name="name"/>
+                <field name="guid" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="dma_fr_ref_org_action" model="ir.actions.act_window">
+        <field name="name">IMSMA organisations</field>
+        <field name="res_model">dma.fr.ref.org</field>
+        <field name="view_mode">list</field>
+    </record>
+
+    <record id="dma_fr_ref_form_view_list" model="ir.ui.view">
+        <field name="name">dma.fr.ref.form.list</field>
+        <field name="model">dma.fr.ref.form</field>
+        <field name="arch" type="xml">
+            <list create="0">
+                <field name="name"/>
+                <field name="version"/>
+                <field name="published_on"/>
+                <field name="is_active_in_imsma"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="dma_fr_ref_form_action" model="ir.actions.act_window">
+        <field name="name">IMSMA forms</field>
+        <field name="res_model">dma.fr.ref.form</field>
+        <field name="view_mode">list</field>
+        <field name="context">{'search_default_active_imsma': 1}</field>
+    </record>
+
+    <record id="dma_fr_ref_form_view_search" model="ir.ui.view">
+        <field name="name">dma.fr.ref.form.search</field>
+        <field name="model">dma.fr.ref.form</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <filter name="active_imsma" string="Active in IMSMA" domain="[('is_active_in_imsma', '=', True)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="dma_fr_ref_cdf_view_list" model="ir.ui.view">
+        <field name="name">dma.fr.ref.cdf.list</field>
+        <field name="model">dma.fr.ref.cdf</field>
+        <field name="arch" type="xml">
+            <list create="0">
+                <field name="entity"/>
+                <field name="name"/>
+                <field name="label"/>
+                <field name="datatype"/>
+                <field name="cdf_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="dma_fr_ref_cdf_view_form" model="ir.ui.view">
+        <field name="name">dma.fr.ref.cdf.form</field>
+        <field name="model">dma.fr.ref.cdf</field>
+        <field name="arch" type="xml">
+            <form create="0">
+                <sheet>
+                    <group>
+                        <field name="name" readonly="1"/>
+                        <field name="entity" readonly="1"/>
+                        <field name="datatype" readonly="1"/>
+                        <field name="cdf_id" readonly="1"/>
+                    </group>
+                    <field name="option_ids">
+                        <list editable="bottom" create="0">
+                            <field name="value" readonly="1"/>
+                            <field name="usage" readonly="1"/>
+                            <field name="is_preferred" widget="boolean_toggle"/>
+                        </list>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="dma_fr_ref_cdf_action" model="ir.actions.act_window">
+        <field name="name">IMSMA custom fields</field>
+        <field name="res_model">dma.fr.ref.cdf</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

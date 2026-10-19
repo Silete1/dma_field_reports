@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="dma_fr_template_view_list" model="ir.ui.view">
+        <field name="name">dma.fr.template.list</field>
+        <field name="model">dma.fr.template</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="kind"/>
+                <field name="imsma_form_name"/>
+                <field name="form_id" string="IMSMA version now"/>
+                <field name="checked_form_version" string="Checked against"/>
+                <field name="field_count" string="Columns"/>
+                <field name="form_version_warning" string="Attention" decoration-warning="form_version_warning"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="dma_fr_template_view_form" model="ir.ui.view">
+        <field name="name">dma.fr.template.form</field>
+        <field name="model">dma.fr.template</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="alert alert-warning" role="alert" invisible="not form_version_warning">
+                        <field name="form_version_warning" readonly="1" nolabel="1"/>
+                    </div>
+                    <div class="oe_title"><h1><field name="name"/></h1></div>
+                    <group>
+                        <group string="IMSMA">
+                            <field name="kind"/>
+                            <field name="imsma_form_name"/>
+                            <field name="form_id"/>
+                            <field name="checked_form_version"/>
+                            <field name="object_element"/>
+                        </group>
+                        <group string="IMSMA ids">
+                            <field name="object_id_type"/>
+                            <field name="object_id_prefix"/>
+                            <field name="report_id_prefix"/>
+                        </group>
+                        <group string="Excel file" invisible="kind == 'location'">
+                            <field name="sheet_name"/>
+                            <field name="header_row"/>
+                            <field name="header_rows"/>
+                            <field name="first_data_row"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Columns" name="columns" invisible="kind == 'location'">
+                            <field name="field_ids">
+                                <list editable="bottom" decoration-danger="cdf_missing">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                    <field name="headers" widget="text" string="Headers (one per line)"/>
+                                    <field name="role"/>
+                                    <field name="datatype"/>
+                                    <field name="required"/>
+                                    <field name="cdf_id_text" optional="show"/>
+                                    <field name="cdf_guid" optional="hide"/>
+                                    <field name="cdf_ref_id" optional="hide"/>
+                                    <field name="fixed_options" optional="hide"/>
+                                    <field name="max_length" optional="hide"/>
+                                    <field name="cdf_missing" column_invisible="1"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Notes" name="note">
+                            <field name="note"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="dma_fr_template_action" model="ir.actions.act_window">
+        <field name="name">Form templates</field>
+        <field name="res_model">dma.fr.template</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- value mappings -->
+    <record id="dma_fr_value_map_view_list" model="ir.ui.view">
+        <field name="name">dma.fr.value.map.list</field>
+        <field name="model">dma.fr.value.map</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="scope_label" string="Field"/>
+                <field name="scope" optional="hide"/>
+                <field name="source_value"/>
+                <field name="target_value"/>
+                <field name="origin"/>
+                <field name="create_uid" string="Added by" optional="show" readonly="1"/>
+                <field name="active" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="dma_fr_value_map_view_search" model="ir.ui.view">
+        <field name="name">dma.fr.value.map.search</field>
+        <field name="model">dma.fr.value.map</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="source_value"/>
+                <field name="target_value"/>
+                <filter name="learned" string="Learned from fixes" domain="[('origin', '=', 'learned')]"/>
+                <filter name="archived" string="Archived" domain="[('active', '=', False)]"/>
+                <group>
+                    <filter name="by_scope" string="Field" context="{'group_by': 'scope'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="dma_fr_value_map_action" model="ir.actions.act_window">
+        <field name="name">Value translations</field>
+        <field name="res_model">dma.fr.value.map</field>
+        <field name="view_mode">list</field>
+        <field name="help" type="html">
+            <p>Texts in operator files and the IMSMA value they stand for. Fixes made with
+               "Remember for future files" appear here.</p>
+        </field>
+    </record>
+
+    <!-- offices and counters -->
+    <record id="dma_fr_office_view_list" model="ir.ui.view">
+        <field name="name">dma.fr.office.list</field>
+        <field name="model">dma.fr.office</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="active" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="dma_fr_office_action" model="ir.actions.act_window">
+        <field name="name">Offices</field>
+        <field name="res_model">dma.fr.office</field>
+        <field name="view_mode">list</field>
+    </record>
+
+    <record id="dma_fr_counter_view_list" model="ir.ui.view">
+        <field name="name">dma.fr.counter.list</field>
+        <field name="model">dma.fr.counter</field>
+        <field name="arch" type="xml">
+            <list editable="bottom" create="0">
+                <field name="id_type"/>
+                <field name="last_number"/>
+                <field name="note"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="dma_fr_counter_action" model="ir.actions.act_window">
+        <field name="name">IMSMA id counters</field>
+        <field name="res_model">dma.fr.counter</field>
+        <field name="view_mode">list</field>
+        <field name="help" type="html">
+            <p>The last number Odoo gave per IMSMA id type. Odoo never goes below the numbers already used in
+               IMSMA; after an export, set IMSMA's own counter as the export tells you.</p>
+        </field>
+    </record>
+
+</odoo>

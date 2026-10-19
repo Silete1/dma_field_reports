@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Built-in translations from the texts operators write to the values IMSMA stores.
+     Taken from the Access tool's value lists and from IMSMA's own data (2025-03-02).
+     Learned mappings are added from the fix dialog. -->
+<odoo noupdate="1">
+
+    <!-- MAC owner: Arabic names of the regional centres (from the Access tool) -->
+    <record id="vm_mac_c_ar" model="dma.fr.value.map">
+        <field name="scope">c0a7-f58e-1773eacedb7-ef3a9ab4-10-dff</field>
+        <field name="source_value">المركز الاقليمي الاوسط لشؤون الالغام</field>
+        <field name="target_value">RMAC-C</field>
+        <field name="origin">seeded</field>
+    </record>
+    <record id="vm_mac_n_ar" model="dma.fr.value.map">
+        <field name="scope">c0a7-f58e-1773eacedb7-ef3a9ab4-10-dff</field>
+        <field name="source_value">المركز الاقليمي الشمالي لشؤون الالغام</field>
+        <field name="target_value">RMAC-N</field>
+        <field name="origin">seeded</field>
+    </record>
+    <record id="vm_mac_s_ar" model="dma.fr.value.map">
+        <field name="scope">c0a7-f58e-1773eacedb7-ef3a9ab4-10-dff</field>
+        <field name="source_value">المركز الاقليمي الجنوبي لشؤون الالغام</field>
+        <field name="target_value">RMAC-S</field>
+        <field name="origin">seeded</field>
+    </record>
+    <record id="vm_mac_meu_ar" model="dma.fr.value.map">
+        <field name="scope">c0a7-f58e-1773eacedb7-ef3a9ab4-10-dff</field>
+        <field name="source_value">المركز الاقليمي للفرات الاوسط لشؤون الالغام</field>
+        <field name="target_value">RMAC-M EU</field>
+        <field name="origin">seeded</field>
+    </record>
+
+    <!-- EORE type: Arabic labels IMSMA has stored, sent as the English value -->
+    <record id="vm_mretype_presentation_ar" model="dma.fr.value.map">
+        <field name="scope">7f00-0001-13f7a2fa1c2-3963ba9f-39-b37</field>
+        <field name="source_value">عرض</field>
+        <field name="target_value">Presentation</field>
+        <field name="origin">seeded</field>
+    </record>
+    <record id="vm_mretype_liaison_ar" model="dma.fr.value.map">
+        <field name="scope">7f00-0001-13f7a2fa1c2-3963ba9f-39-b37</field>
+        <field name="source_value">التواصل المجتمعي</field>
+        <field name="target_value">Community liaison</field>
+        <field name="origin">seeded</field>
+    </record>
+    <record id="vm_mretype_perf_ar" model="dma.fr.value.map">
+        <field name="scope">7f00-0001-13f7a2fa1c2-3963ba9f-39-b37</field>
+        <field name="source_value">أداء عام</field>
+        <field name="target_value">Public Performance</field>
+        <field name="origin">seeded</field>
+    </record>
+    <record id="vm_mretype_media_ar" model="dma.fr.value.map">
+        <field name="scope">7f00-0001-13f7a2fa1c2-3963ba9f-39-b37</field>
+        <field name="source_value">وسائل الإعلام</field>
+        <field name="target_value">Media</field>
+        <field name="origin">seeded</field>
+    </record>
+
+    <!-- Awareness type -->
+    <record id="vm_aw_erw_ar" model="dma.fr.value.map">
+        <field name="scope">c0a8-429c-1524042ff34-acafed6d-e89-45</field>
+        <field name="source_value">المتفجرات من مخلفات الحرب</field>
+        <field name="target_value">ERW</field>
+        <field name="origin">seeded</field>
+    </record>
+    <record id="vm_aw_landmine_ar" model="dma.fr.value.map">
+        <field name="scope">c0a8-429c-1524042ff34-acafed6d-e89-45</field>
+        <field name="source_value">الألغام الأرضية</field>
+        <field name="target_value">Landmine</field>
+        <field name="origin">seeded</field>
+    </record>
+    <record id="vm_aw_cluster_ar" model="dma.fr.value.map">
+        <field name="scope">c0a8-429c-1524042ff34-acafed6d-e89-45</field>
+        <field name="source_value">الذخائر العنقودية</field>
+        <field name="target_value">Cluster Munitions</field>
+        <field name="origin">seeded</field>
+    </record>
+    <record id="vm_aw_ied_ar" model="dma.fr.value.map">
+        <field name="scope">c0a8-429c-1524042ff34-acafed6d-e89-45</field>
+        <field name="source_value">العبوات الناسفة</field>
+        <field name="target_value">IED</field>
+        <field name="origin">seeded</field>
+    </record>
+
+    <!-- Audience type: the template offers "Oil field Companies", IMSMA stores "Oil filed Companies" -->
+    <record id="vm_aud_oil" model="dma.fr.value.map">
+        <field name="scope">7f00-0001-13f7a2f8f6a-74bbbd46-28-907</field>
+        <field name="source_value">Oil field Companies</field>
+        <field name="target_value">Oil filed Companies</field>
+        <field name="origin">seeded</field>
+    </record>
+
+</odoo>

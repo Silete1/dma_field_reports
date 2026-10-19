@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="seq_dma_fr_batch" model="ir.sequence">
+        <field name="name">DMA field data batch</field>
+        <field name="code">dma.fr.batch</field>
+        <field name="prefix">FRB/%(year)s/</field>
+        <field name="padding">4</field>
+    </record>
+</odoo>
