@@ -1,0 +1,154 @@
+/* =====================================================================
+   ANU pitch v3: the transaction file (ملف المعاملة).
+   Loaded after anu-oil.css (fonts, tokens, window, pins, tags, phone,
+   paper, glass). Every inner page is a sheet of one company file: an ink
+   tab strip with the owner's question, the routing slip of the hands the
+   transaction passes (start edge), the Odoo screen as the attachment,
+   one stamp with the figure. Sharp, white/black/blue, red = late only.
+   ===================================================================== */
+
+:root{ --slip-w:340px; --att-w:1062px; --top:186px; }
+
+/* ---------------------------------------------------------------- the tab strip (0–150) */
+.strip{position:absolute;inset-inline:0;top:0;height:150px;background:var(--ink);border-bottom:3px solid var(--signal);overflow:hidden;z-index:1;}
+.strip::after{content:"";position:absolute;top:0;bottom:0;inset-inline-end:0;width:560px;background:url("assets/img/anu_network_rtl.svg") left center/cover no-repeat;opacity:.42;}
+.tabs{position:absolute;z-index:2;top:0;inset-inline-start:var(--m);height:48px;display:flex;align-items:stretch;gap:2px;}
+.tabs .mk{align-self:center;width:18px;height:18px;margin-inline-end:18px;display:block;}
+.tabs li{display:flex;align-items:center;padding-inline:18px;font-size:16px;color:rgba(255,255,255,.58);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-top:0;}
+.tabs li.on{position:relative;color:#fff;font-weight:700;background:rgba(255,255,255,.1);border-color:rgba(96,165,250,.45);}
+.tabs li.on::after{content:"";position:absolute;inset-inline:0;bottom:-1px;height:2px;background:var(--nav-signal);box-shadow:var(--glow-line);}
+.q{position:absolute;z-index:2;top:66px;inset-inline-start:var(--m);font-size:46px;line-height:1.22;font-weight:500;color:#fff;white-space:nowrap;}
+.pno{position:absolute;z-index:2;top:14px;left:calc(var(--m) + 2px);font:500 15px/1 var(--font-mono);color:rgba(255,255,255,.55);direction:ltr;}
+.pno b{color:#fff;font-weight:500;}
+
+/* ---------------------------------------------------------------- the routing slip (start edge) */
+.slip{position:absolute;z-index:3;top:var(--top);inset-inline-start:var(--m);width:var(--slip-w);}
+.slip h3{margin:0 0 14px;font-size:18px;line-height:1.3;font-weight:700;color:var(--ink);}
+.slip h3 > span{display:block;margin-top:4px;font-size:15px;font-weight:400;color:var(--ink-soft);}
+.slip ol{position:relative;}
+.slip ol::before{content:"";position:absolute;top:14px;bottom:14px;inset-inline-start:13px;width:2px;background:var(--rule-strong);}
+.slip li{position:relative;display:grid;grid-template-columns:28px 1fr auto;column-gap:14px;align-items:start;padding-block:9px;}
+.slip .nd{position:relative;z-index:1;width:28px;height:28px;display:grid;place-items:center;background:var(--ink);color:#fff;font:500 13px/1 var(--font-mono);}
+.slip .rl{font-size:18px;line-height:1.35;font-weight:500;color:var(--ink);}
+.slip .rl small{display:block;margin-top:2px;font:400 14.5px/1.4 var(--font-mono);color:var(--ink-soft);}
+.slip .rl small.ar{font-family:var(--font-text);font-size:15px;}
+.slip .pn{align-self:center;width:24px;height:24px;display:grid;place-items:center;background:var(--signal);color:#fff;font:500 14px/1 var(--font-mono);}
+.slip .pn.alarm{background:var(--danger);}
+.slip li.now .nd{background:var(--signal);box-shadow:var(--glow-primary);}
+.slip li.late .nd{background:var(--danger);}
+.slip li.late .rl{color:var(--danger);}
+.slip li.next .nd{background:var(--desk);color:var(--ink-faint);border:2px solid var(--rule-strong);}
+.slip li.next .rl{color:var(--ink-faint);}
+.slip li.next .rl small{color:var(--ink-faint);}
+.slip li.skip .nd{background:var(--desk);border:2px dashed var(--ink);color:var(--ink);}
+
+/* ---------------------------------------------------------------- the attachment (the Odoo screen at 1:1) */
+.att{position:absolute;z-index:2;top:var(--top);left:var(--m);width:var(--att-w);background:var(--paper);border:1px solid var(--rule-strong);}
+.att .win__bar{padding-inline:16px 12px;}
+.att .demo{font-size:14px;color:var(--ink-faint);margin-inline-start:10px;white-space:nowrap;}
+.att + .att{top:auto;}
+.att .win__scr{background:#F9FAFB;}
+.att .win__scr > img.cap{position:relative;}
+
+/* a loupe: one marker's region of a capture, enlarged, as a second attachment */
+.lp{position:absolute;z-index:2;background:var(--paper);border:1px solid var(--rule-strong);}
+.lp .lp__win{position:relative;overflow:hidden;}
+.lp .lp__win > img.cap{position:absolute;left:0;top:0;max-width:none;}
+.lp figcaption{padding:10px 14px;border-top:1px solid var(--rule);font-size:15.5px;line-height:1.4;color:var(--ink-soft);}
+.lp figcaption b{color:var(--ink);font-weight:700;margin-inline-end:6px;}
+
+/* ---------------------------------------------------------------- the stamp and the fact */
+.stamp{position:absolute;z-index:4;top:36px;left:var(--m);display:grid;grid-template-columns:auto auto;align-items:center;column-gap:18px;
+  padding:12px 20px 12px 22px;background:var(--paper);border:2px solid var(--signal);color:var(--signal-strong);}
+.stamp .fig{font:500 38px/1 var(--font-mono);direction:ltr;unicode-bidi:isolate;white-space:nowrap;letter-spacing:-.01em;}
+.stamp .fig small{font:500 19px/1 var(--font-text);margin-inline-start:6px;}
+.stamp .cap{max-width:280px;font-size:16px;line-height:1.4;color:var(--ink);}
+.stamp.alarm{border-color:var(--danger);color:var(--danger);}
+.fct{position:absolute;z-index:3;bottom:36px;left:var(--m);width:1062px;font-size:15.5px;line-height:1.5;color:var(--ink-soft);}
+.fct b{color:var(--ink);font-weight:700;}
+.fct .src{display:block;margin-top:3px;font-size:14px;color:var(--ink-faint);}
+
+/* ---------------------------------------------------------------- the file index (page 2) */
+.ix{position:absolute;inset-inline:var(--m);top:196px;}
+.ix table{width:100%;border-collapse:collapse;}
+.ix th{padding:0 0 12px;font-size:15px;font-weight:500;color:var(--ink-faint);text-align:start;border-bottom:1px solid var(--rule-strong);}
+.ix th.i{width:84px;text-align:center;font-size:14.5px;}
+.ix td{padding:13px 0;vertical-align:middle;}
+.ix td.pgn{width:70px;font:500 20px/1 var(--font-mono);color:var(--signal-text);}
+.ix td.tx{width:170px;font-size:19px;font-weight:700;color:var(--ink);}
+.ix td.q2{font-size:19.5px;white-space:nowrap;line-height:1.35;color:var(--ink);}
+.ix td.i{text-align:center;}
+.ix td.i i{display:inline-block;width:16px;height:16px;border:1.5px solid var(--rule-strong);}
+.ix td.i i.y{background:var(--signal);border-color:var(--signal);}
+.ix tr.ch td{padding:22px 0 6px;font-size:15px;font-weight:700;color:var(--ink-soft);}
+
+/* ---------------------------------------------------------------- cover */
+.cover{background:var(--ink);color:#fff;}
+.cover .net{position:absolute;inset:0;background:url("assets/img/anu_network_rtl.svg") no-repeat left -60px top 40px/1150px auto;opacity:.5;}
+.cover::after{content:"";position:absolute;inset-inline:0;bottom:0;height:3px;background:var(--signal);}
+.folder{position:absolute;z-index:1;left:var(--m);right:var(--m);top:132px;bottom:84px;border:1px solid rgba(255,255,255,.2);}
+.folder__tab{position:absolute;z-index:2;right:var(--m);top:92px;height:41px;padding-inline:22px;display:flex;align-items:center;gap:10px;
+  border:1px solid rgba(255,255,255,.2);border-bottom:0;background:var(--ink);font-size:17px;color:#fff;}
+.folder__tab::before{content:"";width:10px;height:10px;background:var(--nav-signal);}
+.cv-logo2{position:absolute;z-index:2;left:var(--m);top:56px;display:flex;align-items:center;gap:18px;}
+.cv-logo2 img{height:38px;display:block;}
+.cv-logo2 p{font-size:16px;color:var(--on-ink-soft);}
+.cv-t2{position:absolute;z-index:2;right:128px;top:300px;font-size:66px;line-height:1.2;font-weight:500;white-space:nowrap;}
+.cv-s2{position:absolute;z-index:2;right:128px;top:476px;width:640px;font-size:23px;line-height:1.6;color:var(--on-ink-soft);}
+.cv-ind{position:absolute;z-index:2;right:128px;top:612px;display:flex;gap:10px;}
+.cv-ind li{height:40px;display:flex;align-items:center;padding-inline:16px;border:1px solid rgba(255,255,255,.22);font-size:16px;color:#fff;}
+.cv-foot2{position:absolute;z-index:2;inset-inline:var(--m);bottom:30px;display:flex;justify-content:space-between;font-size:14px;color:var(--on-ink-faint);}
+/* the cover's routing slip, on glass over the network */
+.cv-slip{position:absolute;z-index:2;left:128px;top:172px;width:470px;height:622px;padding:22px 28px;}
+.cv-slip .glass{inset:0;}
+.cv-slip h2.slh{position:relative;z-index:2;margin:0 0 8px;font-size:17px;font-weight:700;color:#fff;}
+.cv-slip ol{position:relative;z-index:2;}
+.cv-slip ol::before{content:"";position:absolute;top:12px;bottom:12px;inset-inline-start:11px;width:2px;background:rgba(255,255,255,.18);}
+.cv-slip li{position:relative;display:grid;grid-template-columns:24px 1fr auto;column-gap:14px;align-items:center;height:40.5px;font-size:16.5px;color:rgba(255,255,255,.86);}
+.cv-slip .nd{position:relative;z-index:1;width:26px;height:26px;display:grid;place-items:center;background:#fff;color:var(--ink);font:500 14px/1 var(--font-mono);}
+.cv-slip li.ext .nd{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.7);}
+.cv-slip li.late{color:var(--danger-on-ink);font-weight:700;}
+.cv-slip li.late .nd{background:var(--danger-on-ink);color:var(--ink);}
+.cv-slip li.next{color:rgba(255,255,255,.45);}
+.cv-slip li.next .nd{background:transparent;color:rgba(255,255,255,.5);border:1.5px dashed rgba(255,255,255,.4);}
+.cv-slip .late-stamp{padding:5px 10px;border:2px solid var(--danger-on-ink);font:500 14px/1 var(--font-text);color:var(--danger-on-ink);white-space:nowrap;}
+
+/* ---------------------------------------------------------------- the chain page (page 3) */
+.chain3 .flow{top:210px;}
+.turn3{position:absolute;inset-inline:var(--m);bottom:118px;font-size:27px;line-height:1.45;font-weight:500;color:var(--ink);}
+.turn3 span{color:var(--ink-soft);font-weight:400;}
+
+/* ---------------------------------------------------------------- close */
+.close2{background:var(--ink);color:#fff;}
+.close2 .net{position:absolute;inset:0;background:url("assets/img/anu_network_rtl.svg") no-repeat left -60px top 40px/1150px auto;opacity:.5;}
+.close2::after{content:"";position:absolute;inset-inline:0;bottom:0;height:3px;background:var(--signal);}
+.cl-t{position:absolute;z-index:2;right:var(--m);top:96px;font-size:72px;line-height:1.15;font-weight:500;}
+.cl-s{position:absolute;z-index:2;right:var(--m);top:204px;width:720px;font-size:23px;line-height:1.6;color:var(--on-ink-soft);}
+.cl-slip{position:absolute;z-index:2;right:var(--m);top:360px;width:720px;}
+.cl-slip h3{margin:0 0 10px;font-size:17px;font-weight:700;color:#fff;}
+.cl-slip ol{position:relative;}
+.cl-slip ol::before{content:"";position:absolute;top:16px;bottom:16px;inset-inline-start:15px;width:2px;background:rgba(255,255,255,.2);}
+.cl-slip li{position:relative;display:grid;grid-template-columns:32px 1fr;column-gap:18px;padding-block:10px;}
+.cl-slip .nd{position:relative;z-index:1;width:32px;height:32px;display:grid;place-items:center;background:transparent;font:500 14px/1 var(--font-mono);color:#fff;}
+.cl-slip li:not(:first-child) .nd{border:1.5px solid rgba(255,255,255,.6);}
+.cl-slip li:first-child .nd{background:var(--signal);box-shadow:var(--glow-primary);}
+.cl-slip .rl{font-size:21px;line-height:1.3;font-weight:700;color:#fff;}
+.cl-slip .rl small{display:block;margin-top:4px;font-size:17px;line-height:1.5;font-weight:400;color:var(--on-ink-soft);}
+.cl-first{position:absolute;z-index:2;left:var(--m);top:360px;width:600px;padding:28px 30px;background:#fff;color:var(--ink);}
+.cl-first h3{font-size:27px;line-height:1.3;font-weight:700;}
+.cl-first p{margin-top:10px;font-size:19px;line-height:1.55;color:var(--ink-soft);}
+.cl-first .row{margin-top:22px;padding-top:18px;border-top:1px solid var(--rule);display:flex;align-items:center;justify-content:space-between;gap:20px;}
+.cl-first .row img{height:34px;display:block;}
+.cl-first .ct{display:flex;flex-direction:column;gap:6px;font-size:17px;}
+.cl-first .ct span{font-family:var(--font-latin);}
+.cl-first .ct .ph{font-family:var(--font-mono);direction:ltr;unicode-bidi:isolate;}
+.cl-home{position:absolute;z-index:2;left:var(--m);top:96px;width:600px;height:202px;overflow:hidden;background:#fff;}
+.cl-home img{display:block;width:100%;}
+.cl-note{position:absolute;z-index:2;inset-inline:var(--m);bottom:22px;padding-top:12px;border-top:1px solid var(--on-ink-rule);font-size:14px;line-height:1.6;color:var(--on-ink-faint);}
+
+.pg .phone{box-shadow:none;}
+
+/* design-hook fixes: bars carry vertical inset; the paper commits to its edge, not a wide shadow */
+.att .win__bar{padding-block:6px;}
+.pg .phone__bar{padding-block:4px;}
+.pg .paper{box-shadow:none;}

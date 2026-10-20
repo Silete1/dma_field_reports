@@ -1,0 +1,271 @@
+/* =====================================================================
+   Gold edition exhibits (30 Sep). Gold is the METAL and its WEIGHT only:
+   grams, mithqal, karat, the thread, ingots, the set. Signal stays the
+   system line; red stays loss/late. Stronger glass on ink pages, with the
+   metal's warm light pooled behind it. Sharp corners; line art; every
+   drawing tagged «رسم توضيحي» / «رسم من أرقام النظام».
+   ===================================================================== */
+:root{
+  --gold-hi:#F1D78A; --gold:#C9A44C; --gold-lo:#8A6A22; --gold-ink:#7A5C12; --gold-soft:#FBF6E8; --gold-tint:#F3E6BF;
+  --gold-glow:rgba(241,215,138,.35);
+  --metal:linear-gradient(100deg,#8A6A22 0%,#B8923C 22%,#F1D78A 44%,#D8B866 56%,#C9A44C 70%,#8A6A22 100%);
+}
+.gd{color:var(--gold-ink);} .cover .gd,.dark .gd,.close2 .gd{color:var(--gold-hi);}
+.num.gd,.gd .num{font-variant-numeric:tabular-nums;}
+
+/* ---------------------------------------------------------------- stronger glass + the metal's light behind it */
+.glass.gl .glass__bg{filter:blur(26px) saturate(1.45);transform:scale(1.04);}
+.glass.gl{border-color:rgba(241,215,138,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 30px 60px -40px rgba(0,0,0,.9);}
+.glass.gl::after{background:linear-gradient(160deg,rgba(255,255,255,.10),rgba(255,255,255,.02) 55%,rgba(241,215,138,.05));}
+.glass .gpool,.gpool{position:absolute;pointer-events:none;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(241,215,138,.34),rgba(201,164,76,.14) 55%,rgba(201,164,76,0));}
+.glass .gpool{filter:blur(8px);}
+.gpool.sm{opacity:.7;}
+/* a glass card on ink (cost, close): content above the blurred backdrop */
+.gcard{position:absolute;z-index:2;}
+.gcard > .glass{inset:0;}
+.gcard > .in{position:relative;z-index:2;height:100%;}
+
+/* ---------------------------------------------------------------- the gold thread (cover, route, close): drawn by ex-gld.js */
+.gthr{position:absolute;z-index:2;pointer-events:none;overflow:visible;}
+.gdust{fill:var(--gold-hi);}
+.pg:not(.cover):not(.dark):not(.close2) .gdust{fill:var(--gold);}
+
+/* the cover's places around the office, gold sites */
+.map .site.au .bx{color:var(--gold-hi);border-color:rgba(241,215,138,.55);}
+.map .site.au b{color:#fff;}
+.map .site b,.map .site small{width:max-content;margin-inline:auto;padding-inline:6px;background:rgba(9,11,17,.82);}
+.map .glab{position:absolute;z-index:4;padding:5px 10px;border:1.5px solid rgba(241,215,138,.6);background:rgba(9,11,17,.86);font-size:14.5px;color:var(--gold-hi);white-space:nowrap;}
+.map .glab .num{font-family:var(--font-mono);}
+.hud .px{position:relative;z-index:2;margin-top:8px;display:flex;align-items:baseline;gap:8px;justify-content:flex-end;font-size:14px;color:var(--on-ink-soft);}
+.hud .px b{font:500 20px/1 var(--font-mono);color:var(--gold-hi);direction:ltr;}
+.hud .px i{font:500 14px/1 var(--font-mono);font-style:normal;color:var(--gold-hi);opacity:.85;direction:ltr;}
+
+/* ---------------------------------------------------------------- the bride's set, gold line art (.set4[data-pieces]) */
+.set4{position:absolute;z-index:2;}
+.set4 svg{position:absolute;inset:0;overflow:visible;}
+.set4 .pl{position:absolute;font-size:14.5px;line-height:1.3;color:var(--ink-soft);white-space:nowrap;text-align:center;transform:translateX(-50%);}
+.set4 .pl b{display:block;font-size:15px;font-weight:700;color:var(--ink);}
+.set4 .pl .num{font-family:var(--font-mono);color:var(--gold-ink);}
+.cover .set4 .pl,.dark .set4 .pl,.close2 .set4 .pl{color:var(--on-ink-soft);}
+.cover .set4 .pl b,.dark .set4 .pl b,.close2 .set4 .pl b{color:#fff;}
+.cover .set4 .pl .num,.dark .set4 .pl .num,.close2 .set4 .pl .num{color:var(--gold-hi);}
+
+/* ---------------------------------------------------------------- the price ribbon (.prib[data-steps]) */
+.prib{position:absolute;z-index:2;}
+.prib h3{font-size:17px;font-weight:700;line-height:1.3;color:var(--ink);margin-bottom:12px;display:flex;justify-content:space-between;align-items:baseline;}
+.prib h3 span{font-size:15px;font-weight:400;color:var(--ink-soft);}
+.prib .row{display:flex;align-items:stretch;}
+.prib .tl{flex:1 1 0;min-width:0;position:relative;padding:12px 14px 12px;background:#fff;border:1px solid var(--rule-strong);}
+.prib .tl small{display:block;font-size:14.5px;line-height:1.3;color:var(--ink-soft);white-space:nowrap;}
+.prib .tl b{display:block;margin-top:8px;font:500 24px/1 var(--font-mono);color:var(--ink);direction:ltr;text-align:right;letter-spacing:-.01em;}
+.prib .tl b sub{font:400 13px/1 var(--font-text);vertical-align:0;margin-inline-start:4px;color:var(--ink-faint);}
+.prib .tl.au::before,.rcpx .tc.au::before{content:"";position:absolute;inset-inline:-1px;top:-1px;height:4px;background:var(--metal);}
+.prib .tl.au b{font-size:30px;color:var(--gold-ink);}
+.prib .op{flex:none;width:58px;display:grid;place-items:center;font:500 14px/1.2 var(--font-mono);color:var(--gold-ink);text-align:center;position:relative;}
+.prib .op::before{content:"";position:absolute;top:50%;inset-inline:6px;height:1.5px;background:var(--gold);}
+.prib .op span{position:relative;background:var(--desk);padding:2px 3px;direction:ltr;}
+.prib .sub2{display:flex;gap:10px;margin-top:10px;justify-content:flex-start;}
+.prib .sub2 .tl{flex:0 0 auto;min-width:200px;}
+.prib .sub2 .tl b{font-size:20px;}
+.prib .ft{margin-top:10px;font-size:14.5px;color:var(--ink-faint);}
+
+/* ---------------------------------------------------------------- tags: hand vs printed (.gtag, .gtag.pr) */
+.gtag{position:absolute;z-index:3;width:150px;background:#fff;border:1.5px solid var(--paper-ink,#1E293B);padding:14px 12px 10px 12px;}
+.gtag::before{content:"";position:absolute;right:12px;top:10px;width:10px;height:10px;border:1.5px solid #1E293B;border-radius:50%;}
+.gtag .str{position:absolute;right:16px;top:-40px;width:1.5px;height:52px;background:#94A3B8;}
+.gtag .nm{display:block;margin-top:12px;font-size:15px;font-weight:700;line-height:1.25;color:var(--ink);}
+.gtag .w{display:block;margin-top:4px;font:500 20px/1.1 var(--font-mono);color:var(--gold-ink);direction:ltr;text-align:right;}
+.gtag .w small{font:400 13px/1 var(--font-text);color:var(--ink-faint);margin-inline-start:3px;}
+.gtag dl{display:grid;grid-template-columns:auto 1fr;gap:2px 8px;margin:6px 0 0;font-size:13.5px;color:var(--ink-soft);}
+.gtag dl dt{white-space:nowrap;} .gtag dl dd{margin:0;font-family:var(--font-mono);color:var(--ink);text-align:left;direction:ltr;}
+.gtag .bcode{margin-top:8px;display:block;}
+.gtag .bcode svg{display:block;}
+.gtag .cd{display:block;font:400 12.5px/1.2 var(--font-mono);color:var(--ink);text-align:center;letter-spacing:.12em;margin-top:2px;}
+.gtag.hw .nm,.gtag.hw .w{font-family:"Anu Hand","Anu Arabic",sans-serif;color:#1E3A8A;font-weight:700;}
+.gtag.hw .w{font-size:22px;}
+.gtag.hw .w s{color:#64748B;text-decoration-color:#C81E1E;margin-inline-end:6px;}
+
+/* ---------------------------------------------------------------- the receipt anatomy (.rcpx) */
+.rcpx{position:absolute;z-index:2;}
+.rcpx .eq{display:flex;align-items:stretch;flex-wrap:nowrap;gap:0;}
+.rcpx .tc{padding:12px 14px;background:#fff;border:1px solid var(--rule-strong);min-width:0;}
+.rcpx .tc small{display:block;font-size:14.5px;color:var(--ink-soft);white-space:nowrap;}
+.rcpx .tc b{display:block;margin-top:6px;font:500 22px/1 var(--font-mono);color:var(--ink);direction:ltr;text-align:right;white-space:nowrap;}
+.rcpx .tc.w b{color:var(--gold-ink);}
+.rcpx .tc{position:relative;}
+.rcpx .tc.au b{color:var(--gold-ink);}
+.rcpx .tc.minus b{color:var(--ink);}
+.rcpx .tc.tot{background:var(--ink);border-color:var(--ink);}
+.rcpx .tc.tot small{color:var(--on-ink-soft);} .rcpx .tc.tot b{color:#fff;font-size:24px;}
+.rcpx .o{flex:none;width:36px;display:grid;place-items:center;font:500 22px/1 var(--font-mono);color:var(--gold-ink);}
+
+/* ---------------------------------------------------------------- karat bars (.kbar[data-k]) : fine gold kept, alloy shown hatched */
+.kbar{position:absolute;z-index:2;}
+.kbar h3{font-size:17px;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:12px;}
+.kbar h3 > span{display:block;font-size:15px;font-weight:400;color:var(--ink-soft);}
+.kbar .br{position:relative;display:grid;grid-template-columns:120px 1fr;align-items:center;column-gap:14px;margin-bottom:14px;}
+.kbar .br .lb{font-size:15px;line-height:1.3;color:var(--ink);}
+.kbar .br .lb b{display:block;font:500 15px/1.3 var(--font-text);color:var(--gold-ink);}
+.kbar .br .lb b .num{font:500 22px/1.1 var(--font-mono);}
+.kbar .br .tr{position:relative;height:44px;display:flex;}
+.kbar .br .fn{height:100%;background:var(--metal);position:relative;}
+.kbar .br .al{height:100%;background:repeating-linear-gradient(135deg,#fff 0 4px,#94A3B8 4px 5.5px);border:1px solid #94A3B8;border-inline-start:0;}
+.kbar .br .fn .fl,.kbar .br .al .fl{position:absolute;inset-inline-start:10px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--ink);white-space:nowrap;}
+.kbar .br .al{position:relative;}
+.kbar .same{position:relative;height:28px;margin-block:-6px 8px;margin-inline-start:134px;}
+.kbar .same i{position:absolute;top:0;bottom:0;border-inline-start:1.5px dashed var(--gold-lo);}
+.kbar .same .sm{position:absolute;top:6px;font-style:normal;font-size:14px;color:var(--gold-ink);white-space:nowrap;background:var(--desk);padding:0 6px;}
+.kbar .ft{font-size:14.5px;color:var(--ink-soft);margin-top:2px;}
+
+/* ---------------------------------------------------------------- the workshop's loss bar (.lbar[data-stages]) */
+.lbar{position:absolute;z-index:2;}
+.lbar h3{font-size:17px;font-weight:700;color:var(--ink);line-height:1.3;}
+.lbar h3 > span{display:block;font-size:15px;font-weight:400;color:var(--ink-soft);}
+.lbar svg{position:absolute;left:0;overflow:visible;}
+.lbar .lg{position:absolute;left:0;display:flex;gap:18px;font-size:14.5px;color:var(--ink-soft);}
+.lbar .lg i{display:inline-block;width:18px;height:10px;margin-inline-end:6px;vertical-align:1px;}
+.lbar .lg i.m{background:var(--metal);} .lbar .lg i.t{border-top:2px dashed var(--ink);height:0;vertical-align:4px;} .lbar .lg i.r{background:var(--danger);}
+
+/* ---------------------------------------------------------------- two notebooks that disagree (.nb2) */
+.nb2{position:absolute;z-index:2;display:flex;gap:26px;align-items:flex-start;}
+.nb2 .pgx{position:relative;flex:1 1 0;background:#fff;border:1px solid var(--rule-strong);padding:12px 16px 10px 28px;
+  background-image:repeating-linear-gradient(to bottom,transparent 0 29px,#DBEAFE 29px 30px);background-position:0 44px;}
+.nb2 .pgx::before{content:"";position:absolute;left:18px;top:0;bottom:0;width:2px;background:#FCA5A5;opacity:.7;}
+.nb2 .pgx h3{margin:0 0 6px;font-size:15px;font-weight:700;color:var(--ink);display:flex;justify-content:space-between;}
+.nb2 .pgx h3 small{font:400 14px/1.3 var(--font-mono);color:var(--ink-faint);}
+.nb2 table{width:100%;border-collapse:collapse;}
+.nb2 td{height:30px;font-family:"Anu Hand","Anu Arabic",sans-serif;font-size:16.5px;font-weight:700;color:#1E3A8A;padding:0 2px;vertical-align:bottom;white-space:nowrap;}
+.nb2 td.m{font-family:"Anu Hand","Anu Arabic",sans-serif;text-align:left;direction:ltr;}
+.nb2 td.x{color:#64748B;text-decoration:line-through;text-decoration-color:#C81E1E;}
+.nb2 tr.tot td{border-top:2px solid #1E3A8A;}
+.nb2 tr.tot td.m b{display:inline-block;padding:0 6px;border:2px solid var(--danger);border-radius:50%;color:var(--danger);}
+.nb2 .gap{position:absolute;z-index:3;padding:6px 12px;background:var(--danger);color:#fff;font:500 20px/1 var(--font-mono);white-space:nowrap;transform:translate(-50%,-50%);}
+.nb2 .gap small{font:400 14px/1 var(--font-text);margin-inline-start:4px;}
+
+/* ---------------------------------------------------------------- the balance scale (.scl[data-tilt]) */
+.scl{position:absolute;z-index:2;}
+.scl svg{position:absolute;inset:0;overflow:visible;}
+.scl .pan{position:absolute;text-align:center;transform:translateX(-50%);white-space:nowrap;font-size:14.5px;line-height:1.3;color:var(--ink-soft);}
+.scl .pan b{display:block;font:500 20px/1.1 var(--font-mono);color:var(--gold-ink);direction:ltr;}
+.dark .scl .pan,.cover .scl .pan,.close2 .scl .pan{color:var(--on-ink-soft);}
+.dark .scl .pan b,.cover .scl .pan b,.close2 .scl .pan b{color:var(--gold-hi);}
+.scl .dif{position:absolute;transform:translateX(-50%);padding:4px 10px;font:500 18px/1 var(--font-mono);white-space:nowrap;}
+.scl .dif.al{background:var(--danger);color:#fff;} .scl .dif.ok{background:var(--signal);color:#fff;}
+
+/* ---------------------------------------------------------------- the repair bag (.rbag) */
+.rbag{position:absolute;z-index:3;width:210px;height:250px;}
+.rbag svg{position:absolute;inset:0;}
+.rbag .lbl{position:absolute;left:28px;right:28px;top:74px;background:#fff;border:1.5px solid #1E293B;padding:8px 10px;}
+.rbag .lbl b{display:block;font-size:14.5px;font-weight:700;color:var(--ink);}
+.rbag .lbl .hw{display:flex;justify-content:space-between;font-family:"Anu Hand","Anu Arabic",sans-serif;font-size:17px;font-weight:700;color:#1E3A8A;}
+.rbag .lbl .hw.al{color:var(--danger);}
+.rbag .lbl .hw .num{direction:ltr;}
+
+/* ---------------------------------------------------------------- paper objects on the desk (page 3) */
+.pbx{padding:12px 16px 14px;background:#fff;border:2px solid #1E293B !important;box-shadow:inset 0 0 0 6px #F1F5F9;}
+.pbx .hd{font-size:15px;font-weight:700;color:var(--ink);display:flex;justify-content:space-between;align-items:baseline;border-bottom:1.5px solid #CBD5E1;padding-bottom:6px;margin-bottom:6px;}
+.pbx table{width:100%;border-collapse:collapse;}
+.pbx td{padding:3px 0;font-size:15px;color:var(--ink);white-space:nowrap;}
+.pbx td.hw{font-family:"Anu Hand","Anu Arabic",sans-serif;font-size:20px;font-weight:700;color:#1E3A8A;text-align:left;direction:ltr;}
+.pbx td.hw s{color:#64748B;text-decoration-color:#C81E1E;margin-inline-end:8px;font-size:16px;}
+.oslip{padding:12px 14px;}
+.oslip .hd{display:flex;justify-content:space-between;font-size:15px;font-weight:700;color:var(--ink);border-bottom:1.5px dashed #94A3B8;padding-bottom:6px;}
+.oslip .sk{position:relative;height:96px;margin:6px 0;}
+.oslip .sk svg{position:absolute;inset:0;overflow:visible;}
+.oslip .ln{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;color:var(--ink-soft);line-height:1.7;}
+.oslip .ln .hw{font-family:"Anu Hand","Anu Arabic",sans-serif;font-size:17px;font-weight:700;color:#1E3A8A;}
+.oslip .ln .hw.al{color:var(--danger);}
+.kslip{padding:12px 14px;}
+.kslip .hd{display:flex;justify-content:space-between;font-size:15px;font-weight:700;color:var(--ink);border-bottom:1.5px solid #CBD5E1;padding-bottom:6px;margin-bottom:4px;}
+.kslip .ln{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;color:var(--ink-soft);line-height:1.75;}
+.kslip .ln .hw{font-family:"Anu Hand","Anu Arabic",sans-serif;font-size:17px;font-weight:700;color:#1E3A8A;}
+.kslip .ln .hw.qm{color:var(--danger);}
+.exh .obj.tray{border:0;background:#141824;}
+.tray{position:relative;padding:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.tray .it{position:relative;background:#1E2230;height:62px;border:1px solid #3A4152;display:grid;place-items:center;}
+.tray .it svg{width:34px;height:34px;color:var(--gold-hi);}
+.tray .tg2{position:absolute;right:-4px;bottom:-8px;padding:1px 6px;background:#fff;border:1px solid #1E293B;font-family:"Anu Hand","Anu Arabic",sans-serif;font-size:14.5px;font-weight:700;color:#1E3A8A;transform:rotate(-4deg);direction:ltr;}
+.tray .tg2.x{color:var(--danger);}
+.tray .tg2.x s{color:#64748B;margin-inline-end:4px;}
+
+/* ---------------------------------------------------------------- gram dots for the cost page (.gdots[data-n][data-red][data-cols]) */
+.gdots{display:grid;gap:4px;margin-top:16px;direction:rtl;justify-content:start;}
+.gdots i{display:block;aspect-ratio:1;background:rgba(241,215,138,.22);border:1px solid rgba(241,215,138,.45);}
+.gdots i.au{background:var(--metal);border-color:rgba(241,215,138,.8);}
+.gdots i.r{background:var(--danger-on-ink);border-color:var(--danger-on-ink);}
+.gdots.q16 i{width:16px;} .gdots.q20 i{width:20px;}
+
+/* ---------------------------------------------------------------- the gram ledger strip (.gled[data-rows]) : balance in grams per partner */
+.gled{position:absolute;z-index:2;}
+.gled h3{font-size:17px;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:10px;display:flex;justify-content:space-between;align-items:baseline;}
+.gled h3 span{font-size:15px;font-weight:400;color:var(--ink-soft);}
+.gled ol li{display:grid;grid-template-columns:250px 1fr 90px;white-space:nowrap;align-items:center;column-gap:12px;padding:7px 0;border-bottom:1px solid var(--rule);font-size:15px;color:var(--ink);}
+.gled .bar{position:relative;height:14px;}
+.gled .bar i{position:absolute;top:0;bottom:0;background:var(--metal);}
+.gled .bar i.neg{background:repeating-linear-gradient(135deg,var(--gold-tint) 0 4px,var(--gold) 4px 5.5px);}
+.gled .bar i.late{outline:2px solid var(--danger);outline-offset:1px;}
+.gled .bar::before{content:"";position:absolute;top:-4px;bottom:-4px;left:50%;border-left:1.5px solid var(--ink);}
+.gled b{font:500 16px/1 var(--font-mono);direction:ltr;text-align:left;color:var(--gold-ink);}
+.gled b.al{color:var(--danger);}
+.gled .lgd{display:flex;gap:18px;margin-top:8px;font-size:14px;color:var(--ink-soft);}
+.gled .lgd i{display:inline-block;width:18px;height:10px;margin-inline-end:6px;vertical-align:1px;background:var(--metal);}
+.gled .lgd i.neg{background:repeating-linear-gradient(135deg,var(--gold-tint) 0 4px,var(--gold) 4px 5.5px);}
+
+/* ---------------------------------------------------------------- round 1 additions */
+.gtag.big{width:190px;padding:18px 16px 14px;}
+.gtag.big .nm{font-size:18px;} .gtag.big .w{font-size:30px;} .gtag.big .w s{font-size:22px;}
+.gtag .nt{display:block;margin-top:6px;font-size:14px;color:var(--ink-faint);}
+.rbars.au .rrow .rb i{background:var(--metal);}
+.nb2 tr.al td{color:var(--danger);}
+.cl-done.au .c14 i{background:var(--metal);}
+.cl-done.au .c14 i:last-child{background:var(--metal);box-shadow:0 0 18px -2px rgba(241,215,138,.8);}
+.lbar .stg{position:absolute;text-align:center;font-size:15px;line-height:1.35;color:var(--ink);}
+.lbar .stg b{display:block;font-weight:700;}
+.lbar .stg .v{display:inline-block;font:500 16px/1.2 var(--font-mono);color:var(--gold-ink);}
+.lbar .stg .v.al{color:var(--danger);}
+.lbar .stg small{display:block;font-size:14px;color:var(--ink-faint);}
+.lbar .ends{position:absolute;font-size:14.5px;color:var(--ink-soft);white-space:nowrap;}
+.lbar .ends b{font:500 18px/1 var(--font-mono);color:var(--gold-ink);}
+
+/* ---------------------------------------------------------------- round 4 (early finish review) */
+.stamp .fig{direction:rtl;}
+.stamp .fig > .num{font:inherit;letter-spacing:inherit;}
+.tkey i.gw{width:26px;height:6px;background:var(--metal);}
+.tkey i.gdt{width:18px;height:10px;background:radial-gradient(circle,var(--gold) 1.6px,transparent 2px) 0 0/6px 5px;}
+.wkx li.late i{background:var(--danger);}
+.wkx li.late b,.wkx li.late span{color:var(--danger);}
+.gcard .gk{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:14px;color:var(--on-ink-soft);}
+.gcard .gk i{display:inline-block;width:14px;height:14px;background:rgba(241,215,138,.22);border:1px solid rgba(241,215,138,.55);}
+.gcard .gk i.r{margin-inline-start:14px;background:var(--danger-on-ink);border-color:var(--danger-on-ink);}
+.gcard .gk i.w{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.5);}
+.gcard .gk i.m{background:var(--metal);border-color:rgba(241,215,138,.8);}
+.gbar{position:relative;height:16px;margin-top:18px;background:rgba(255,255,255,.2);}
+.gbar.au{background:var(--metal);}
+.gbar i{position:absolute;left:0;top:0;bottom:0;background:var(--danger-on-ink);}
+.map .zlab,.zmap .zlab.al{white-space:nowrap;}
+.zmap .zlab.al{border-color:var(--danger);color:var(--danger);}
+.gled h3 .lgd{display:flex;gap:16px;align-items:center;font-size:14px;font-weight:400;color:var(--ink-soft);}
+.gled h3 .lgd i{display:inline-block;width:18px;height:10px;margin-inline-end:6px;vertical-align:0;background:var(--metal);}
+.gled h3 .lgd i.neg{background:repeating-linear-gradient(135deg,var(--gold-tint) 0 4px,var(--gold) 4px 5.5px);}
+.gled h3 .lgd i.late{background:#fff;outline:2px solid var(--danger);outline-offset:-2px;}
+.nbk td.qd{direction:rtl;text-align:left;}
+.kbar .kk{display:flex;gap:18px;align-items:center;margin-top:4px;font-size:14.5px;color:var(--ink-soft);}
+.kbar .kk i{display:inline-block;width:22px;height:12px;margin-inline-end:6px;vertical-align:-1px;background:repeating-linear-gradient(135deg,#fff 0 4px,#94A3B8 4px 5.5px);border:1px solid #94A3B8;}
+.kbar .kk i.m{background:var(--metal);border-color:var(--gold-lo);}
+.gain{position:absolute;z-index:3;font-size:15px;line-height:1.45;color:var(--ink-soft);}
+.gain b{display:block;font:500 22px/1.2 var(--font-mono);color:var(--gold-ink);}
+.gain b .num{font:inherit;}
+.dueslip li .rl small b{font-weight:700;color:inherit;}
+
+.rbars.au .rrow{grid-template-columns:150px 1fr 76px;}
+.rbars.au .rrow .rl2{font-size:15.5px;}
+.pg[data-page=route] .wkx li{grid-template-columns:22px 92px 1fr;}
+.cl-done .c14{justify-content:space-between;}
+.kbar.big .br .tr{height:52px;}
+.kbar.big .br{margin-bottom:18px;}
+/* round 7 (final review) */
+.cl-done .c14 i,.cl-done .c14 i:last-child{background:rgba(147,197,253,.30);border:1px solid rgba(191,219,254,.7);box-shadow:none;}
+.gdots.q12{gap:3px;margin-top:14px;}
+.gdots.q12 i{width:12px;}
+.gcard .cost .n.sub2{font-size:88px;}

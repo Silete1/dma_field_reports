@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>دائرة شؤون الألغام · التقارير الميدانية · DMA Field Reports</title>
+<link rel="stylesheet" href="anu-oil.css">
+<link rel="stylesheet" href="anu-file.css">
+<link rel="stylesheet" href="anu-ex.css">
+<link rel="stylesheet" href="dma.css">
+<style>
+  .tabs li.mkli{background:none;border:0;padding:0;}
+</style>
+<!--MARKERS-->
+<script src="assets/geo/iraq.js"></script>
+<script>
+  // the cover's Iraq: outline from geoBoundaries (CC0), scaled into its box; places from the same file
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".cvmap").forEach((m) => {
+      const W = m.clientWidth, s = W / window.IRQ.w, svg = m.querySelector("svg");
+      svg.setAttribute("viewBox", `0 0 ${W} ${window.IRQ.h * s}`);
+      svg.innerHTML = `<path class="iq" transform="scale(${s})" d="${window.IRQ.outline}"/>` + svg.innerHTML;
+      const P = (k) => window.IRQ.cities[k].map((v) => v * s);
+      m.querySelectorAll(".site[data-c]").forEach((el) => { const [x, y] = P(el.dataset.c); el.style.left = x + "px"; el.style.top = y + "px"; });
+      const hq = P("baghdad");
+      m.querySelectorAll(".site[data-c]:not(.hq)").forEach((el) => {
+        const [x, y] = P(el.dataset.c);
+        svg.insertAdjacentHTML("beforeend", `<path class="ln${el.classList.contains("on") ? " on" : ""}" d="M${x} ${y} L${hq[0]} ${hq[1]}"/>`);
+      });
+    });
+  });
+</script>
+<script src="layout.js"></script>
+</head>
+<body>
+<main class="doc">
+
+<!-- ============================================================ 01 · cover -->
+<section class="pg cover" data-page="cover">
+  <i class="net"></i>
+  <div class="cv-brand"><img class="seal" src="assets/img/dma_seal.png" alt="ختم دائرة شؤون الألغام">
+    <div class="nm"><b>دائرة شؤون الألغام</b><span>Directorate of Mine Action, Iraq</span></div></div>
+  <div class="cv-by"><span>Information management support</span><img src="assets/img/immap_mark_on_dark.png" alt="iMMAP"></div>
+  <div class="cvmap" style="left:96px;top:150px;width:560px;height:620px">
+    <svg></svg>
+    <div class="site on lft" data-c="ramadi"><i></i><span><b>الأنبار</b><small>EORE, Heet</small></span></div>
+    <div class="site" data-c="mosul"><i></i><b>نينوى</b><small>operator file</small></div>
+    <div class="site" data-c="basra"><i></i><b>البصرة</b><small>RMAC South</small></div>
+    <div class="site" data-c="najaf"><i></i><b>النجف</b><small>operator file</small></div>
+    <div class="site hq" data-c="baghdad"><i></i><b>مقر الدائرة</b><small>DMA HQ, Baghdad</small></div>
+    <div class="box ims" style="left:372px;top:560px">IMSMA NG<small>system of record</small></div>
+  </div>
+  <span class="tg tg--ink tg--draw tg--sm" style="position:absolute;z-index:3;left:96px;top:800px">رسم توضيحي</span>
+  <div class="cv-title">
+    <h1>من ملف Excel للمنظمة<br>إلى <b>IMSMA</b>، بلا تقرير يضيع.</h1>
+    <p class="h1e">From the operator's Excel file to IMSMA NG, without losing a report.</p>
+    <p class="cs">أداة التقارير الميدانية على Odoo: يرفع الموظف ملف المنظمة، يشوف كل المشكلات مرة وحدة، يصلحها بمكانها، وينزّل ملف zip واحد يستورده IMSMA. بديل أداة Access القديمة.</p>
+    <p class="cse">The Field Reports tool on the DMA Odoo: upload, see every problem at once, fix in place, export one zip for IMSMA. It replaces the old Access importer.</p>
+  </div>
+  <ul class="cv-chips">
+    <li class="on">التوعية EORE <small>ready</small></li>
+    <li>المواقع <small>Locations</small></li>
+    <li>العربي والإنكليزي <small>Arabic / English</small></li>
+  </ul>
+  <div class="cv-foot3"><span class="lat">DMA Field Reports · Odoo 19 · v19.0.0.2.0</span><span>الشاشات من النظام، والأسماء بالأمثلة غير حقيقية</span></div>
+</section>
+
+<!-- ============================================================ 02 · today: the old Access tool -->
+<section class="pg desk" data-page="old">
+  <header class="strip"><ul class="tabs"><li class="mkli"><img class="mk" src="assets/img/dma_seal.png" alt=""></li><li class="on">الأداة القديمة</li><li>الطريقة</li><li>الشاشات</li><li>بيانات IMSMA</li><li>الحالة</li></ul>
+    <h2 class="q">اليوم: Access على كل جهاز، وأول خطأ يمسح كل الشغل.</h2>
+    <p class="qe">Today: an Access tool on every PC, and the first error deletes the work.</p><p class="pno"><b>02</b> / 11</p></header>
+  <div class="stamp alarm"><span class="fig"><span class="num">1</span><small>خطأ</small></span><span class="cap">يوقف البناء ويمسح الملفات اللي انبنت.<span class="en">One error stops and deletes everything built.</span></span></div>
+
+  <figure class="old" style="right:72px;top:196px;width:440px">
+    <div class="obj msgbox"><div class="ttl"><span>Microsoft Access</span><i>✕</i></div>
+      <div class="bd"><span class="ic">!</span><span>Funded by is required from row number7</span></div><div class="ft"><span>OK</span></div></div>
+    <figcaption><span class="exn">مرفق 1</span>رسالة وحدة لكل خطأ: تصلحه، تعيد، وتطلع الثانية.<span class="en">One message per error: fix, re-run, meet the next one.</span></figcaption>
+  </figure>
+  <figure class="old" style="right:580px;top:196px;width:440px">
+    <div class="obj code"><span class="c">' after every message</span>
+<span class="k">If</span> Dir(strFile) &lt;&gt; "" <span class="k">Then</span>
+    <span class="x">Kill</span> "C:\Excel2IMSMA\*.*"
+    <span class="x">Kill</span> "C:\iMMAP…\imsma_attachments\*.*"
+<span class="k">End If</span>
+<span class="x">End</span></div>
+    <figcaption><span class="exn">مرفق 2</span>وبعد الرسالة يمسح الملفات، وحتى المرفقات اللي نقلها.<span class="en">It then deletes the files, even the attachments it moved.</span></figcaption>
+  </figure>
+  <figure class="old" style="right:1088px;top:196px;width:440px">
+    <div class="obj dlg"><div class="ttl">PostgreSQL Unicode ODBC Driver Setup</div>
+      <dl><dt>Data Source</dt><dd>IMSMA DMA</dd><dt>Database</dt><dd>imsma</dd><dt>Server</dt><dd>localhost</dd><dt>Password</dt><dd>••••••••</dd></dl></div>
+    <figcaption><span class="exn">مرفق 3</span>كل جهاز يحتاج Access وربط ODBC يدوي بقاعدة IMSMA.<span class="en">Each PC needs Access and a manual ODBC link to IMSMA.</span></figcaption>
+  </figure>
+
+  <figure class="old" style="right:72px;top:530px;width:440px">
+    <div class="obj colstrip">
+      <div class="row"><span>AQ</span><span>AR</span><span class="new">+1</span><span>AS</span><span>AT</span><span>AU</span><span>AV</span><span>AW</span><span>AX</span></div>
+      <div class="row v"><span>aud.</span><span>note</span><span class="bad">?</span><span>MAC</span><span>rem.</span><span>aud.</span><span>…</span><span>…</span><span>…</span></div>
+      <p class="arr">columns read by letter: one inserted column shifts every value after it</p></div>
+    <figcaption><span class="exn">مرفق 4</span>الأعمدة تنقرأ بالحرف: عمود زايد يزحّف كل القيم.<span class="en">Columns are read by letter: one extra column shifts all values.</span></figcaption>
+  </figure>
+  <figure class="old" style="right:580px;top:530px;width:440px">
+    <div class="obj idbox"><div class="r"><b>Last QA ID</b><span>1204</span></div><div class="r"><b>New QA ID</b><span>1204</span></div>
+      <span class="btn">Update QA IDs in IMSMA</span>
+      <p class="sql">UPDATE public_localidtype SET nextnumber = …</p></div>
+    <figcaption><span class="exn">مرفق 5</span>الأرقام تنكتب يدوياً داخل قاعدة IMSMA، وأحياناً ترجع للخلف.<span class="en">Counters are written into IMSMA by hand, sometimes backwards.</span></figcaption>
+  </figure>
+  <figure class="old" style="right:1088px;top:530px;width:440px">
+    <div class="obj code"><span class="c">' QA form, line 711</span>
+<span class="k">If</span> Trim(Rst.Fields("<b>BQ</b>")) &lt;&gt; "" <span class="k">Then</span>
+  cdflist(Trim(Rst.Fields("<span class="x">BP</span>")),
+    "is_there_an_oxygen_bottle…")</div>
+    <figcaption><span class="exn">مرفق 6</span>قيم تنكتب غلط بدون إنذار: الأوكسجين ياخذ جواب الأدوية.<span class="en">Wrong values without warning: oxygen gets the medicine answer.</span></figcaption>
+  </figure>
+  <span class="tg tg--draw tg--sm" style="position:absolute;z-index:3;left:72px;bottom:26px">رسم توضيحي، من شاشات وكود الأداة القديمة V6 وV7.1</span>
+</section>
+
+<!-- ============================================================ 03 · the cost -->
+<section class="pg dark" data-page="cost">
+  <i class="net"></i>
+  <header class="strip"><ul class="tabs"><li class="mkli"><img class="mk" src="assets/img/dma_seal.png" alt=""></li><li class="on">الأداة القديمة</li><li>الطريقة</li><li>الشاشات</li><li>بيانات IMSMA</li><li>الحالة</li></ul>
+    <h2 class="q">الأداة شغّالة سنين، وحملها كبير، وأخطاؤها ساكتة.</h2>
+    <p class="qe">The old tool carried years of work, and its errors were silent.</p><p class="pno"><b>03</b> / 11</p></header>
+  <div class="dmc" style="right:72px;top:190px">
+    <p class="n"><small>تقرير</small><span class="num">14,289</span></p>
+    <h3>دخلت IMSMA عن طريق الأداة القديمة، من 2019 إلى 2025.<span class="en">field reports imported through the old tool, 2019 to 2025</span></h3>
+    <p>منها <span class="num">14,000</span> تقرير توعية EORE، و<span class="num">289</span> مسح ضحايا. كلها انقبلت بـIMSMA.</p>
+    <div class="ticks"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+  <div class="dmc" style="left:72px;top:190px">
+    <p class="n"><small>سطر VBA</small><span class="num">16,000</span></p>
+    <h3>كود الأداة، و<span class="num">76%</span> منه مكرر بين الاستمارات.<span class="en">lines of VBA, 76% repeated from form to form</span></h3>
+    <p>تعديل حقل واحد يعني تعديله بعشر أماكن، على كل جهاز.</p>
+    <div class="bar"><i style="width:76%"></i></div>
+  </div>
+  <div class="dmc" style="right:72px;top:520px">
+    <p class="n"><small>ربط حقل</small><span class="num">914</span></p>
+    <h3>عمود Excel إلى حقل IMSMA، مكتوبة داخل الكود.<span class="en">Excel-column-to-IMSMA-field mappings, hard-coded</span></h3>
+    <p>بالأداة الجديدة صارت جدول يعدّله المدير، ويتطابق بالعنوان مو بالحرف.</p>
+  </div>
+  <div class="dmc" style="left:72px;top:520px">
+    <p class="n al"><small>خلل</small><span class="num">15</span></p>
+    <h3>تغيّر قيم أو تضيّع بيانات بدون أي إنذار.<span class="en">defects that change or lose data without any warning</span></h3>
+    <p>مثل الأرقام اللي ترجع للخلف، وملف XML يحمل كل التقارير السابقة، والموقع المختار عشوائياً.</p>
+    <div class="ticks"><i class="r"></i><i class="r"></i><i class="r"></i><i class="r"></i><i class="r"></i><i class="r"></i><i class="r"></i><i class="r"></i><i class="r"></i><i class="r"></i><i class="r"></i><i class="r"></i><i class="r"></i><i class="r"></i><i class="r"></i></div>
+  </div>
+  <span class="tg tg--ink tg--draw tg--sm" style="position:absolute;z-index:3;left:72px;bottom:24px">رسم من أرقام فعلية</span>
+  <p class="srcnote" style="inset-inline-end:330px">المصدر: قراءة كود الأداة (V6 وV7.1، <span class="num">16,000</span> سطر) وسجلات IMSMA بنسخة <span class="num">2</span> آذار <span class="num">2025</span>. كل مربع أبيض <span class="num">1,000</span> تقرير.</p>
+</section>
+
+<!-- ============================================================ 04 · the road -->
+<section class="pg" data-page="road">
+  <header class="strip"><ul class="tabs"><li class="mkli"><img class="mk" src="assets/img/dma_seal.png" alt=""></li><li>الأداة القديمة</li><li class="on">الطريقة</li><li>الشاشات</li><li>بيانات IMSMA</li><li>الحالة</li></ul>
+    <h2 class="q">ستّ خطوات، من ملف المنظمة إلى تقرير بـIMSMA.</h2>
+    <p class="qe">Six steps, from the operator's file to a report in IMSMA.</p><p class="pno"><b>04</b> / 11</p></header>
+  <div class="stamp"><span class="fig"><span class="num">0</span><small>تنصيب</small></span><span class="cap">على الأجهزة: متصفح وحساب Odoo يكفي.<span class="en">Nothing to install: a browser and an Odoo login.</span></span></div>
+  <div class="road6">
+    <div><p class="st us"><b>1</b>رفع</p><p class="tx">ملف Excel للمنظمة، والتقارير والصور، باختيار الاستمارة والمكتب.<span class="en">Upload the Excel file and the reports and photos.</span><span class="who">موظف الدائرة · User</span></p></div>
+    <div><p class="st us"><b>2</b>تدقيق</p><p class="tx">كل قيمة تنفحص على قوائم IMSMA والدليل والإحداثيات، مرة وحدة.<span class="en">Every value checked against IMSMA lists, places and points.</span><span class="who">تلقائي · automatic</span></p></div>
+    <div><p class="st red"><b>3</b>إصلاح</p><p class="tx">المشكلات مجمّعة. إصلاح وحد يمشي على كل الصفوف، ويتذكّره النظام.<span class="en">Grouped problems; one fix for all rows, remembered.</span><span class="who">موظف الدائرة · User</span></p></div>
+    <div><p class="st"><b>4</b>مواقع جديدة</p><p class="tx">إذا القرية ما عندها موقع بـIMSMA: تقرير موقع يُستورد ويُعتمد أولاً.<span class="en">Villages without an IMSMA location go in first.</span><span class="who im">IMSMA Workbench</span></p></div>
+    <div><p class="st us"><b>5</b>تصدير</p><p class="tx">zip واحد: ملفات XML بصيغة IMSMA، والمرفقات، وقائمة المحتوى.<span class="en">One zip: maXML files, attachments and a manifest.</span><span class="who">موظف الدائرة · User</span></p></div>
+    <div><p class="st"><b>6</b>بـIMSMA</p><p class="tx">يُستورد بـWorkbench كالعادة، والنظام يعلّم الدفعة لما تظهر بـIMSMA.<span class="en">Imported in the Workbench; Odoo marks it “In IMSMA”.</span><span class="who im">IMSMA Workbench</span></p></div>
+  </div>
+  <div class="lanes">
+    <div class="r"><h3>IMSMA يبقى الأساس<span class="en">IMSMA stays the system of record</span></h3><p>Odoo يحضّر ويدقق ويتابع. ما يكتب بقاعدة IMSMA، والاستيراد والاعتماد بيد موظف IMSMA.<span class="en">Odoo prepares and tracks; it never writes to IMSMA.</span></p></div>
+    <div><h3>ولا شي ينحذف<span class="en">Nothing is deleted</span></h3><p>الملف الأصلي، كل إصلاح ومنو سواه، وكل zip انصدّر، يبقى بالدفعة.<span class="en">The file, every fix and every export stay on the batch.</span></p></div>
+    <div><h3>نفس الأرقام بلا تكرار<span class="en">No duplicate ids</span></h3><p>الترقيم يكمل بعد أعلى رقم بـIMSMA، ويتحفظ بالتقرير حتى لو انعاد تصديره.<span class="en">Numbering continues after IMSMA's highest and stays fixed.</span></p></div>
+  </div>
+</section>
+
+<!-- ============================================================ 05 · upload and check -->
+<section class="pg" data-page="check">
+  <header class="strip"><ul class="tabs"><li class="mkli"><img class="mk" src="assets/img/dma_seal.png" alt=""></li><li>الأداة القديمة</li><li>الطريقة</li><li class="on">الشاشات</li><li>بيانات IMSMA</li><li>الحالة</li></ul>
+    <h2 class="q">ارفع الملف، والتدقيق يطلّع كل شي مرة وحدة.</h2>
+    <p class="qe">Upload the file: one check lists everything.</p><p class="pno"><b>05</b> / 11</p></header>
+  <div class="stamp"><span class="fig"><span class="num">4</span><small>من 4</small></span><span class="cap">مرفقات انربطت بتقاريرها بالاسم.<span class="en">Attachments matched by name.</span></span></div>
+  <div class="att" style="top:186px">
+    <div class="win__bar"><span class="win__path"><span class="o">Odoo</span><span class="sep">·</span>التقارير الميدانية<span class="sep">‹</span>دفعة</span>
+      <span class="win__apps"><span class="tg tg--real tg--sm">شاشة من النظام</span><span class="demo">ملف حقيقي، الأسماء أمثلة</span></span></div>
+    <div class="win__scr" style="height:600px"><img class="cap" data-cap="batch_form" alt="دفعة بعد التدقيق"></div>
+  </div>
+  <div class="hl" data-mk="batch_form:1" data-n="1"></div>
+  <div class="hl pin-l" data-mk="batch_form:2" data-n="2"></div>
+  <div class="hl" data-mk="batch_form:3" data-n="3"></div>
+  <div class="hl pin-l" data-mk="batch_form:4" data-n="4"></div>
+  <div class="hl pin-l" data-mk="batch_form:5" data-n="5"></div>
+  <ol class="keys col" style="left:1180px;top:200px;width:348px;flex-direction:column;gap:16px">
+    <li><b class="pn">1</b><span>الخطوة الجاية بزر واحد، وقائمة المشكلات للمنظمة.<span class="en">Next action, and a problem list for the operator</span></span></li>
+    <li><b class="pn">2</b><span>مرحلة الدفعة: مرفوعة، مشكلات، مواقع، جاهزة، مصدّرة، بـIMSMA.<span class="en">Batch stage, from upload to “In IMSMA”</span></span></li>
+    <li><b class="pn">3</b><span>العدّاد: تقارير، يجب إصلاحه، للمراجعة، مواقع جديدة.<span class="en">Counts: reports, must fix, to check, new places</span></span></li>
+    <li><b class="pn">4</b><span>شنو تسوي هسه، بكلام واضح.<span class="en">What to do now, in plain words</span></span></li>
+    <li><b class="pn">5</b><span>تقارير الوورد والصور تنربط بكل صف تلقائياً.<span class="en">Word reports and photos linked to each row</span></span></li>
+  </ol>
+  <p class="pcap" style="left:1180px;top:690px;width:348px"><b>64 عمود</b> بالقالب تنقرأ بعناوينها، بالعربي أو الإنكليزي، حتى لو تغيّر ترتيبها.<span class="en">The 64 template columns are found by header, in Arabic or English.</span></p>
+</section>
+
+<!-- ============================================================ 06 · fix problems -->
+<section class="pg" data-page="fix">
+  <header class="strip"><ul class="tabs"><li class="mkli"><img class="mk" src="assets/img/dma_seal.png" alt=""></li><li>الأداة القديمة</li><li>الطريقة</li><li class="on">الشاشات</li><li>بيانات IMSMA</li><li>الحالة</li></ul>
+    <h2 class="q">المشكلات مجمّعة، وإصلاح واحد يمشي على الكل.</h2>
+    <p class="qe">Problems grouped by column; one fix covers every row.</p><p class="pno"><b>06</b> / 11</p></header>
+  <div class="stamp"><span class="fig"><span class="num">3</span><small>صفوف</small></span><span class="cap">بنقرة وحدة: WRA صارت PMWRA، وتنحفظ.<span class="en">One click, and remembered.</span></span></div>
+  <div class="att" style="top:186px">
+    <div class="win__bar"><span class="win__path"><span class="o">Odoo</span><span class="sep">·</span>دفعة<span class="sep">‹</span>إصلاح المشكلات</span>
+      <span class="win__apps"><span class="tg tg--real tg--sm">شاشة من النظام</span><span class="demo">ملف حقيقي، الأسماء أمثلة</span></span></div>
+    <div class="win__scr" style="height:600px"><img class="cap" data-cap="problems" alt="قائمة المشكلات مجمّعة"></div>
+  </div>
+  <div class="hl pin-l" data-mk="problems:1" data-n="1"></div>
+  <div class="hl" data-mk="problems:2" data-n="2"></div>
+  <div class="hl" data-mk="problems:3" data-n="3"></div>
+  <div class="hl pin-l" data-mk="problems:4" data-n="4"></div>
+  <ol class="keys col" style="left:1180px;top:200px;width:348px;flex-direction:column;gap:16px">
+    <li><b class="pn">1</b><span>العمود وعدد الصفوف اللي بيها نفس المشكلة.<span class="en">The column and how many rows share the problem</span></span></li>
+    <li><b class="pn">2</b><span>القيمة مثل ما بالملف.<span class="en">The value as written in the file</span></span></li>
+    <li><b class="pn">3</b><span>أقرب قيم IMSMA، من القيم المخزونة فعلاً.<span class="en">Closest values IMSMA really stores</span></span></li>
+    <li><b class="pn">4</b><span>إصلاح: يختار القيمة، ويصلح كل الصفوف، ويتذكّر.<span class="en">Fix: pick once, all rows, remembered</span></span></li>
+  </ol>
+  <div class="cards" style="left:1180px;top:560px;width:348px">
+    <div class="r"><h3>شنو يتفحص<span class="en">What is checked</span></h3><p>الحقول المطلوبة، قيم القوائم، التواريخ وترتيبها، المنظمة، المكان والموقع، الإحداثيات وMGRS، المرفقات، والتقارير المكررة.<span class="en">Required values, lists, dates, organisation, place, coordinates, attachments, duplicates.</span></p></div>
+  </div>
+</section>
+
+<!-- ============================================================ 07 · nearest location -->
+<section class="pg" data-page="near">
+  <header class="strip"><ul class="tabs"><li class="mkli"><img class="mk" src="assets/img/dma_seal.png" alt=""></li><li>الأداة القديمة</li><li>الطريقة</li><li class="on">الشاشات</li><li>بيانات IMSMA</li><li>الحالة</li></ul>
+    <h2 class="q">القرية مو بالدليل؟ يدلّك على أقرب موقع.</h2>
+    <p class="qe">Village not in the gazetteer? The nearest IMSMA locations.</p><p class="pno"><b>07</b> / 11</p></header>
+  <div class="stamp"><span class="fig"><span class="num">0.8</span><small>كم</small></span><span class="cap">«Alkasarah» هي «قرية الكسارة» بـIMSMA.<span class="en">An existing IMSMA location.</span></span></div>
+  <div class="att" style="top:186px;width:822px">
+    <div class="win__bar"><span class="win__path"><span class="o">Odoo</span><span class="sep">·</span>إصلاح المشكلات<span class="sep">‹</span>المكان</span>
+      <span class="win__apps"><span class="tg tg--real tg--sm">شاشة من النظام</span></span></div>
+    <div class="win__scr"><img class="cap" data-cap="fix_dialog" alt="نافذة إصلاح المكان"></div>
+  </div>
+  <div class="hl pin-l" data-mk="fix_dialog:2" data-n="1"></div>
+  <div class="hl pin-l" data-mk="fix_dialog:3" data-n="2"></div>
+  <div class="hl pin-l" data-mk="fix_dialog:4" data-n="3"></div>
+  <div class="near" style="left:922px;top:186px;width:606px;height:470px">
+    <h3>المواقع حول نقطة التقرير <span class="en">IMSMA locations around the report's point</span></h3>
+    <svg viewBox="0 0 606 470">
+      <g class="grid"><line x1="0" y1="260" x2="606" y2="260"/><line x1="300" y1="56" x2="300" y2="470"/></g>
+      <circle class="ring" cx="300" cy="260" r="70"/><circle class="ring" cx="300" cy="260" r="140"/>
+      <text class="lbs" x="300" y="182" text-anchor="middle">1 km</text><text class="lbs" x="300" y="112" text-anchor="middle">2 km</text>
+      <rect class="pt best" x="239" y="246" width="14" height="14"/><text class="lb best" x="232" y="236" text-anchor="end">قرية الكسارة</text>
+      <text class="lbs" x="232" y="282" text-anchor="end">LOC-CI-40420 · 0.8 km</text>
+      <rect class="pt" x="346" y="227" width="12" height="12"/><text class="lb" x="366" y="230">قرية السهلية</text><text class="lbs" x="366" y="250">0.8 km</text>
+      <rect class="pt" x="364" y="320" width="12" height="12"/><text class="lb" x="384" y="332">saridih</text><text class="lbs" x="384" y="352">1.4 km</text>
+      <circle class="rep" cx="300" cy="260" r="9"/><text class="lb" x="312" y="292">نقطة التقرير</text><text class="lbs" x="312" y="310">MGRS 38SKC 87787 32517</text>
+      <g class="sc"><line x1="430" y1="440" x2="500" y2="440"/><line x1="430" y1="434" x2="430" y2="446"/><line x1="500" y1="434" x2="500" y2="446"/><text x="465" y="430" text-anchor="middle">1 km</text></g>
+    </svg>
+  </div>
+  <span class="tg tg--draw tg--sm" style="position:absolute;z-index:3;left:922px;top:666px">رسم من نقاط IMSMA، بمقياس</span>
+  <ol class="keys" style="left:72px;top:766px;width:822px;gap:22px">
+    <li><b class="pn">1</b>مواقع IMSMA القريبة، بالمسافة<span class="en">nearby, with distance</span></li>
+    <li><b class="pn">2</b>موقع موجود، أو اسم ثاني، أو موقع جديد<span class="en">three choices</span></li>
+    <li><b class="pn">3</b>الأقرب مختار مسبقاً<span class="en">nearest pre-selected</span></li>
+  </ol>
+  <p class="pcap" style="left:922px;top:712px;width:606px">النقطة من الملف (MGRS، وخط العرض الناقص انحسب منه). المواقع من نسخة IMSMA: <span class="num">3,426</span> موقع من <span class="num">4,414</span> عنده نقطة.<span class="en">The point comes from the file; 3,426 of 4,414 IMSMA locations have a point.</span></p>
+</section>
+
+<!-- ============================================================ 08 · new locations and export -->
+<section class="pg" data-page="export">
+  <header class="strip"><ul class="tabs"><li class="mkli"><img class="mk" src="assets/img/dma_seal.png" alt=""></li><li>الأداة القديمة</li><li>الطريقة</li><li class="on">الشاشات</li><li>بيانات IMSMA</li><li>الحالة</li></ul>
+    <h2 class="q">المواقع الجديدة أولاً، وبعدها zip واحد للاستيراد.</h2>
+    <p class="qe">New locations first, then one zip for the Workbench import.</p><p class="pno"><b>08</b> / 11</p></header>
+  <div class="stamp"><span class="fig"><span class="num">75,321</span></span><span class="cap">أعلى رقم EORE بـIMSMA. الترقيم يكمل بعده، بدون كتابة على IMSMA.<span class="en">Numbering continues after IMSMA's highest.</span></span></div>
+  <div class="att" style="top:186px;width:902px">
+    <div class="win__bar"><span class="win__path"><span class="o">Odoo</span><span class="sep">·</span>التقارير الميدانية<span class="sep">‹</span>دفعة مصدّرة</span>
+      <span class="win__apps"><span class="tg tg--real tg--sm">شاشة من النظام</span><span class="demo">ملف حقيقي، الأسماء أمثلة</span></span></div>
+    <div class="win__scr"><img class="cap" data-cap="exported" alt="دفعة مصدّرة وعمليات التصدير"></div>
+  </div>
+  <div class="hl" data-mk="exported:1" data-n="1"></div>
+  <div class="hl pin-b" data-mk="exported:2" data-n="2"></div>
+  <div class="ztree" style="left:1000px;top:186px;width:528px">
+    <h3>محتوى الملفين <span class="en">what the two zips hold</span></h3>
+    <ul>
+      <li class="d">FRB-2026-0043_locations.zip <em>step 4</em></li>
+      <li class="i1">xml/FR-LOC-CI-60341.xml <em>Alraas Algharbi</em></li>
+      <li class="i1">xml/FR-LOC-CI-60342.xml <em>Alsangak</em></li>
+      <li class="i1">xml/FR-LOC-CI-60343.xml <em>Yardah</em></li>
+      <li class="i1">README.txt</li>
+      <li class="d">FRB-2026-0043_eore.zip <em>step 5</em></li>
+      <li class="i1 k">xml/FR-MRE-CI-75330.xml … 75333.xml <em>4</em></li>
+      <li class="i1">attachments/1.&lt;guid&gt;.docx <em>4</em></li>
+      <li class="i1">manifest.csv <em>row → IMSMA id</em></li>
+      <li class="i1">README.txt <em>AR + EN steps</em></li>
+    </ul>
+  </div>
+  <div class="cards" style="left:1000px;top:560px;width:528px">
+    <div class="r"><h3>بعد الاستيراد<span class="en">After the import</span></h3><p>لما تنحمّل بيانات IMSMA الجاية، تتعلّم التقارير «بـIMSMA» وتتسكّر الدفعة. وإعادة الفتح تحتفظ بنفس الأرقام.<span class="en">The next IMSMA load marks the reports “In IMSMA”; re-opening keeps the same ids.</span></p></div>
+  </div>
+  <ol class="keys" style="left:72px;top:808px;width:902px">
+    <li><b class="pn">1</b>كل المراحل اكتملت لحد التصدير<span class="en">all stages done</span></li>
+    <li><b class="pn">2</b>الملفين، ومنو صدّرهم، والعدّاد اللي يتضبط بـIMSMA<span class="en">both zips and the counter note</span></li>
+  </ol>
+</section>
+
+<!-- ============================================================ 09 · IMSMA data, two ways -->
+<section class="pg" data-page="data">
+  <header class="strip"><ul class="tabs"><li class="mkli"><img class="mk" src="assets/img/dma_seal.png" alt=""></li><li>الأداة القديمة</li><li>الطريقة</li><li>الشاشات</li><li class="on">بيانات IMSMA</li><li>الحالة</li></ul>
+    <h2 class="q">بيانات IMSMA تدخل بطريقتين، وOdoo ما يكتب عليها أبداً.</h2>
+    <p class="qe">IMSMA data comes in two ways, and Odoo never writes to IMSMA.</p><p class="pno"><b>09</b> / 11</p></header>
+  <div class="stamp"><span class="fig"><span class="num">0</span><small>كتابة</small></span><span class="cap">من Odoo على قاعدة IMSMA. القراءة بس.<span class="en">Odoo reads only, never writes.</span></span></div>
+  <div class="dflow" style="left:72px;top:196px;width:820px;height:600px">
+    <svg viewBox="0 0 820 600"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#1A1A1A"/></marker></defs>
+      <path class="ar" d="M690 120 L690 196"/>
+      <path class="ar" d="M690 300 L690 376"/>
+      <path class="ar" d="M600 430 L410 430"/>
+      <path class="ar dash" d="M560 70 C 420 70 300 120 300 380"/>
+      <path class="ar" d="M190 470 L190 540 L560 540"/>
+      <path class="ar no" d="M200 380 C 160 260 300 90 540 60"/>
+    </svg>
+    <div class="nd2 ims" style="right:0;top:20px;width:260px">قاعدة IMSMA NG<small>Postgres · system of record</small></div>
+    <div class="nd2" style="right:0;top:200px;width:260px">نسخة احتياطية<small>Dump.sql</small><span class="en">IMSMA backup</span></div>
+    <div class="nd2" style="right:0;top:380px;width:260px">حزمة القوائم imsma_ref.zip<small>من أداة الاستخراج، بدقيقة</small><span class="en">lists only, no report contents</span></div>
+    <div class="nd2 odoo" style="left:110px;top:380px;width:300px">Odoo · التقارير الميدانية<small>نسخة القوائم: النماذج، القيم، الدليل، المواقع، المنظمات، الأرقام</small></div>
+    <div class="nd2 ims" style="right:0;top:500px;width:260px">IMSMA Workbench<small>استيراد واعتماد بيد الموظف</small></div>
+    <span class="lab" style="right:280px;top:430px">رفع الحزمة · upload</span>
+    <span class="lab" style="left:310px;top:150px">اتصال للقراءة فقط · read-only (اختياري)</span>
+    <span class="lab" style="left:230px;top:548px">zip التقارير · report zip</span>
+    <span class="xno" style="left:196px;top:186px">✕</span><span class="lab no" style="left:100px;top:244px">لا كتابة · no writes</span>
+  </div>
+  <div class="att" style="left:920px;top:186px;width:608px">
+    <div class="win__bar"><span class="win__path"><span class="o">Odoo</span><span class="sep">·</span>التهيئة<span class="sep">‹</span>مصدر بيانات IMSMA</span>
+      <span class="win__apps"><span class="tg tg--real tg--sm">شاشة من النظام</span></span></div>
+    <div class="win__scr" style="height:420px"><img class="cap" data-cap="source" alt="مصدر بيانات IMSMA"></div>
+  </div>
+  <div class="hl pin-l" data-mk="source:1" data-n="1"></div>
+  <div class="hl" data-mk="source:2" data-n="2"></div>
+  <div class="hl pin-l" data-mk="source:3" data-n="3"></div>
+  <ol class="keys col" style="left:920px;top:680px;width:608px;flex-direction:column;gap:10px">
+    <li><b class="pn">1</b>المدير يختار: حزمة من نسخة احتياطية، أو اتصال للقراءة فقط<span class="en">backup package or read-only link</span></li>
+    <li><b class="pn">2</b>تحميل بيانات IMSMA بزر واحد<span class="en">one button to load</span></li>
+    <li><b class="pn">3</b>تاريخ البيانات المستعملة بالتدقيق<span class="en">the data's date</span></li>
+  </ol>
+</section>
+
+<!-- ============================================================ 10 · people, languages, proof -->
+<section class="pg" data-page="people">
+  <header class="strip"><ul class="tabs"><li class="mkli"><img class="mk" src="assets/img/dma_seal.png" alt=""></li><li>الأداة القديمة</li><li>الطريقة</li><li>الشاشات</li><li class="on">بيانات IMSMA</li><li>الحالة</li></ul>
+    <h2 class="q">بالعربي والإنكليزي، وكل واحد يشوف شغله بس.</h2>
+    <p class="qe">Arabic and English, and each person sees only their part.</p><p class="pno"><b>10</b> / 11</p></header>
+  <div class="stamp"><span class="fig"><span class="num">16</span><small>اختبار</small></span><span class="cap">آلي ناجح، على نسخة من نظام الدائرة نفسه.<span class="en">automated tests pass on the DMA module set.</span></span></div>
+  <div class="cards" style="right:72px;top:196px;width:460px">
+    <div class="r"><h3>مستخدم<span class="en">User</span></h3><p>موظفو المقر والمراكز الإقليمية: يرفع، يصلح، يصدّر. ما يقدر يحذف دفعة.<span class="en">Upload, fix, export; cannot delete a batch.</span></p></div>
+    <div class="r"><h3>مدير<span class="en">Manager</span></h3><p>يحمّل بيانات IMSMA، ويعدّل النماذج والترجمات والمكاتب والعدّادات، ووحده يشوف كلمة سر الاتصال.<span class="en">Loads IMSMA data, edits templates and translations.</span></p></div>
+    <div class="g"><h3>غيرهم<span class="en">Everyone else</span></h3><p>ما يشوفون التطبيق أصلاً.<span class="en">Do not see the app.</span></p></div>
+  </div>
+  <div class="cards" style="right:568px;top:196px;width:460px">
+    <div><p class="bignum"><small>نص</small>609</p><h3>الواجهة والرسائل بالعربي<span class="en">UI and messages in Arabic</span></h3><p>من اليمين لليسار، بنفس مصطلحات تطبيقات الدائرة الثانية.</p></div>
+    <div><p class="bignum"><small>ترجمة</small>72</p><h3>أجوبة عربية تتحول لقيم IMSMA<span class="en">Arabic answers mapped to IMSMA values</span></h3><p>«عرض توضيحي» تصير Presentation، و«مخلفات حربية» تصير ERW. وعناوين القالب العربي تنقرأ هم.</p></div>
+  </div>
+  <div class="cards" style="left:72px;top:196px;width:460px">
+    <div><p class="bignum"><small>ثانية</small>10</p><h3>لملف بـ<span class="num">600</span> تقرير<span class="en">to read and check a 600-row file</span></h3><p>والإصلاح على <span class="num">300</span> صف بثانية ونص.</p></div>
+    <div><h3>شكل الدائرة<span class="en">DMA look</span></h3><p>نفس ثيم الدائرة، والتطبيق بجنب «أوامر العمل» و«الاعتماد».<span class="en">Runs inside the DMA theme next to Task Orders and Accreditation.</span></p></div>
+  </div>
+  <p class="fct" style="left:72px;width:1456px">الاختبارات تمشي على نسخة من وحدات النظام الحالية: الثيم، الاعتماد، الإيفاد، وأوامر العمل، مع بيانات IMSMA حقيقية.<span class="src">Tested on a copy of the live module set (theme, accreditation, deputation, task orders) with the 2 March 2025 IMSMA backup.</span></p>
+</section>
+
+<!-- ============================================================ 11 · close: status and next step -->
+<section class="pg close2" data-page="close">
+  <i class="net"></i>
+  <div class="cl-logos"><img src="assets/img/dma_seal.png" alt="دائرة شؤون الألغام"><img class="im" src="assets/img/immap_mark_on_dark.png" alt="iMMAP"></div>
+  <h2 class="cl-t" style="font-size:62px">الجاهز اليوم، والخطوة الجاية.</h2>
+  <p class="cl-s" style="top:180px"><span class="en" style="color:#fff;font-size:24px">Ready today, and the next step.</span></p>
+  <div class="stat" style="right:72px;top:262px">
+    <table>
+      <tr><th>الاستمارة · Form</th><th>الحالة · Status</th><th>اللي نحتاجه · Needed</th></tr>
+      <tr><td>التوعية EORE<span class="en">EORE, Excel template</span></td><td><span class="st2 ok"><i></i>جاهزة</span></td><td>استيراد تجريبي لملف بـIMSMA<span class="en">one test import</span></td></tr>
+      <tr><td>المواقع<span class="en">Location</span></td><td><span class="st2 ok"><i></i>جاهزة</span></td><td>تنبني تلقائياً ويا EORE<span class="en">built with EORE</span></td></tr>
+      <tr><td>ضمان الجودة QA<span class="en">QA, Survey123</span></td><td><span class="st2 nx"><i></i>الجاية</span></td><td>ملف تصدير من Survey123<span class="en">a Survey123 export</span></td></tr>
+      <tr><td>الخطر، NTS، TS، الإكمال، التقدم<span class="en">Hazard, NTS, TS, Completion, Progress</span></td><td><span class="st2 nx"><i></i>بعدها</span></td><td>قوالب Excel الحالية<span class="en">current Excel templates</span></td></tr>
+      <tr><td>الضحايا<span class="en">Victim, restricted</span></td><td><span class="st2 nx"><i></i>بعدها</span></td><td>القالب، وصلاحية خاصة<span class="en">template, own access role</span></td></tr>
+    </table>
+  </div>
+  <div class="cl-first" style="top:262px;width:640px">
+    <h3>أول خطوة: ملف EORE واحد يُستورد بـIMSMA ويُراجع.</h3>
+    <p>نصدّر دفعة صغيرة، يستوردها موظف IMSMA بالـWorkbench، ونشوف التقرير هناك. إذا انقبل، الأداة تدخل الشغل اليومي.</p>
+    <p class="en" style="margin-top:8px">First step: one EORE batch imported into IMSMA and reviewed in the Workbench.</p>
+    <div class="row"><div class="ct"><span>DMA Field Reports · Odoo 19</span><span>Directorate of Mine Action, Iraq</span></div><img src="assets/img/immap_mark.png" alt="iMMAP"></div>
+  </div>
+  <p class="cl-note">الشاشات من نظام Odoo 19 للدائرة بثيم الدائرة، على نسخة تجريبية. البيانات من ملف EORE حقيقي لأيلول 2026 بعد ما تبدّلت أسماء الأشخاص والمنظمة بأمثلة. أرقام IMSMA من نسخة 2 آذار 2025. خريطة العراق من geoBoundaries (ملكية عامة).<span class="en" style="font-size:14px;margin-top:4px">Screens from the DMA Odoo 19 with the DMA theme, on a test copy; data from a real September 2026 EORE file with people and organisation replaced by examples; IMSMA figures from the 2 March 2025 backup.</span></p>
+</section>
+
+</main>
+</body>
+</html>

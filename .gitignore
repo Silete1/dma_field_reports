@@ -4,3 +4,8 @@ __pycache__/
 *.zip
 /local/
 dist/
+presentation/captures/
+presentation/out/
+presentation/pitch/out/
+presentation/pitch/ed.html
+presentation/EORE_example.xlsx

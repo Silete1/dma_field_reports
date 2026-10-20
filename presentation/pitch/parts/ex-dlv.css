@@ -1,0 +1,257 @@
+
+/* =====================================================================
+   Delivery edition exhibits (29 Sep). Iraq as line art (geoBoundaries,
+   CC0), the parcel's paper, the run through the streets, the cash chain.
+   Same rules: sharp, ink/bone/white/Signal, red only for late or lost;
+   every drawing carries «رسم توضيحي» or «رسم من أرقام النظام».
+   ===================================================================== */
+
+/* ---------------------------------------------------------------- the hand on paper objects (Aref Ruqaa, OFL 1.1; paper exhibits only) */
+@font-face{font-family:"Anu Hand";src:url("assets/fonts/aref-ruqaa-arabic-700.woff2") format("woff2");font-weight:400 700;unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFC,U+200C-200E;}
+@font-face{font-family:"Anu Hand";src:url("assets/fonts/aref-ruqaa-latin-400.woff2") format("woff2");font-weight:400 700;unicode-range:U+0000-00FF;}
+.hand,.wbx .hw,.nbk td.hw,.mnf .cnt b,.oilx dd{font-family:"Anu Hand","Anu Arabic",sans-serif;}
+.wbx .hw{font-size:17px;font-weight:700;color:#1E3A8A;}
+.wbx .tear{margin-top:10px;border-top:2px dashed #94A3B8;padding-top:6px;display:flex;justify-content:space-between;font-size:14px;color:#64748B;}
+.wbx .tear b{font-family:"Anu Hand","Anu Arabic",sans-serif;font-size:18px;color:#1E3A8A;}
+.mnf .cnt b{font-size:30px;font-weight:700;color:#1E3A8A;}
+.mnf .cnt b.al{color:var(--danger);}
+.nbk td.hw{font-size:17px;color:#1E3A8A;}
+.oilx dd{font-size:17px;font-weight:700;color:#1E3A8A;}
+
+/* ---------------------------------------------------------------- the night map of Iraq (cover) */
+.gmap{position:absolute;z-index:2;}
+.gmap > svg.geo{position:absolute;left:0;top:0;overflow:visible;}
+.gmap .site .bx{width:60px;height:60px;padding:11px;margin-bottom:8px;}
+.gmap .site.hq .bx{width:78px;height:78px;padding:13px;}
+.gmap .site b{font-size:16px;}
+.gmap .site small{font-size:14px;}
+.gmap .site.dot{width:auto;margin-left:0;text-align:start;display:flex;align-items:center;gap:8px;}
+.gmap .site.dot::before{content:"";width:11px;height:11px;flex:none;background:var(--ink);border:1.5px solid rgba(147,197,253,.75);}
+.gmap .site.dot b{font-size:14.5px;font-weight:500;color:var(--on-ink-soft);}
+.gmap .site.side{display:flex;align-items:center;gap:10px;width:auto;margin-left:0;text-align:start;}
+.gmap .site.side .bx{margin:0;flex:none;}
+.gmap .site.side .sx{display:flex;flex-direction:column;}
+.gmap .fl{position:absolute;width:14px;height:14px;margin:-7px 0 0 -7px;background:#fff;z-index:3;}
+.gmap .fl.late{width:16px;height:16px;margin:-8px 0 0 -8px;background:var(--danger-on-ink);}
+.gmap .flab{position:absolute;z-index:3;padding:6px 10px;border:1.5px solid var(--danger-on-ink);background:rgba(9,11,17,.88);font-size:14.5px;color:var(--danger-on-ink);white-space:nowrap;}
+.gmap .road{position:absolute;z-index:3;font-size:14px;color:#93C5FD;white-space:nowrap;}
+
+/* ---------------------------------------------------------------- the zone-fee map (contracting) */
+.zmap{position:absolute;z-index:2;}
+.zmap > svg.geo{position:absolute;left:0;top:34px;overflow:visible;}
+.zmap > .tg{position:absolute;left:0;top:0;}
+.zmap h3{position:absolute;right:0;top:0;font-size:17px;font-weight:700;line-height:1.3;color:var(--ink);}
+.zlab{position:absolute;z-index:3;transform:translate(-50%,-50%);padding:3px 8px;background:#fff;border:1.5px solid var(--ink);font-size:14.5px;font-weight:700;white-space:nowrap;color:var(--ink);}
+.zlab.sig{border-color:var(--signal);color:var(--signal-text);}
+.zleg{position:absolute;z-index:3;display:flex;flex-direction:column;border-top:1px solid var(--rule-strong);}
+.zleg li{display:grid;grid-template-columns:22px 1fr auto;align-items:center;column-gap:12px;padding-block:8px;border-bottom:1px solid var(--rule);font-size:16px;color:var(--ink);}
+.zleg li i{width:22px;height:16px;border:1.5px solid var(--ink);}
+.zleg li i.z1{background:#60A5FA;border-color:var(--signal);}
+.zleg li i.z2{background:#fff;}
+.zleg li i.z3{background:repeating-linear-gradient(135deg,#fff 0 3px,#94A3B8 3px 4.5px);}
+.zleg li b{font:500 18px/1 var(--font-mono);direction:ltr;}
+.zleg li small{font-size:14px;color:var(--ink-faint);margin-inline-start:6px;}
+.zleg li.ft{grid-template-columns:1fr auto;color:var(--ink-soft);font-size:15px;}
+
+/* ---------------------------------------------------------------- the line manifest as a grid (intake) */
+.mfx{position:absolute;z-index:3;background:#fff;border:1px solid var(--rule-strong);padding:14px 18px 12px;}
+.mfx .mstamp{position:absolute;left:18px;top:14px;padding:4px 12px;border:3px solid var(--danger);color:var(--danger);font:500 24px/1.1 var(--font-mono);transform:rotate(-5deg);background:rgba(255,255,255,.85);}
+.mfx h3{font-size:17px;font-weight:700;line-height:1.3;color:var(--ink);}
+.mfx h3 span{display:block;font-size:15px;font-weight:400;color:var(--ink-soft);}
+.mfx .cells2{margin-top:14px;}
+.mfx .cells2 svg{display:block;}
+.mfx .mlg{display:flex;gap:18px;margin-top:10px;font-size:14.5px;color:var(--ink-soft);}
+.mfx .mlg span{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;}
+.mfx .mlg i{width:18px;height:12px;background:repeating-linear-gradient(90deg,#090B11 0 2px,#fff 2px 3.5px);border-bottom:2px solid var(--signal);}
+.mfx .mlg i.miss{background:#fff;border:0;outline:1.6px dashed var(--danger);outline-offset:-1.6px;}
+.mfx .mlg b{font:500 15px/1 var(--font-mono);color:var(--ink);}
+.mfx .mlg b.al{color:var(--danger);}
+
+/* ---------------------------------------------------------------- the driver's run through the streets */
+.runmap{position:absolute;z-index:2;background:#fff;border:1px solid var(--rule-strong);overflow:hidden;}
+.runmap > svg{position:absolute;inset:0;}
+.runmap .stp{position:absolute;z-index:2;width:14px;height:14px;margin:-7px 0 0 -7px;background:var(--ink);}
+.runmap .stp.fail{background:#fff;outline:2.5px solid var(--danger);outline-offset:-2.5px;}
+.runmap .stp.post{background:#fff;outline:2px dashed var(--ink);outline-offset:-2px;}
+.runmap .stp.ours{width:22px;height:22px;margin:-11px 0 0 -11px;}
+.runmap .hub{position:absolute;z-index:2;width:44px;height:44px;padding:7px;margin:-22px 0 0 -22px;background:var(--ink);color:#BFDBFE;}
+.runmap .rlab{position:absolute;z-index:3;padding:5px 9px;background:#fff;border:1.5px solid var(--danger);font-size:14.5px;line-height:1.35;color:var(--danger);white-space:nowrap;}
+.runmap .rlab b{font-weight:700;}
+.runmap .roadl{position:absolute;z-index:3;transform:translateX(-50%);padding:0 8px;background:#E2E8F0;font-size:14px;color:var(--ink-soft);white-space:nowrap;}
+.runmap .hlab{position:absolute;z-index:3;font-size:14.5px;font-weight:700;color:var(--ink);white-space:nowrap;}
+.runmap .rh{position:absolute;z-index:3;right:16px;top:12px;font-size:17px;font-weight:700;color:var(--ink);background:rgba(255,255,255,.9);padding:2px 6px 2px 0;}
+.runmap .rh span{font-weight:400;font-size:15px;color:var(--ink-soft);margin-inline-start:8px;}
+.runmap .rleg{position:absolute;z-index:3;left:14px;top:12px;display:flex;gap:16px;padding:4px 8px;background:rgba(255,255,255,.92);font-size:14.5px;color:var(--ink-soft);}
+.runmap .rleg span{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;}
+.runmap .rleg i{width:12px;height:12px;background:var(--ink);}
+.runmap .rleg i.fail{background:#fff;outline:2px solid var(--danger);outline-offset:-2px;}
+.runmap .rleg i.post{background:#fff;outline:1.5px dashed var(--ink);outline-offset:-1.5px;}
+.runmap .rleg b{font:500 15px/1 var(--font-mono);color:var(--ink);}
+.runmap > .tg{position:absolute;z-index:3;left:14px;bottom:12px;}
+
+/* ---------------------------------------------------------------- return reasons (bars from system numbers) */
+.rbars{position:absolute;z-index:3;}
+.rbars h3{font-size:17px;font-weight:700;line-height:1.3;color:var(--ink);margin-bottom:8px;}
+.rbars h3 > span:not(.tg){display:block;font-size:15px;font-weight:400;color:var(--ink-soft);}
+.rrow{display:grid;grid-template-columns:118px 1fr 44px;align-items:center;column-gap:12px;padding-block:8px;border-bottom:1px solid var(--rule);}
+.rrow .rl2{font-size:16px;line-height:1.3;color:var(--ink-soft);white-space:nowrap;}
+.rrow .rb{height:14px;}
+.rrow .rb i{display:block;height:100%;background:#94A3B8;}
+.rrow .rv{font:500 17px/1 var(--font-mono);color:var(--ink-soft);direction:ltr;text-align:left;}
+.rrow.top .rl2{color:var(--ink);font-weight:700;}
+.rrow.top .rb i{background:var(--ink);}
+.rrow.top .rv{color:var(--ink);}
+.rbars .rsum{display:flex;justify-content:space-between;align-items:baseline;padding-top:10px;font-size:15px;color:var(--ink-soft);}
+.rbars .rsum b{font:500 17px/1 var(--font-mono);color:var(--ink);}
+
+/* ---------------------------------------------------------------- the return tags on a string */
+.rtags{position:absolute;z-index:2;}
+.rtags .str{position:absolute;inset-inline:0;top:10px;height:2px;background:#94A3B8;}
+.rtags .tagx{position:absolute;top:0;background:#fff;border:1px solid var(--rule-strong);}
+.rtags .tagx .tband{font-size:16px;}
+.rtags .tagx .bd{padding:10px 12px 12px;font-size:14.5px;}
+.rtags .tagx .bd b{font-size:15.5px;}
+.rtags .tagx .dt{font-size:14px;}
+
+/* ---------------------------------------------------------------- the cash chain (a slip with amounts) */
+.cashx{position:absolute;z-index:3;}
+.cashx h3{margin:0 0 12px;font-size:18px;line-height:1.3;font-weight:700;color:var(--ink);}
+.cashx h3 > span{display:block;margin-top:4px;font-size:15px;font-weight:400;color:var(--ink-soft);}
+.cashx ol{position:relative;}
+.cashx ol::before{content:"";position:absolute;top:22px;bottom:22px;inset-inline-start:21px;width:2px;background:var(--rule-strong);}
+.cashx li{position:relative;display:grid;grid-template-columns:44px 1fr;column-gap:14px;padding-block:10px;}
+.cashx .ib{position:relative;z-index:1;width:44px;height:44px;padding:9px;background:var(--ink);color:#fff;}
+.cashx .rl3{font-size:17px;line-height:1.3;font-weight:500;color:var(--ink);}
+.cashx .rl3 > small{display:block;margin-top:2px;font-size:14.5px;font-weight:400;color:var(--ink-soft);}
+.cashx .amt{display:block;margin-top:6px;font:500 22px/1 var(--font-mono);color:var(--ink);direction:ltr;text-align:right;}
+.cashx .amt small{font:400 14px/1 var(--font-text);color:var(--ink-soft);margin-inline-start:6px;}
+.cashx .dif{display:inline-block;margin-top:8px;padding:4px 9px;border:1.5px solid var(--danger);color:var(--danger);font-size:14.5px;font-weight:700;}
+.cashx .dif .num{font-family:var(--font-mono);font-weight:500;}
+.cashx li.now .ib{background:var(--signal);box-shadow:var(--glow-primary);}
+.cashx li.next .ib{background:var(--desk);color:var(--ink-faint);border:2px solid var(--rule-strong);}
+.cashx li.next .rl3,.cashx li.next .amt{color:var(--ink-faint);}
+
+/* ---------------------------------------------------------------- per-merchant payout rows (IQD) */
+.mbars{position:absolute;z-index:3;}
+.mbars .mhd{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;}
+.mbars .mhd .mleg{margin:0;}
+.mbars h3{font-size:17px;font-weight:700;line-height:1.3;color:var(--ink);}
+.mbars .mleg{display:flex;align-items:center;gap:16px;margin:6px 0 4px;font-size:14px;color:var(--ink-soft);}
+.mbars .mleg span{display:inline-flex;align-items:center;gap:6px;}
+.mbars .mleg i{width:16px;height:10px;background:#CBD5E1;}
+.mbars .mleg i.pd{background:var(--ink);}
+.mbars .mleg i.al{background:var(--danger);}
+.mrow{display:grid;grid-template-columns:150px 1fr 118px 104px;align-items:center;column-gap:12px;padding-block:9px;border-bottom:1px solid var(--rule);font-size:15.5px;color:var(--ink);}
+.mrow .mn{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.mrow .mb{display:flex;gap:2px;height:14px;}
+.mrow .mb i{display:block;height:100%;}
+.mrow .mb i.pd{background:var(--ink);}
+.mrow .mb i.ow{background:#CBD5E1;}
+.mrow .mb i.al{background:var(--danger);}
+.mrow .mv{font:500 15px/1 var(--font-mono);direction:ltr;text-align:left;}
+.mrow .ms{font-size:14.5px;color:var(--ink-soft);white-space:nowrap;}
+.mrow.late .mv,.mrow.late .ms{color:var(--danger);}
+.mrow.late .ms{font-weight:700;}
+
+/* ---------------------------------------------------------------- chat lines become tickets (helpdesk) */
+.b2t{position:absolute;z-index:3;display:flex;flex-direction:column;gap:18px;}
+.b2t h3{font-size:17px;font-weight:700;line-height:1.3;color:var(--ink);}
+.b2t .pair{display:grid;grid-template-columns:1fr 26px 176px;align-items:center;column-gap:10px;}
+.b2t .bub{max-width:none;}
+.b2t .bub small{display:block;margin-bottom:3px;font-size:14px;color:var(--ink-faint);}
+.b2t .arr{width:26px;height:26px;color:var(--ink);}
+.tk2{padding:9px 12px;background:#fff;border:1px solid var(--rule-strong);border-top:3px solid var(--signal);font-size:14.5px;line-height:1.35;color:var(--ink);}
+.tk2 b{display:block;font-size:15.5px;}
+.tk2 .sla{display:flex;justify-content:space-between;margin-top:4px;color:var(--ink-soft);}
+.tk2 .sla .num{font-family:var(--font-mono);color:var(--ink);}
+.tk2.done{border-top-color:var(--ink);}
+.tk2.late{border-top-color:var(--danger);}
+.tk2.late .sla,.tk2.late .sla .num{color:var(--danger);font-weight:700;}
+
+/* ---------------------------------------------------------------- vehicles line art (fleet panel) */
+.vart{position:absolute;z-index:2;color:#BFDBFE;}
+.vart svg{display:block;overflow:visible;}
+
+/* ---------------------------------------------------------------- desk objects for couriers (page 3) */
+.wbx{padding:12px 14px;color:#1E293B;font-size:15px;line-height:1.5;}
+.wbx .hd{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:6px;border-bottom:1.5px solid #1E293B;font-size:15.5px;font-weight:700;}
+.wbx .ln{display:grid;grid-template-columns:62px 1fr;column-gap:8px;padding-block:3px;border-bottom:1px dashed #CBD5E1;}
+.wbx .ln span:first-child{color:#64748B;font-size:14px;}
+.wbx .hw{font-weight:700;transform:rotate(-1.2deg);display:inline-block;}
+.wbx .x{text-decoration:line-through;color:#64748B;}
+.wbx .al{color:var(--danger);font-weight:700;}
+.xls{padding:0;font-size:14px;color:#1E293B;}
+.xls .hd{padding:9px 12px;border-bottom:1px solid var(--rule-strong);font-size:15px;font-weight:700;display:flex;justify-content:space-between;}
+.xls table{width:100%;border-collapse:collapse;table-layout:fixed;}
+.xls td{height:30px;padding-inline:6px;border:1px solid #CBD5E1;white-space:nowrap;overflow:hidden;}
+.xls tr:first-child td{background:var(--sunken);font-weight:700;font-size:13.5px;}
+.xls td.m{font-family:var(--font-mono);direction:ltr;text-align:left;font-size:13.5px;}
+.xls td.al{color:var(--danger);font-weight:700;outline:2px solid var(--danger);outline-offset:-2px;}
+.xls .ft{padding:7px 12px;font-size:14px;color:#64748B;}
+.mnf{padding:12px 14px;color:#1E293B;font-size:14.5px;}
+.mnf .hd{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:6px;border-bottom:1.5px solid #1E293B;font-size:15.5px;font-weight:700;}
+.mnf .tally{display:flex;flex-wrap:wrap;gap:4px 10px;margin-top:10px;}
+.mnf .tally svg{width:34px;height:22px;}
+.mnf .cnt{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:8px;border-top:1px dashed #94A3B8;}
+.mnf .cnt b{font:500 26px/1 var(--font-mono);}
+.mnf .cnt b.al{color:var(--danger);}
+.envx{padding:0;background:#fff;}
+.envx svg{display:block;width:100%;height:auto;}
+.oilx{padding:10px 14px;background:#fff;border:2px solid #1E293B;font-size:14.5px;color:#1E293B;}
+.oilx .hd{font-size:15px;font-weight:700;text-align:center;padding-bottom:5px;border-bottom:1.5px solid #1E293B;}
+.oilx dl{display:grid;grid-template-columns:auto 1fr;column-gap:10px;row-gap:3px;margin-top:6px;}
+.oilx dt{color:#64748B;font-size:14px;}
+.oilx dd{margin:0;font-family:var(--font-mono);direction:ltr;text-align:right;}
+.odo{position:absolute;padding:6px 10px;background:var(--ink);color:#fff;font:500 22px/1 var(--font-mono);letter-spacing:.02em;direction:ltr;}
+.odo small{display:block;margin-bottom:4px;font:400 14px/1 var(--font-text);color:var(--on-ink-soft);letter-spacing:0;direction:rtl;}
+.odo.al{background:var(--danger);}
+.bcode{display:block;}
+.phone .phnote{padding:14px 16px;font-size:14.5px;line-height:1.45;color:var(--ink-soft);background:#fff;}
+/* the week the cash sleeps (route page) */
+.wkx{position:absolute;z-index:3;}
+.wkx .wn{font:500 64px/1 var(--font-mono);color:var(--ink);direction:ltr;text-align:right;}
+.wkx .wn small{font:500 22px/1 var(--font-text);color:var(--ink-soft);margin-inline-end:10px;}
+.wkx .wc{margin-top:8px;font-size:16.5px;line-height:1.45;color:var(--ink-soft);}
+.wkx ol{margin-top:16px;border-top:1px solid var(--rule-strong);}
+.wkx li{display:grid;grid-template-columns:22px 70px 1fr;align-items:center;column-gap:12px;padding-block:6px;border-bottom:1px solid var(--rule);font-size:15.5px;color:var(--ink);}
+.wkx li i{width:22px;height:22px;background:var(--ink);}
+.wkx li.now i{background:var(--signal);}
+.wkx li.slp i{background:repeating-linear-gradient(135deg,#fff 0 3px,#94A3B8 3px 4.5px);border:1.5px solid #94A3B8;}
+.wkx li.nx i{background:#fff;border:2px solid var(--rule-strong);}
+.wkx li b{font-weight:700;}
+.wkx li span{color:var(--ink-soft);}
+.wkx li.now span{color:var(--signal-text);font-weight:500;}
+/* the ladder's small Iraq */
+.minimap{margin-top:auto;display:flex;align-items:flex-end;gap:14px;}
+.minimap svg{display:block;flex:none;overflow:visible;}
+.minimap p{font-size:15px;line-height:1.4;color:var(--ink-soft);}
+.minimap p b{display:block;color:var(--ink);}
+/* the fleet panel: a Signal card for what is due but not late, the sticker on the bike */
+.art .card.sig{border-top-color:var(--signal);}
+.art .card.sig .pn{background:var(--signal);}
+.art .stk{position:absolute;z-index:2;padding:4px 9px;background:#fff;border:1.5px solid var(--danger);font-size:14px;color:var(--danger);transform:rotate(-3deg);white-space:nowrap;}
+.art .stk b{font-family:"Anu Hand","Anu Arabic",sans-serif;font-size:16px;}
+/* the close: the parcel's file, closed */
+.cl-done{position:absolute;z-index:2;}
+.cl-done p{font-size:17px;line-height:1.5;color:var(--on-ink-soft);}
+.cl-done p b{color:#fff;font-weight:700;}
+.cl-done .c14{display:flex;gap:6px;margin-top:10px;}
+.cl-done .c14 i{width:28px;height:28px;background:#fff;}
+.cl-done .c14 i:last-child{background:var(--nav-signal);}
+.ladder-fact .n small{font-size:.42em;letter-spacing:0;margin-inline-end:10px;color:var(--ink-soft);}
+
+.chat .bub small.from{display:block;margin-bottom:2px;font-size:13.5px;color:var(--ink-faint);}
+.nbk td.hw{font-weight:700;font-size:17px;}
+.nbk td.x{text-decoration:line-through;color:#64748B;}
+.rtags .tagx .dt.x span{color:var(--danger);font-weight:700;}
+.tkey i.now{background:var(--signal);box-shadow:var(--glow-primary);}
+.qgrid.q22{grid-template-columns:repeat(25,22px)!important;gap:5px;}
+.qgrid.q22 i{width:22px;height:22px;}
+.qgrid.q9{grid-template-columns:repeat(40,12px)!important;gap:4px;}
+.qgrid.q9 i{width:12px;height:12px;border-width:1px;}
+.zleg li b small{font:400 14px/1 var(--font-text);color:var(--ink-faint);margin-inline-start:6px;}
+.b2t > .tg{align-self:flex-end;}
+
+.filex.env{width:56px;height:38px;background:none;border:0;}
+.filex.env::before{display:none;}
+.filex.env svg{display:block;}
