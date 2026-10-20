@@ -1,11 +1,11 @@
 # Deploying DMA Field Reports to the DMA Odoo server
 
-Tested on 2026-10-19 against a copy of the live module set:
+Version 19.0.0.2.0. Tested on 2026-10-20 against a copy of the live module set:
 - integ/dma-unified 4a1ffb4 (dma_theme, dma_accreditation, gov_hr_base, gov_hr_deputation);
 - dma_task_orders 71f6cb9;
 - Odoo 19 Community.
 
-All 13 module tests pass, run with the real IMSMA data loaded. The module needs only `base`, `mail` and `web`.
+All 16 module tests pass, run with the real IMSMA data loaded, on a fresh database and on one upgraded from 19.0.0.1.0. The module needs only `base`, `mail` and `web`.
 
 The Python libraries it uses (openpyxl, lxml, psycopg2) are in Odoo 19's own requirements and in the official `odoo:19` image. No pip install is needed.
 
@@ -23,6 +23,12 @@ Arabic loads with the module when Arabic is already installed on the database. I
 ```
 docker compose run --rm --no-deps odoo odoo -c /etc/odoo/odoo.conf -d dma -u dma_field_reports --i18n-overwrite --stop-after-init --no-http </dev/null
 ```
+
+## 2b. Already installed 19.0.0.1.0? Upgrade instead
+Same backup and stop/start, then run `-u dma_field_reports` instead of `-i`. The upgrade:
+- adds the Arabic headers to the EORE columns a manager has not changed;
+- adds the built-in Arabic list translations, and never overwrites a mapping someone made;
+- loads the new Arabic texts.
 
 ## 3. Give people access
 In Settings > Users, section **DMA Field Reports**:

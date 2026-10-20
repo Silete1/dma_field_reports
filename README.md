@@ -7,10 +7,13 @@ Odoo never writes to the IMSMA database.
 
 Design: `../imsma-importer/DESIGN.md`. Analysis of the old tool: `../imsma-importer/analysis/`.
 
-## Status (2026-10-19)
+## Status (2026-10-20, version 19.0.0.2.0)
 
 - EORE (the DMA EORE Template English, Sep 2026) works end to end: check, fix, new locations, export.
 - Location reports are generated from other batches.
+- English and Arabic (UI, messages, and Arabic headers and answers in the operator file).
+- Problem list for the operator (Excel), blank operator template per form, warning when a report was already exported.
+- 600-row file: read 6 s, check 4 s, a fix on 300 rows 1.4 s (local PC).
 - Other forms (QA/Survey123, Hazard, NTS, TS, Completion, UXO, Progress, Victim): templates to add,
   using `analysis/mappings/*.csv` of the old tool.
 - Not yet tried: importing an exported zip into a real IMSMA NG (needs a test instance) and

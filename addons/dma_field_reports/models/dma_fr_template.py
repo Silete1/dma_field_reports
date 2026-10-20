@@ -89,6 +89,10 @@ class DmaFrTemplate(models.Model):
     field_ids = fields.One2many("dma.fr.template.field", "template_id", "Columns", copy=True)
     field_count = fields.Integer(compute="_compute_field_count")
     note = fields.Html(translate=True)
+    operator_file = fields.Binary("Blank file for operators", attachment=True,
+                                  help="The empty Excel template the organisations fill in. Staff can download it "
+                                       "from every batch of this form.")
+    operator_filename = fields.Char()
 
     @api.depends("imsma_form_name", "checked_form_version")
     def _compute_form_id(self):

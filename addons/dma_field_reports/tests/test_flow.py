@@ -93,6 +93,8 @@ class TestFlow(TransactionCase):
     def setUpClass(cls):
         super().setUpClass()
         cls.env["dma.fr.source"].search([]).write({"is_current": False})
+        # independent of what this database has learned from earlier fixes
+        cls.env["dma.fr.value.map"].search([("origin", "=", "learned")]).unlink()
         cls.source = cls.env["dma.fr.source"].create({
             "name": "test package", "mode": "package", "package_file": base64.b64encode(_package())})
         cls.source.action_refresh()
@@ -149,7 +151,8 @@ class TestFlow(TransactionCase):
             b.action_export()
         b.action_export_locations()
         req = b.location_request_ids
-        self.assertEqual(req.localid, "LOC-CI-101")  # numbers continue after IMSMA's highest
+        # numbers continue after IMSMA's highest (100 in the package) and never go back
+        self.assertTrue(req.localid.startswith("LOC-CI-") and int(req.localid.rsplit("-", 1)[1]) > 100)
         self.assertEqual(b.state, "locations")
         b.action_confirm_locations()
         self.assertEqual(b.state, "ready")
@@ -157,13 +160,17 @@ class TestFlow(TransactionCase):
         b.action_export()
         self.assertEqual(b.state, "exported")
         rows = b.row_ids.sorted("excel_row")
-        self.assertEqual(rows.mapped("object_localid"), ["Education-CI-501", "Education-CI-502"])
+        numbers = [int(x.rsplit("-", 1)[1]) for x in rows.mapped("object_localid")]
+        self.assertTrue(all(x.startswith("Education-CI-") for x in rows.mapped("object_localid")))
+        self.assertGreater(numbers[0], 500)
+        self.assertEqual(numbers[1], numbers[0] + 1)
+        first = rows[0].report_localid
         export = b.export_ids.filtered(lambda e: e.kind == "reports")
         with zipfile.ZipFile(io.BytesIO(base64.b64decode(export.file))) as z:
             names = z.namelist()
-            self.assertIn("xml/FR-MRE-CI-501.xml", names)
+            self.assertIn(f"xml/{first}.xml", names)
             self.assertTrue(any(n.startswith("attachments/1.") and n.endswith(".docx") for n in names))
-            root = etree.fromstring(z.read("xml/FR-MRE-CI-501.xml"))
+            root = etree.fromstring(z.read(f"xml/{first}.xml"))
         self.assertEqual(root.find(".//FieldReportInfo").get("reportGUID"), "form-eore")
         self.assertEqual(root.findtext(".//MREOrganisation/OrganisationID/OriginalID"), "NPA")
         self.assertEqual(root.findtext(".//Association/AssociationIdentification/OriginalID"), "LOC-CI-101")

@@ -46,6 +46,8 @@
                             <field name="header_row"/>
                             <field name="header_rows"/>
                             <field name="first_data_row"/>
+                            <field name="operator_file" filename="operator_filename"/>
+                            <field name="operator_filename" invisible="1"/>
                         </group>
                     </group>
                     <notebook>

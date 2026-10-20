@@ -226,7 +226,7 @@ class DmaFrBatchExport(models.Model):
     @staticmethod
     def _val(cells, role):
         c = cells.get(role)
-        return c[0].value if c and c[0].value else None
+        return c[0].sent_value if c and c[0].sent_value else None
 
     def _attachments(self, rep, row):
         files = []
@@ -242,22 +242,22 @@ class DmaFrBatchExport(models.Model):
     def _cdfs(self, rep, parent, cells):
         for c in cells.get("cdf", []):
             f = c.field_id
-            if not c.value or not f.cdf_id_text or not f.cdf_guid:
+            if not c.sent_value or not f.cdf_id_text or not f.cdf_guid:
                 continue
             dt = maxml.datatype_of(f.cdf_id_text, f.cdf_ref_id.datatype)
             if f.datatype == "multi":
-                value = [v.strip() for v in c.value.split(", ") if v.strip()]
+                value = [v.strip() for v in c.sent_value.split(", ") if v.strip()]
             elif f.datatype == "list":
-                value = [c.value]
+                value = [c.sent_value]
             else:
-                value = c.value
+                value = c.sent_value
             rep.cdf(parent, f.cdf_id_text, f.cdf_guid, value, dt)
 
     def _cdf_simple(self, rep, parent, cells, role):
         for c in cells.get(role, []):
             f = c.field_id
-            if c.value and f.cdf_id_text and f.cdf_guid:
-                rep.cdf(parent, f.cdf_id_text, f.cdf_guid, c.value,
+            if c.sent_value and f.cdf_id_text and f.cdf_guid:
+                rep.cdf(parent, f.cdf_id_text, f.cdf_guid, c.sent_value,
                         maxml.datatype_of(f.cdf_id_text, f.cdf_ref_id.datatype))
 
     def _build_eore(self, rep, row):
@@ -299,7 +299,7 @@ class DmaFrBatchExport(models.Model):
 
     def _resolve_org_value(self, cell):
         Org = self.env["dma.fr.ref.org"]
-        val = cell.value or ""
+        val = cell.sent_value or ""
         if " · " in val:
             return Org.search([("localid", "=", val.split(" · ")[0])], limit=1)
         return Org.search([("name", "=", val)], limit=1)

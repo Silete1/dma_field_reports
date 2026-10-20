@@ -13,6 +13,8 @@ class TestAccess(TransactionCase):
     def setUpClass(cls):
         super().setUpClass()
         cls.env["dma.fr.source"].search([]).write({"is_current": False})
+        # independent of what this database has learned from earlier fixes
+        cls.env["dma.fr.value.map"].search([("origin", "=", "learned")]).unlink()
         cls.source = cls.env["dma.fr.source"].create({
             "name": "test package", "mode": "package", "package_file": base64.b64encode(_package()),
             "db_password": "secret"})

@@ -12,9 +12,26 @@ import re
 import zipfile
 from collections import defaultdict
 
+from psycopg2.extras import execute_values
+
 from odoo import _, fields, models
 
 from ..services import geo, text
+
+def _differs(record, fname, value):
+    """True when writing value would change record[fname] (avoids needless writes and recomputes)."""
+    field = record._fields[fname]
+    current = record[fname]
+    if field.type == "many2one":
+        return (current.id or False) != (value or False)
+    if field.type in ("many2many", "one2many"):
+        if isinstance(value, list) and value and value[0][0] == 6:
+            return set(current.ids) != set(value[0][2])
+        return True
+    if field.type == "float":
+        return round(current or 0.0, 7) != round(value or 0.0, 7)
+    return (current or False) != (value or False)
+
 
 DATE_FORMATS = ["%Y-%m-%d", "%d/%m/%Y", "%d-%m-%Y", "%d.%m.%Y", "%Y/%m/%d", "%d/%m/%y", "%d %B %Y", "%d %b %Y"]
 PLACE_ROLES = ("province", "district", "subdistrict", "city")
@@ -49,6 +66,8 @@ class Ctx:
         self.orgs = orgs
         # gazetteer in memory
         self.places = {}
+        self._by_level = {}
+        self.place_cache = {}  # address (+ rounded point) -> (place, area, [(role, flag args)])
         self.children = defaultdict(list)
         env.cr.execute("SELECT id, name, name_norm, level, parent_id FROM dma_fr_ref_place WHERE active")
         for pid, name, norm_, level, parent in env.cr.fetchall():
@@ -95,7 +114,9 @@ class Ctx:
         return out
 
     def by_level(self, level):
-        return [pid for pid, p in self.places.items() if p[2] == level]
+        if level not in self._by_level:
+            self._by_level[level] = [pid for pid, p in self.places.items() if p[2] == level]
+        return self._by_level[level]
 
     def nearest_locations(self, lat, lon, max_km=10.0, limit=3):
         """[(km, location)] of IMSMA locations near a point, nearest first."""
@@ -141,7 +162,7 @@ class DmaFrBatchCheck(models.Model):
         self.ensure_one()
         rows = rows or self.row_ids
         ctx = Ctx(self)
-        pending_writes = defaultdict(list)  # frozen vals -> cell ids
+        new_vals = {}  # cell -> (state, code, message, suggestion, value)
         row_writes = []
         seen_report_ids = defaultdict(list)
         for row in rows:
@@ -158,30 +179,61 @@ class DmaFrBatchCheck(models.Model):
             for cell, res in values.get("org_report_id", []):
                 if res.get("py"):
                     seen_report_ids[text.norm(res["py"])].append((row, cell))
-            for cell_id, res in results.items():
-                vals = {"state": res.get("state", "ok"), "code": res.get("code") or False,
-                        "message": res.get("message") or False, "suggestion": res.get("suggestion") or False,
-                        "value": res.get("value") or False}
-                pending_writes[tuple(sorted(vals.items()))].append(cell_id)
-        # same organisation report id twice in this batch
-        for key, hits in seen_report_ids.items():
-            if len(hits) > 1:
-                for row, cell in hits:
-                    vals = dict(state="warning", code="duplicate_in_batch",
-                                message=_("The same report id is on rows %s.", ", ".join(str(r.excel_row) for r, _c in hits)),
-                                suggestion=False, value=cell.raw)
-                    for k, ids in list(pending_writes.items()):
-                        if cell.id in ids:
-                            ids.remove(cell.id)
-                    pending_writes[tuple(sorted(vals.items()))].append(cell.id)
-        Cell = self.env["dma.fr.cell"].with_context(dma_fr_no_recheck=True)
-        for vals, ids in pending_writes.items():
-            if ids:
-                Cell.browse(ids).write(dict(vals))
+            for cell in row.cell_ids:
+                res = results[cell.id]
+                value = res.get("value") or None
+                if value is not None and not cell.override and value == cell.raw:
+                    value = None  # same as the file: not stored (see dma.fr.cell.sent_value)
+                new_vals[cell] = (res.get("state", "ok"), res.get("code") or None, res.get("message") or None,
+                                  res.get("suggestion") or None, value)
+        # same organisation report id twice in this batch, or already exported in an earlier batch
+        self._flag_repeated_reports(seen_report_ids, new_vals)
+        self._write_cells(new_vals)
         for row, vals in row_writes:
-            row.write(vals)
+            changes = {k: v for k, v in vals.items() if _differs(row, k, v)}
+            if changes:
+                row.write(changes)
         self._make_location_requests(rows)
         return True
+
+    def _flag_repeated_reports(self, seen_report_ids, new_vals):
+        done = self.env["dma.fr.cell"].search([
+            ("batch_id", "!=", self.id), ("field_id.role", "=", "org_report_id"), ("row_id.imsma_state", "!=", "not_sent"),
+            ("row_excluded", "=", False), ("raw", "!=", False)])
+        earlier = defaultdict(list)
+        for c in done:
+            earlier[text.norm(c.raw)].append(c)
+        for key, hits in seen_report_ids.items():
+            if len(hits) > 1:
+                rows_txt = ", ".join(str(r.excel_row) for r, _c in hits)
+                for _row, cell in hits:
+                    new_vals[cell] = ("warning", "duplicate_in_batch",
+                                      _("The same report id is on rows %s.", rows_txt), None, cell.raw)
+            for _row, cell in hits:
+                if key in earlier:
+                    prev = earlier[key][0]
+                    new_vals[cell] = ("warning", "already_exported",
+                                      _("Already exported in batch %(batch)s (%(id)s). Leave this row out unless it "
+                                        "corrects that report.", batch=prev.batch_id.name,
+                                        id=prev.row_id.object_localid or "-"), None, cell.raw)
+
+    def _write_cells(self, new_vals):
+        """Write only the cells whose result changed, in one SQL statement (thousands of cells on big files)."""
+        rank = {"error": 3, "warning": 2, "info": 1}
+        changed = [(c.id, *v, rank.get(v[0], 0)) for c, v in new_vals.items()
+                   if (c.state, c.code or None, c.message or None, c.suggestion or None, c.value or None) != v]
+        if not changed:
+            return
+        self.env.flush_all()
+        execute_values(self.env.cr._obj, """
+            UPDATE dma_fr_cell AS c SET state = v.state, code = v.code, message = v.message,
+                   suggestion = v.suggestion, value = v.value, severity = v.severity,
+                   write_uid = %s, write_date = now() at time zone 'UTC'
+            FROM (VALUES %%s) AS v(id, state, code, message, suggestion, value, severity)
+            WHERE c.id = v.id""" % int(self.env.uid), changed, page_size=2000)
+        cells = self.env["dma.fr.cell"].browse([c[0] for c in changed])
+        cells.invalidate_recordset(["state", "code", "message", "suggestion", "value", "severity"])
+        cells.modified(["state", "code", "message", "suggestion", "value", "severity"])
 
     # ============================================================ one value
     def _check_value(self, ctx, cell):
@@ -389,7 +441,21 @@ class DmaFrBatchCheck(models.Model):
             return
         place = row.place_id.id if row.place_manual and row.place_id else None
         if not place:
-            place, area = self._resolve_place(ctx, cells, flag, row_vals)
+            key = tuple(v for _c, v in cells.values()) + (
+                round(row_vals.get("latitude") or 0, 3), round(row_vals.get("longitude") or 0, 3))
+            cached = ctx.place_cache.get(key)
+            if cached is None:
+                flags = []
+                cell_role = {c.id: r for r, (c, _v) in cells.items() if c}
+
+                def record(cell, *args):
+                    if cell is not None:
+                        flags.append((cell_role.get(cell.id), args))
+                place, area = self._resolve_place(ctx, cells, record, row_vals)
+                cached = ctx.place_cache[key] = (place, area, flags)
+            place, area, flags = cached
+            for role, args in flags:
+                flag(cells[role][0] if role else None, *args)
             row_vals["area_id"] = area or False
         if not place:
             row_vals["place_id"] = False

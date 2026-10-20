@@ -65,7 +65,7 @@
                         <group>
                             <field name="raw" readonly="1"/>
                             <field name="override"/>
-                            <field name="value" readonly="1"/>
+                            <field name="sent_value" readonly="1"/>
                         </group>
                     </group>
                     <group>

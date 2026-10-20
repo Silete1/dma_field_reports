@@ -58,11 +58,14 @@
                             invisible="state not in ('draft', 'checked', 'ready', 'locations') or not row_count"/>
                     <button name="action_open_problems" type="object" string="Fix problems" class="btn-primary"
                             invisible="error_count == 0 or state not in ('draft', 'checked', 'ready', 'locations')"/>
+                    <button name="action_problem_report" type="object" string="Problem list for the operator"
+                            invisible="not error_count and not warning_count"
+                            help="Excel list of every problem, to send back to the organisation."/>
                     <button name="action_export_locations" type="object" string="Export new locations"
                             class="btn-primary"
-                            invisible="error_count or not location_count or state not in ('checked', 'ready')"/>
+                            invisible="error_count or not locations_to_export or state in ('exported', 'done', 'cancel')"/>
                     <button name="action_confirm_locations" type="object" string="Locations approved in IMSMA"
-                            class="btn-primary" invisible="state != 'locations'"
+                            class="btn-primary" invisible="not locations_waiting or state in ('exported', 'done', 'cancel')"
                             confirm="Have the location reports been imported AND approved in the IMSMA Workbench?"/>
                     <button name="action_export" type="object" string="Export to IMSMA" class="btn-primary"
                             invisible="state != 'ready'"/>
@@ -72,6 +75,8 @@
                             invisible="state in ('exported', 'done', 'cancel')"/>
                     <button name="action_reset" type="object" string="Back to draft" invisible="state != 'cancel'"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,checked,locations,ready,exported,done"/>
+                    <field name="locations_to_export" invisible="1"/>
+                    <field name="locations_waiting" invisible="1"/>
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
@@ -109,6 +114,9 @@
                             <field name="office_id" options="{'no_create': True, 'no_open': True}"
                                    readonly="state in ('exported', 'done')"/>
                             <field name="user_id" widget="many2one_avatar_user"/>
+                            <field name="template_file" filename="template_filename" readonly="1"
+                                   invisible="not template_file"/>
+                            <field name="template_filename" invisible="1"/>
                         </group>
                         <group string="Files">
                             <field name="source_file" filename="source_filename" readonly="state in ('exported', 'done', 'cancel')"/>
@@ -261,7 +269,7 @@
                             <field name="field_id" readonly="1"/>
                             <field name="raw" readonly="1"/>
                             <field name="override" placeholder="type to correct"/>
-                            <field name="value" readonly="1"/>
+                            <field name="sent_value" readonly="1"/>
                             <field name="message" readonly="1"/>
                             <field name="state" column_invisible="1"/>
                             <button name="action_fix" type="object" icon="fa-wrench" title="Fix"

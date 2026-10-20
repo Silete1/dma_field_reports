@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-19 10:32+0000\n"
-"PO-Revision-Date: 2026-10-19 10:32+0000\n"
+"POT-Creation-Date: 2026-10-20 07:01+0000\n"
+"PO-Revision-Date: 2026-10-20 07:01+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -241,6 +241,14 @@ msgid "Allowed values"
 msgstr ""
 
 #. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_check.py:0
+msgid ""
+"Already exported in batch %(batch)s (%(id)s). Leave this row out unless it "
+"corrects that report."
+msgstr ""
+
+#. module: dma_field_reports
 #: model:res.groups,comment:dma_field_reports.group_dma_fr_manager
 msgid ""
 "Also sets up the IMSMA reference source, the form templates, the value "
@@ -342,6 +350,8 @@ msgid "Bags"
 msgstr ""
 
 #. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
 #: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__batch_id
 #: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_export__batch_id
 #: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__batch_id
@@ -358,6 +368,12 @@ msgstr ""
 #. module: dma_field_reports
 #: model:ir.model.fields,help:dma_field_reports.field_dma_fr_cell__suggestion
 msgid "Best guesses, best first, separated by ' | '."
+msgstr ""
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__template_file
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__operator_file
+msgid "Blank file for operators"
 msgstr ""
 
 #. module: dma_field_reports
@@ -445,6 +461,17 @@ msgid "Checked against"
 msgstr ""
 
 #. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "Checked on"
+msgstr ""
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__value
+msgid "Checked value"
+msgstr ""
+
+#. module: dma_field_reports
 #: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_ref_place__child_ids
 msgid "Children"
 msgstr ""
@@ -479,6 +506,12 @@ msgid "City / town / village"
 msgstr ""
 
 #. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
+msgid "Closest IMSMA values"
+msgstr ""
+
+#. module: dma_field_reports
 #: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_cell_view_problem_list
 msgid "Closest matches"
 msgstr ""
@@ -502,6 +535,8 @@ msgid "Col"
 msgstr ""
 
 #. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
 #: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__field_id
 #: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__field_id
 #: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_cell_view_search
@@ -860,6 +895,11 @@ msgid "Excel file"
 msgstr ""
 
 #. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+msgid "Excel list of every problem, to send back to the organisation."
+msgstr ""
+
+#. module: dma_field_reports
 #: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__excel_row
 msgid "Excel row"
 msgstr ""
@@ -915,6 +955,8 @@ msgid "Failed"
 msgstr ""
 
 #. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
 #: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_value_map__scope_label
 #: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_value_map_view_list
 #: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_value_map_view_search
@@ -973,6 +1015,8 @@ msgid "Fieldreport Guid"
 msgstr ""
 
 #. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
 #: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_export__file
 #: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_list
 #: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_search
@@ -1242,6 +1286,7 @@ msgid "IM date"
 msgstr ""
 
 #. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__imsma_state
 #: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_ref_place_alias__origin__imsma
 #: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_row_view_form
 #: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_template_view_form
@@ -1541,11 +1586,6 @@ msgid ""
 msgstr ""
 
 #. module: dma_field_reports
-#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__imsma_state
-msgid "Imsma State"
-msgstr ""
-
-#. module: dma_field_reports
 #. odoo-python
 #: code:addons/dma_field_reports/models/dma_fr_batch.py:0
 #: model:ir.model.fields.selection,name:dma_field_reports.selection__dma_fr_batch__state__done
@@ -1555,6 +1595,8 @@ msgid "In IMSMA"
 msgstr ""
 
 #. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
 #: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__raw
 #: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__raw
 msgid "In the file"
@@ -1809,6 +1851,16 @@ msgstr ""
 #. module: dma_field_reports
 #: model:ir.ui.menu,name:dma_field_reports.menu_dma_fr_ref_location
 msgid "Locations"
+msgstr ""
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__locations_to_export
+msgid "Locations To Export"
+msgstr ""
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__locations_waiting
+msgid "Locations Waiting"
 msgstr ""
 
 #. module: dma_field_reports
@@ -2283,6 +2335,12 @@ msgstr ""
 #. module: dma_field_reports
 #. odoo-python
 #: code:addons/dma_field_reports/models/dma_fr_source.py:0
+msgid "Only a Field Reports manager can load IMSMA data."
+msgstr ""
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_source.py:0
 msgid ""
 "Only one IMSMA source can be used for checking. Untick the other one first."
 msgstr ""
@@ -2299,6 +2357,12 @@ msgid ""
 "Open Fix problems. Problems are grouped by column and value: fixing one "
 "fixes every row with the same value. Use Leave out for a report that should "
 "not go to IMSMA."
+msgstr ""
+
+#. module: dma_field_reports
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_batch__template_filename
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_template__operator_filename
+msgid "Operator Filename"
 msgstr ""
 
 #. module: dma_field_reports
@@ -2552,6 +2616,8 @@ msgid "Press Export to IMSMA and import the zip in the IMSMA Workbench."
 msgstr ""
 
 #. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
 #: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_fix_wizard__message
 msgid "Problem"
 msgstr ""
@@ -2562,6 +2628,13 @@ msgid "Problem Count"
 msgstr ""
 
 #. module: dma_field_reports
+#: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
+msgid "Problem list for the operator"
+msgstr ""
+
+#. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
 #: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
 #: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_row_view_list
 msgid "Problems"
@@ -2802,6 +2875,8 @@ msgid "Role"
 msgstr ""
 
 #. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
 #: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__row_id
 #: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_row__excel_row
 #: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_cell_view_search
@@ -2871,7 +2946,7 @@ msgid "Seen in IMSMA data"
 msgstr ""
 
 #. module: dma_field_reports
-#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__value
+#: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__sent_value
 msgid "Sent to IMSMA"
 msgstr ""
 
@@ -2894,6 +2969,8 @@ msgid "Several values from a list"
 msgstr ""
 
 #. module: dma_field_reports
+#. odoo-python
+#: code:addons/dma_field_reports/models/dma_fr_batch.py:0
 #: model:ir.model.fields,field_description:dma_field_reports.field_dma_fr_cell__severity
 msgid "Severity"
 msgstr ""
@@ -2995,6 +3072,13 @@ msgstr ""
 #. odoo-python
 #: code:addons/dma_field_reports/models/dma_fr_batch.py:0
 msgid "Step 4 of 4: export"
+msgstr ""
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_cell__value
+msgid ""
+"Stored only when it differs from the file (a translated list value, a "
+"corrected date...)."
 msgstr ""
 
 #. module: dma_field_reports
@@ -3114,6 +3198,14 @@ msgstr ""
 #. module: dma_field_reports
 #: model_terms:ir.ui.view,arch_db:dma_field_reports.dma_fr_batch_view_form
 msgid "The Word reports and photos named in the file (or a zip of them)."
+msgstr ""
+
+#. module: dma_field_reports
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_batch__template_file
+#: model:ir.model.fields,help:dma_field_reports.field_dma_fr_template__operator_file
+msgid ""
+"The empty Excel template the organisations fill in. Staff can download it "
+"from every batch of this form."
 msgstr ""
 
 #. module: dma_field_reports

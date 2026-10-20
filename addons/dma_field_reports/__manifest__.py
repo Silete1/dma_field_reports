@@ -16,7 +16,7 @@ locations, organisations, ids in use) comes either from a read-only
 connection to the IMSMA database or from a package built from an IMSMA backup.
 Odoo never writes to IMSMA.
 """,
-    "version": "19.0.0.1.0",
+    "version": "19.0.0.2.0",
     "category": "Services",
     "license": "LGPL-3",
     "author": "Directorate of Mine Action",
@@ -39,6 +39,7 @@ Odoo never writes to IMSMA.
         "wizards/dma_fr_fix_wizard_views.xml",
         "views/dma_fr_menus.xml",
     ],
+    "post_init_hook": "post_init_hook",
     "installable": True,
     "application": True,
 }

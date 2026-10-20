@@ -21,7 +21,9 @@
         <field name="template_id" ref="template_eore"/>
         <field name="sequence">10</field>
         <field name="name">Funded by</field>
-        <field name="headers">Funded by</field>
+        <field name="headers">Funded by
+الجهة الممولة
+اسم الجهة الممولة</field>
         <field name="role">cdf</field>
         <field name="datatype">list</field>
         <field name="required" eval="True"/>
@@ -32,7 +34,8 @@
         <field name="template_id" ref="template_eore"/>
         <field name="sequence">20</field>
         <field name="name">Date of report</field>
-        <field name="headers">Date of report</field>
+        <field name="headers">Date of report
+تاريخ التقرير</field>
         <field name="role">report_date</field>
         <field name="datatype">date</field>
         <field name="required" eval="True"/>
@@ -43,7 +46,8 @@
         <field name="template_id" ref="template_eore"/>
         <field name="sequence">30</field>
         <field name="name">Reported by</field>
-        <field name="headers">Reported by</field>
+        <field name="headers">Reported by
+أعد التقرير من قبل</field>
         <field name="role">reporting_person</field>
         <field name="datatype">text</field>
         <field name="required" eval="True"/>
@@ -52,7 +56,8 @@
         <field name="template_id" ref="template_eore"/>
         <field name="sequence">40</field>
         <field name="name">Position</field>
-        <field name="headers">Position</field>
+        <field name="headers">Position
+الموقع الوظيفي</field>
         <field name="role">reporting_position</field>
         <field name="datatype">text</field>
         <field name="required" eval="True"/>
@@ -62,7 +67,8 @@
         <field name="sequence">50</field>
         <field name="name">Organisation</field>
         <field name="headers">Organization
-Organisation</field>
+Organisation
+الجهة المنفذة</field>
         <field name="role">organisation</field>
         <field name="datatype">organisation</field>
         <field name="required" eval="True"/>
@@ -72,7 +78,8 @@ Organisation</field>
         <field name="sequence">60</field>
         <field name="name">Sub-contractor</field>
         <field name="headers">Sub-contractor
-Subcontractor</field>
+Subcontractor
+المتعاقد الثانوي</field>
         <field name="role">subcontractor</field>
         <field name="datatype">organisation</field>
         <field name="required" eval="False"/>
@@ -84,7 +91,8 @@ Subcontractor</field>
         <field name="sequence">70</field>
         <field name="name">Task dossier id</field>
         <field name="headers">Task dossier ID
-Task dossier</field>
+Task dossier
+رقم أمر العمل</field>
         <field name="role">task_dossier</field>
         <field name="datatype">text</field>
         <field name="required" eval="True"/>
@@ -96,7 +104,8 @@ Task dossier</field>
         <field name="sequence">80</field>
         <field name="name">Province</field>
         <field name="headers">Location / Province
-Province</field>
+Province
+المحافظة</field>
         <field name="role">province</field>
         <field name="datatype">text</field>
         <field name="required" eval="True"/>
@@ -106,7 +115,8 @@ Province</field>
         <field name="sequence">90</field>
         <field name="name">District</field>
         <field name="headers">Location / District
-District</field>
+District
+القضاء</field>
         <field name="role">district</field>
         <field name="datatype">text</field>
         <field name="required" eval="True"/>
@@ -117,7 +127,8 @@ District</field>
         <field name="name">Sub-district</field>
         <field name="headers">Location / Subdistrict
 Subdistrict
-Sub-district</field>
+Sub-district
+الناحية</field>
         <field name="role">subdistrict</field>
         <field name="datatype">text</field>
         <field name="required" eval="False"/>
@@ -128,7 +139,10 @@ Sub-district</field>
         <field name="name">City / town / village</field>
         <field name="headers">Location / City/Town/Village
 City/Town/Village
-City</field>
+City
+القرية / المدينة
+المدينة / القرية
+القرية</field>
         <field name="role">city</field>
         <field name="datatype">text</field>
         <field name="required" eval="True"/>
@@ -138,7 +152,9 @@ City</field>
         <field name="sequence">120</field>
         <field name="name">Location name</field>
         <field name="headers">Location / Location name
-Location name</field>
+Location name
+اسم الموقع
+اسم موقع التوعية بمخاطر الذخائر والمواد المتفجرة</field>
         <field name="role">location_name</field>
         <field name="datatype">text</field>
         <field name="required" eval="False"/>
@@ -150,7 +166,8 @@ Location name</field>
         <field name="sequence">130</field>
         <field name="name">MGRS</field>
         <field name="headers">Location / MGRS
-MGRS</field>
+MGRS
+MGRS Coord</field>
         <field name="role">mgrs</field>
         <field name="datatype">text</field>
         <field name="required" eval="False"/>
@@ -161,7 +178,9 @@ MGRS</field>
         <field name="name">Latitude</field>
         <field name="headers">Location / Lat
 Lat
-Latitude</field>
+Latitude
+خطوط العرض
+خط العرض</field>
         <field name="role">latitude</field>
         <field name="datatype">number</field>
         <field name="required" eval="False"/>
@@ -172,7 +191,9 @@ Latitude</field>
         <field name="name">Longitude</field>
         <field name="headers">Location / Long
 Long
-Longitude</field>
+Longitude
+خطوط الطول
+خط الطول</field>
         <field name="role">longitude</field>
         <field name="datatype">number</field>
         <field name="required" eval="False"/>
@@ -181,7 +202,8 @@ Longitude</field>
         <field name="template_id" ref="template_eore"/>
         <field name="sequence">160</field>
         <field name="name">Planned start date</field>
-        <field name="headers">Planned start date</field>
+        <field name="headers">Planned start date
+تاريخ المخطط للبدء</field>
         <field name="role">planned_start</field>
         <field name="datatype">date</field>
         <field name="required" eval="False"/>
@@ -190,7 +212,8 @@ Longitude</field>
         <field name="template_id" ref="template_eore"/>
         <field name="sequence">170</field>
         <field name="name">Planned end date</field>
-        <field name="headers">Planned end date</field>
+        <field name="headers">Planned end date
+تاريخ المخطط للانتهاء</field>
         <field name="role">planned_end</field>
         <field name="datatype">date</field>
         <field name="required" eval="False"/>
@@ -199,7 +222,8 @@ Longitude</field>
         <field name="template_id" ref="template_eore"/>
         <field name="sequence">180</field>
         <field name="name">Actual start date</field>
-        <field name="headers">Actual start date</field>
+        <field name="headers">Actual start date
+تاريخ البدء الفعلي</field>
         <field name="role">actual_start</field>
         <field name="datatype">date</field>
         <field name="required" eval="True"/>
@@ -208,7 +232,8 @@ Longitude</field>
         <field name="template_id" ref="template_eore"/>
         <field name="sequence">190</field>
         <field name="name">Actual end date</field>
-        <field name="headers">Actual end date</field>
+        <field name="headers">Actual end date
+تاريخ الانتهاء الفعلي</field>
         <field name="role">actual_end</field>
         <field name="datatype">date</field>
         <field name="required" eval="True"/>
@@ -217,7 +242,8 @@ Longitude</field>
         <field name="template_id" ref="template_eore"/>
         <field name="sequence">200</field>
         <field name="name">Activity type</field>
-        <field name="headers">Activity type</field>
+        <field name="headers">Activity type
+نوع النشاط</field>
         <field name="role">cdf</field>
         <field name="datatype">multi</field>
         <field name="required" eval="False"/>
@@ -228,7 +254,8 @@ Longitude</field>
         <field name="template_id" ref="template_eore"/>
         <field name="sequence">210</field>
         <field name="name">Awareness type</field>
-        <field name="headers">Awareness type for impacted communities</field>
+        <field name="headers">Awareness type for impacted communities
+توعية المجتمعات المتأثرة من مخاطر</field>
         <field name="role">cdf</field>
         <field name="datatype">multi</field>
         <field name="required" eval="False"/>
@@ -240,7 +267,8 @@ Longitude</field>
         <field name="sequence">220</field>
         <field name="name">EORE type</field>
         <field name="headers">EORE type
-MRE type</field>
+MRE type
+نوع التوعية بمخاطر الذخائر والمواد المتفجرة</field>
         <field name="role">cdf</field>
         <field name="datatype">list</field>
         <field name="required" eval="False"/>
@@ -252,7 +280,8 @@ MRE type</field>
         <field name="sequence">230</field>
         <field name="name">EORE sub-type</field>
         <field name="headers">EORE Sub Type
-MRE Sub Type</field>
+MRE Sub Type
+النوع الثانوي للتوعية بمخاطر الذخائر والمواد المتفجرة</field>
         <field name="role">cdf</field>
         <field name="datatype">list</field>
         <field name="required" eval="False"/>
@@ -264,7 +293,8 @@ MRE Sub Type</field>
         <field name="sequence">240</field>
         <field name="name">Folders</field>
         <field name="headers">Number of material distribution / Folders
-Folders</field>
+Folders
+فولدرات</field>
         <field name="role">cdf</field>
         <field name="datatype">integer</field>
         <field name="required" eval="False"/>
@@ -276,7 +306,8 @@ Folders</field>
         <field name="sequence">250</field>
         <field name="name">Bags</field>
         <field name="headers">Number of material distribution / Bags
-Bags</field>
+Bags
+الحقائب</field>
         <field name="role">cdf</field>
         <field name="datatype">integer</field>
         <field name="required" eval="False"/>
@@ -289,7 +320,9 @@ Bags</field>
         <field name="name">Magazines</field>
         <field name="headers">Number of material distribution / Magazin
 Magazin
-Magazines</field>
+Magazines
+مجلة
+مجلات</field>
         <field name="role">cdf</field>
         <field name="datatype">integer</field>
         <field name="required" eval="False"/>
@@ -301,7 +334,8 @@ Magazines</field>
         <field name="sequence">270</field>
         <field name="name">Posters</field>
         <field name="headers">Number of material distribution / Posters
-Posters</field>
+Posters
+بوسترات</field>
         <field name="role">cdf</field>
         <field name="datatype">integer</field>
         <field name="required" eval="False"/>
@@ -313,7 +347,8 @@ Posters</field>
         <field name="sequence">280</field>
         <field name="name">Football</field>
         <field name="headers">Number of material distribution / Football
-Football</field>
+Football
+كرة القدم</field>
         <field name="role">cdf</field>
         <field name="datatype">integer</field>
         <field name="required" eval="False"/>
@@ -325,7 +360,8 @@ Football</field>
         <field name="sequence">290</field>
         <field name="name">School supplement</field>
         <field name="headers">Number of material distribution / School Supplement
-School Supplement</field>
+School Supplement
+ملحق المدرسة</field>
         <field name="role">cdf</field>
         <field name="datatype">integer</field>
         <field name="required" eval="False"/>
@@ -337,7 +373,8 @@ School Supplement</field>
         <field name="sequence">300</field>
         <field name="name">T-shirts</field>
         <field name="headers">Number of material distribution / T-Shirts
-T-Shirts</field>
+T-Shirts
+تيشرت</field>
         <field name="role">cdf</field>
         <field name="datatype">integer</field>
         <field name="required" eval="False"/>
@@ -349,7 +386,8 @@ T-Shirts</field>
         <field name="sequence">310</field>
         <field name="name">Snake and ladder game</field>
         <field name="headers">Number of material distribution / Snake And Ladder Game
-Snake And Ladder Game</field>
+Snake And Ladder Game
+لعبة حية ودرج</field>
         <field name="role">cdf</field>
         <field name="datatype">integer</field>
         <field name="required" eval="False"/>
@@ -361,7 +399,8 @@ Snake And Ladder Game</field>
         <field name="sequence">320</field>
         <field name="name">Warning signs (flexes)</field>
         <field name="headers">Number of material distribution / Warning Signs(Flexes)
-Warning Signs(Flexes)</field>
+Warning Signs(Flexes)
+لوحات ارشادية تحذيرية</field>
         <field name="role">cdf</field>
         <field name="datatype">integer</field>
         <field name="required" eval="False"/>
@@ -373,7 +412,8 @@ Warning Signs(Flexes)</field>
         <field name="sequence">330</field>
         <field name="name">Booklets</field>
         <field name="headers">Number of material distribution / Booklets
-Booklets</field>
+Booklets
+كتيبات</field>
         <field name="role">cdf</field>
         <field name="datatype">integer</field>
         <field name="required" eval="False"/>
@@ -386,7 +426,8 @@ Booklets</field>
         <field name="name">Leaflets</field>
         <field name="headers">Number of material distribution / Leaflet
 Leaflet
-Leaflets</field>
+Leaflets
+منشورات</field>
         <field name="role">cdf</field>
         <field name="datatype">integer</field>
         <field name="required" eval="False"/>
@@ -397,7 +438,8 @@ Leaflets</field>
         <field name="template_id" ref="template_eore"/>
         <field name="sequence">350</field>
         <field name="name">Other material</field>
-        <field name="headers">Number of material distribution / Others</field>
+        <field name="headers">Number of material distribution / Others
+مواد اخرى</field>
         <field name="role">cdf</field>
         <field name="datatype">text</field>
         <field name="required" eval="False"/>
@@ -409,7 +451,8 @@ Leaflets</field>
         <field name="sequence">360</field>
         <field name="name">Narrative and reasons</field>
         <field name="headers">Narrative of the project and Reasons for EORE activity
-Narrative</field>
+Narrative
+توضيح للمشروع واسباب نشاط التوعية ضد مخاطر الالغام</field>
         <field name="role">reason</field>
         <field name="datatype">text</field>
         <field name="required" eval="False"/>
@@ -419,7 +462,9 @@ Narrative</field>
         <field name="sequence">370</field>
         <field name="name">Children (5-12) male</field>
         <field name="headers">Audience by Gender with Age Info / Children (5-12) Male
-Children (5-12) Male</field>
+Children (5-12) Male
+أطفال (5-12) ذكر
+أطفال (12-5) ذكر</field>
         <field name="role">cdf</field>
         <field name="datatype">integer</field>
         <field name="required" eval="False"/>
@@ -431,7 +476,9 @@ Children (5-12) Male</field>
         <field name="sequence">380</field>
         <field name="name">Children (5-12) female</field>
         <field name="headers">Audience by Gender with Age Info / Children (5-12) Female
-Children (5-12) Female</field>
+Children (5-12) Female
+أطفال (5-12) انثى
+أطفال (12-5) انثى</field>
         <field name="role">cdf</field>
         <field name="datatype">integer</field>
         <field name="required" eval="False"/>
@@ -443,7 +490,9 @@ Children (5-12) Female</field>
         <field name="sequence">390</field>
         <field name="name">Youth (13-18) male</field>
         <field name="headers">Audience by Gender with Age Info / Youth (13-18) Male
-Youth (13-18) Male</field>
+Youth (13-18) Male
+شباب (13-18) ذكر
+شباب (18-13) ذكر</field>
         <field name="role">cdf</field>
         <field name="datatype">integer</field>
         <field name="required" eval="False"/>
@@ -455,7 +504,9 @@ Youth (13-18) Male</field>
         <field name="sequence">400</field>
         <field name="name">Youth (13-18) female</field>
         <field name="headers">Audience by Gender with Age Info / Youth (13-18) Female
-Youth (13-18) Female</field>
+Youth (13-18) Female
+شباب (13-18) انثى
+شباب (18-13) انثى</field>
         <field name="role">cdf</field>
         <field name="datatype">integer</field>
         <field name="required" eval="False"/>
@@ -467,7 +518,8 @@ Youth (13-18) Female</field>
         <field name="sequence">410</field>
         <field name="name">Adult (19+) male</field>
         <field name="headers">Audience by Gender with Age Info / Adult (19+) Male
-Adult (19+) Male</field>
+Adult (19+) Male
+بالغ (19+) ذكر</field>
         <field name="role">cdf</field>
         <field name="datatype">integer</field>
         <field name="required" eval="False"/>
@@ -479,7 +531,8 @@ Adult (19+) Male</field>
         <field name="sequence">420</field>
         <field name="name">Adult (19+) female</field>
         <field name="headers">Audience by Gender with Age Info / Adult (19+) Female
-Adult (19+) Female</field>
+Adult (19+) Female
+بالغ (19+) انثى</field>
         <field name="role">cdf</field>
         <field name="datatype">integer</field>
         <field name="required" eval="False"/>
@@ -490,7 +543,9 @@ Adult (19+) Female</field>
         <field name="template_id" ref="template_eore"/>
         <field name="sequence">430</field>
         <field name="name">Audience type</field>
-        <field name="headers">Audience type</field>
+        <field name="headers">Audience type
+تصنيف المستفيدون
+تصنيف المستفيدين</field>
         <field name="role">cdf</field>
         <field name="datatype">list</field>
         <field name="required" eval="False"/>
@@ -502,7 +557,9 @@ Adult (19+) Female</field>
         <field name="sequence">440</field>
         <field name="name">Comment</field>
         <field name="headers">Comment
-Comments</field>
+Comments
+تعليقات
+ملاحظات</field>
         <field name="role">comments</field>
         <field name="datatype">text</field>
         <field name="required" eval="False"/>
@@ -511,7 +568,8 @@ Comments</field>
         <field name="template_id" ref="template_eore"/>
         <field name="sequence">450</field>
         <field name="name">Organisation's report id</field>
-        <field name="headers">Org Internal Report ID</field>
+        <field name="headers">Org Internal Report ID
+رقم هوية التقرير الخاص بالجهة المنفذة</field>
         <field name="role">org_report_id</field>
         <field name="datatype">text</field>
         <field name="required" eval="False"/>
@@ -522,7 +580,8 @@ Comments</field>
         <field name="template_id" ref="template_eore"/>
         <field name="sequence">460</field>
         <field name="name">MAC owner</field>
-        <field name="headers">MAC Owner</field>
+        <field name="headers">MAC Owner
+عائدية مركز شؤون الألغام</field>
         <field name="role">cdf</field>
         <field name="datatype">list</field>
         <field name="required" eval="True"/>
@@ -534,7 +593,8 @@ Comments</field>
         <field name="sequence">470</field>
         <field name="name">Remote risk education</field>
         <field name="headers">Type of Remote Risk Education
-Remote Risk Education</field>
+Remote Risk Education
+نوع نشاط التوعية عن بعد</field>
         <field name="role">cdf</field>
         <field name="datatype">multi</field>
         <field name="required" eval="False"/>
@@ -593,7 +653,8 @@ Number of Visual Broadcasting</field>
         <field name="template_id" ref="template_eore"/>
         <field name="sequence">520</field>
         <field name="name">SMS sent</field>
-        <field name="headers">Number of SMS</field>
+        <field name="headers">Number of SMS
+عدد الرسائل النصية</field>
         <field name="role">cdf</field>
         <field name="datatype">integer</field>
         <field name="required" eval="False"/>
@@ -669,7 +730,7 @@ Number of Visual Broadcasting</field>
     <record id="eore_f59" model="dma.fr.template.field">
         <field name="template_id" ref="template_eore"/>
         <field name="sequence">590</field>
-        <field name="name">Attachments</field>
+        <field name="name">Attachments|المرفقات|الصور المرفقة</field>
         <field name="headers">Attachments</field>
         <field name="role">attachments</field>
         <field name="datatype">text</field>
@@ -692,7 +753,8 @@ IM date</field>
         <field name="sequence">610</field>
         <field name="name">Received date</field>
         <field name="headers">received_date
-Received date</field>
+Received date
+تاريخ الاستلام</field>
         <field name="role">cdf</field>
         <field name="datatype">date</field>
         <field name="required" eval="False"/>
@@ -712,7 +774,8 @@ Received date</field>
         <field name="template_id" ref="template_eore"/>
         <field name="sequence">630</field>
         <field name="name">Received by</field>
-        <field name="headers">Received By</field>
+        <field name="headers">Received By
+استلم التقرير من قبل</field>
         <field name="role">cdf</field>
         <field name="datatype">text</field>
         <field name="required" eval="False"/>
