@@ -5,6 +5,8 @@ Odoo, see every problem at once, fix them in place, and download one zip of IMSM
 reports (with attachments) for the IMSMA Workbench import. IMSMA NG stays the system of record;
 Odoo never writes to the IMSMA database.
 
+**User walkthrough:** [docs/USER_GUIDE.md](docs/USER_GUIDE.md) (English), [docs/USER_GUIDE.ar.md](docs/USER_GUIDE.ar.md) (العربية). Server install: [DEPLOY.md](DEPLOY.md).
+
 Design: `../imsma-importer/DESIGN.md`. Analysis of the old tool: `../imsma-importer/analysis/`.
 
 ## Status (2026-10-20, version 19.0.0.2.0)
